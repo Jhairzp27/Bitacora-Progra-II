@@ -77,3 +77,20 @@ El nombre del código se encuentra resaltado
 
 Y este se vera modificado con cada commit y su respsectivo comentario
 
+esta linea la quiero probar a ver si se borra, por ello es de pruba
+# BUAHAHAH
+
+asdfjeoirjsda
+Una linea aleatoriaaa
+jdafasldkfjasdf
+a
+
+asdfsdf
+asdfasd
+
+sdfadfa 
+a
+asdfadf 2.6 
++ addfadf 
++ adkfasd
+
