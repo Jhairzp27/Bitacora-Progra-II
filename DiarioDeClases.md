@@ -413,6 +413,8 @@ public class Nombre_de_la_clase{
 
     ![Tabla de variables primitivas](image-2.png)
 
+    <span style = "color: #FF0000">Nota:</span> Se recomienda utilizar camelCase,para nombrar variables.
+
 + <span style = "color: #FF7F45;">Variables de referencia:</span> Son variables que almacenan direcciones de memoria de objetos.
 
     Los objetos en Java son instancias de clases.
@@ -440,3 +442,11 @@ int contador = 0;
 + En el tercer ejemplo, la variable *contador* es una variable local de tipo *int* que se declara dentro del método *main()*.
 
 **Nota:** Cuando se habla de creación de procedimiento se habla de una programación estructurada.
+
+<span style = "color: #FF7F45">Dato curioso:</span> El area mejor pagada dentro de JAVA es Java EE.
+
+## <span style = "color: #FF7F45">Estructuras de control</span>
+
+### <span style = "color: #FF7F45">Bucles</span>
+### <span style = "color: #FF7F45"> Metodos </span>
+Para terminar un proceso en linux Cntrl + c
