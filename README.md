@@ -214,9 +214,11 @@ El valor hexadecimal del color está compuesto por dos pares de números hexadec
 | **Gris** | #EEEEEE, #D3D3D3 | <span style="color: #EEEEEE;">Gris claro</span>`,`<span style="color: #D3D3D3;">Gris oscuro</span> |
 |Negro|    #000000   |<span style="color: #000000;">Este texto es negro</span>|
 
-# <p style="text-align: center; margin: 0 auto;"> <span style = "color: #FF7F45;">**GIT**</span> [<img src="https://raw.githubusercontent.com/Delta456/Delta456/master/img/git.png" alt="git logo" width="24">](https://git-scm.com/)</p>
+# <span style = "color: #FF4767;">**TERCERA CLASE**</span>
 
 **Fecha:** 9 de noviembre de 2023
+
+# <p style="text-align: center; margin: 0 auto;"> <span style = "color: #FF7F45;">**GIT**</span> [<img src="https://raw.githubusercontent.com/Delta456/Delta456/master/img/git.png" alt="git logo" width="24">](https://git-scm.com/)</p>
 
 ## ¿Qué es?
 
@@ -301,10 +303,6 @@ Por ello GitBash es un acercamiento a Linux.
 |***ls -a***|Se utiliza para listar todos los archivos y directorios, incluidos los archivos ocultos, en la terminal|
 
 <Span style = "color: #FF0000">**Para terminar un proceso Cntrl + c**</Span>
-
-# <span style = "color: #FF4767;">**TERCERA CLASE**</span>
-
-**Fecha:** 09 de noviembre 2023
 
 # <p style="text-align: center; margin: 0 auto;"><span style = "color: #F7F"> **GitHub** <td><a href="#"><img alt="GitHub" title="GitHub" height="28px" src="https://i.imgur.com/DZgetVv.png" /> </a></td></span></p>
 
@@ -1033,11 +1031,25 @@ Otros ejemplos:
 + Una casa es un objeto que tiene estado, como su tamaño, número de habitaciones y ubicación. También tiene comportamiento, como proporcionar refugio, seguridad y comodidad.
 + Una computadora es un objeto que tiene estado, como su procesador, memoria y almacenamiento. También tiene comportamiento, como ejecutar programas, almacenar datos y conectarse a Internet.
 
+![POO - EdxTeam](image-4.png)
+
 # <Span style = "color: #FF4767;">**SEXTA CLASE**</Span>
 
 **Fecha:** 16 de noviembre 2023
 
-Una instancia es un objeto concreto creado a partir de una clase.
+## <span style = "color: #FF7F00">Compilador de Java</span>
+
+El compilador de Java es un programa informático que traduce el código fuente escrito en Java a código de máquina, que es un conjunto de instrucciones que puede ser ejecutado directamente por la computadora.
+
+## <span style = "color: FF7F00;">Instancia</span>
+Una instancia es un objeto concreto creado a partir de una clase, es decir, una representación específica de una clase. Tiene un estado y un comportamiento definidos por la clase a la que pertenece
+
+Por ejemplo, la clase `Persona` podria tener las siguientes variables de instancia:
+
++ `nombre: ` Nombre de la persona.
++ `edad: ` Edad de la persona.
+
+Las instancias se crean utilizando el operador new. Por ejemplo:
 
 ```java
 Persona persona = new Persona();
@@ -1053,4 +1065,16 @@ persona.nombre = "Juan Pérez";
 
 System.out.println(persona.nombre); // Imprime "Juan Pérez"
 ```
+
+## <span style = "color: #FF7F00">Constructor</span>
+
+Es un método especial que se utiliza para inicializar un objeto recién creado. El constructor se llama cuando se crea una instancia de una clase.
+
+### Caracteristicas
++ Tiene el mismo nombre de la clase.
++ Se ejecutra un unica vez.
++ Debe ser publico.
++ Puede ayudar inicializando las variables.
++ Puede haber mas de un constructor en la clase.
+
 </dev>
