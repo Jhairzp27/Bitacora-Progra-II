@@ -592,47 +592,6 @@ Estas estructuras permiten saltar a una instrucción específica en el código.
     }
     ```
 
-## <span style = "color: #FF7F00"> BUCLES </span>
-
-Es una estructura de control que permite ejecutar un bloque de código repetidamente. Los bucles se utilizan para realizar tareas que deben repetirse un número determinado de veces, o mientras se cumpla una condición.
-
-Siendo tres: for, while y do-while
-
-#### <span style = "color: #FF7F00">**Sintaxis**</span>
-1. **For:**
-
-    ```java
-    for (int i = 0; i < 10; i++) {
-      System.out.println(i);
-    }
-    ```
-
-    La inicialización se ejecuta una sola vez, al principio del bucle. La condición se evalúa al principio de cada iteración del bucle. Si la condición es verdadera, se ejecuta el bloque de código. Si la condición es falsa, el bucle termina. El incremento se ejecuta al final de cada iteración del bucle.
-
-2. **While:**
-
-    La condición se evalúa al principio de cada iteración del bucle. Si la condición es verdadera, se ejecuta el bloque de código. Si la condición es falsa, el bucle termina.
-
-    ```java
-    int i = 0;
-
-    while (i < 10) {
-      System.out.println(i);
-      i++;
-    }
-    ```
-
-3. **Do-while:**
-    El bloque de código se ejecuta al menos una vez, incluso si la condición no se cumple. La condición se evalúa al final de cada iteración del bucle. Si la condición es verdadera, el bucle se repite. Si la condición es falsa, el bucle termina.
-
-    ```java
-    do {
-      // bloque de código
-    } while (condición);
-    ```
-
-Se utilizan en una amplia variedad de aplicaciones, incluyendo la creación de menús, la navegación por árboles y la generación de gráficos.
-
 ## <span style = "color: #FF7F00"> METODOS </span>
 
 Es un bloque de código que se puede llamar desde cualquier parte del programa.
@@ -1037,11 +996,12 @@ Otros ejemplos:
 
 **Fecha:** 16 de noviembre 2023
 
-## <span style = "color: #FF7F00">Compilador de Java</span>
+### <span style = "color: #FF7F00">Compilador de Java</span>
 
 El compilador de Java es un programa informático que traduce el código fuente escrito en Java a código de máquina, que es un conjunto de instrucciones que puede ser ejecutado directamente por la computadora.
 
-## <span style = "color: FF7F00;">Instancia</span>
+### <span style = "color: FF7F00;">Instancia</span>
+
 Una instancia es un objeto concreto creado a partir de una clase, es decir, una representación específica de una clase. Tiene un estado y un comportamiento definidos por la clase a la que pertenece
 
 Por ejemplo, la clase `Persona` podria tener las siguientes variables de instancia:
@@ -1066,15 +1026,88 @@ persona.nombre = "Juan Pérez";
 System.out.println(persona.nombre); // Imprime "Juan Pérez"
 ```
 
-## <span style = "color: #FF7F00">Constructor</span>
+### <span style = "color: #FF7F00;">Debugger</span>
+
+Es una herramienta de desarrollo de software que permite a los desarrolladores encontrar y corregir errores en el código fuente. Los depuradores proporcionan una variedad de funciones que ayudan a los desarrolladores a comprender cómo se ejecuta el código y a identificar los problemas.
+
+Funciones básicas de un depurador:
+
++ Pausar la ejecución del código.
++ Navegar por el código.
++ Examinar los valores de las variables.
++ Ejecutar el codigo paso a paso
+
+### <span style = "color: #FF7F00">Constructor</span>
 
 Es un método especial que se utiliza para inicializar un objeto recién creado. El constructor se llama cuando se crea una instancia de una clase.
 
-### Caracteristicas
+#### Caracteristicas
 + Tiene el mismo nombre de la clase.
 + Se ejecutra un unica vez.
 + Debe ser publico.
 + Puede ayudar inicializando las variables.
 + Puede haber mas de un constructor en la clase.
+
+### <span style = "color: #FF7F00;">Creacion de la clase</span>
+
+Dentro de una clase se pueden crear metodos o funciones para llamarlos dentro de la propia clase, pero lo ideal en POO es crear un `Proyecto Java`, donde se van a crear todas las clases y se las llamaran a una `clase Main`.
+
+Por ello lo recomendable es crear un archivo especifico para almacenar el proyecto con el comando
+
+1. Ctrl + Shift + N.
+2. Ctrl + Shift + P.
+3. Create Java Project.
+4. No build tools (Depende de lo que se quiera hacer).
+5. Seleccionar el espacio (carpeta) para almacenar.
+6. Darle un nombre al proyecto.
+
+De esta manera se crea una estructura de proyecta Java, ejemplo:
+
+![Muestra](image-5.png)
+
+# <span style = "color: #FF4767;">**SEPTIMA CLASE**</span>
+
+**Fecha:** 21 de noviembre
+
+## <span style = "color: #FF7F00"> BUCLES </span>
+
+Es una estructura de control que permite ejecutar un bloque de código repetidamente. Los bucles se utilizan para realizar tareas que deben repetirse un número determinado de veces, o mientras se cumpla una condición.
+
+Siendo tres: for, while y do-while
+
+#### <span style = "color: #FF7F00">**Sintaxis**</span>
+1. **For:**
+
+    ```java
+    for (int i = 0; i < 10; i++) {
+      System.out.println(i);
+    }
+    ```
+
+    La inicialización se ejecuta una sola vez, al principio del bucle. La condición se evalúa al principio de cada iteración del bucle. Si la condición es verdadera, se ejecuta el bloque de código. Si la condición es falsa, el bucle termina. El incremento se ejecuta al final de cada iteración del bucle.
+
+2. **While:**
+
+    La condición se evalúa al principio de cada iteración del bucle. Si la condición es verdadera, se ejecuta el bloque de código. Si la condición es falsa, el bucle termina.
+
+    ```java
+    int i = 0;
+
+    while (i < 10) {
+      System.out.println(i);
+      i++;
+    }
+    ```
+
+3. **Do-while:**
+    El bloque de código se ejecuta al menos una vez, incluso si la condición no se cumple. La condición se evalúa al final de cada iteración del bucle. Si la condición es verdadera, el bucle se repite. Si la condición es falsa, el bucle termina.
+
+    ```java
+    do {
+      // bloque de código
+    } while (condición);
+    ```
+
+Se utilizan en una amplia variedad de aplicaciones, incluyendo la creación de menús, la navegación por árboles y la generación de gráficos.
 
 </dev>
