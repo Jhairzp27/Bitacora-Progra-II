@@ -1,5 +1,5 @@
 
-# <span style="color: #FF4767;">**PRIMERA CLASE**</span>
+# <span style="color: #FF4767;">**Clase 1**</span>
 
 **Fecha:** 07 de noviembre 2023
 
@@ -61,7 +61,7 @@ workdirectory: workspace --> directorio de trabajo
 
 ---------------------------
 
-# <span style ="color: #FF4767;">**SEGUNDA CLASE**</span>
+# <span style ="color: #FF4767;">**Clase 2**</span>
 
 **Fecha:** 08 de noviembre de 2023
 
@@ -94,7 +94,9 @@ workdirectory: workspace --> directorio de trabajo
     Moverá la línea o bloque seleccionado en dirección que se le indique.
 9. Comentar en bloque (Multi-Line): **ALT + SHIFT +A**
 
-    Comenta en forma varias línea al mismo tiempo ejemplo:
+    Comenta en forma varias línea al mismo tiempo 
+    
+    *Ejemplo:*
 
         /* código escrito
             código escrito */
@@ -214,7 +216,7 @@ El valor hexadecimal del color está compuesto por dos pares de números hexadec
 | **Gris** | #EEEEEE, #D3D3D3 | <span style="color: #EEEEEE;">Gris claro</span>`,`<span style="color: #D3D3D3;">Gris oscuro</span> |
 |Negro|    #000000   |<span style="color: #000000;">Este texto es negro</span>|
 
-# <span style = "color: #FF4767;">**TERCERA CLASE**</span>
+# <span style = "color: #FF4767;">**Clase 3**</span>
 
 **Fecha:** 9 de noviembre de 2023
 
@@ -318,7 +320,7 @@ Es una plataforma de desarrollo de código fuente que facilita a los desarrollad
 + <span style = "color: #F7F" >Issues:</span> Proporciona una función de Issues para que los desarrolladores puedan informar de errores y solicitar nuevas funciones.
 + <span style = "color: #F7F" >Pull requests:</span> Proporciona una función de Pull requests para que los desarrolladores puedan solicitar que sus cambios se incorporen a un proyecto.
 
-# <span style="color: #FF4767;">**CUARTA CLASE**</span>
+# <span style="color: #FF4767;">**Clase 4**</span>
 
 **Fecha:** 10 de noviembre 2023
 
@@ -419,53 +421,10 @@ public class Nombre_de_la_clase{
 |java ***nombre del archivo.java***|Compila el programa en consola|
 |cat ***nombre del archivo.java***|Muestra lo que tiene el archivo escrito|
 
-# <span style = "color: #FF4767;"> **QUINTA CLASE**</span>
+# <span style = "color: #FF4767;"> **Clase 5**</span>
 **Fecha:** 14 de noviembre 2023
 
-## <span style = "color: #FF7F00;">Tipos de variables</span>
 
-
-+ <span style = "color: #FF7F00;">Variables primitivas:</span> Almacenan valores de tipos de datos primitivos, como números, caracteres y booleanos. Son tipos de datos básicos que no son objetos. Los tipos de datos primitivos en Java son los siguientes:
-
-    + byte: Almacena un número entero de 8 bits.
-    + short: Almacena un número entero de 16 bits.
-    + int: Almacena un número entero de 32 bits.
-    + long: Almacena un número entero de 64 bits.
-    + float: Almacena un número de coma flotante de 32 bits.
-    + double: Almacena un número de coma flotante de 64 bits.
-    + char: Almacena un carácter Unicode.
-    + boolean: Almacena un valor lógico, true o false.
-    + Variables de referencia
-
-    ![Tabla de variables primitivas](image-2.png)
-
-    <span style = "color: #FF0000">Nota:</span> Se recomienda utilizar camelCase,para nombrar variables.
-
-+ <span style = "color: #FF7F00;">Variables de referencia:</span> Son variables que almacenan direcciones de memoria de objetos.
-
-    Los objetos en Java son instancias de clases.
-
-+ <span style = "color: #FF7F00 ">Variables locales:</span> Son variables que se declaran dentro del cuerpo de un método.
-Variables primitivas
-
-    Solo son visibles dentro del método en el que se declaran.
-
-*Ejemplo:*
-
-``````java
-// Variable primitiva
-int numero = 10;
-
-// Variable de referencia
-Persona persona = new Persona();
-
-// Variable local
-int contador = 0;
-``````
-
-+ En el primer ejemplo, la variable *numero* es una variable primitiva de tipo *int* que almacena el valor 10.
-+ En el segundo ejemplo, la variable persona es una variable de referencia de tipo *Persona* que almacena la dirección de memoria de un objeto de la *clase Persona*.
-+ En el tercer ejemplo, la variable *contador* es una variable local de tipo *int* que se declara dentro del método *main()*.
 
 **Nota:** Cuando se habla de creación de procedimiento se habla de una programación estructurada.
 
@@ -622,7 +581,7 @@ Los *argumentos* son los datos que se pasan al método cuando se llama. Los argu
 
 El *cuerpo* del método es el código que se ejecuta cuando se llama al método.
 
-Ejemplo:
+*Ejemplo:*
 
 ```java
 public int sumar(int a, int b) {
@@ -723,6 +682,241 @@ class Persona {
 
 }
 ```
+# OPERADORES
+
+|Operator|Name|Example|
+|---|---|---|
+|+|Adicion|x + y|
+|-|Reduccion|x - y|
+|*|Multiplicacion|x * y|
+|/|División|x / y|
+|%|Módulo|x % y|
+|++|Incremento|++x|
+|--|Decremento|--x|
+|&& |Y|Logical and x < 5 && x < 10|
+| l l | O | Logical or x < 5 l l x < 4|
+|!| Logical not| !(x < 5 && x < 10)|
+|==| Equal to| x == y|
+|!=| Not equal| x != y|
+|> |Greater than |x > y|
+|< |Less than |x < y|
+|>=| Greater than or equal to| x >= y|
+|<=| Less than or equal to |x <= y|
+
+## Otros operadores
+|Operator| Example| Same As|
+|---|---|---|
+|= |x = 5| x = 5|
+|+=|x += 3 |x = x + 3|
+|-=| x -= 3| x = x - 3|
+|*=| x *= 3| x = x * 3|
+|/=| x /= 3| x = x / 3|
+|%=| x %= 3| x = x % 3|
+|&=| x &= 3| x = x & 3|
+|l=| x l= 3| x = x l 3|
+|^=| x ^= 3 |x = x ^ 3|
+|>>= |x >>= 3 |x = x >> 3|
+|<<= |x <<= 3 |x = x <<|
+
+## <span style = "color: #FF7F00;">**PROGRAMACION ORIENTADA A OBJETOS (POO)**</span>
+
+Es un paradigma de programación que organiza el código en torno a objetos. Son entidades que tienen estado y comportamiento. El estado de un objeto se representa mediante variables, y el comportamiento de un objeto se representa mediante métodos.
+
+Un ejemplo de la vida cotidiana de la POO es una persona. Una persona tiene estado, como su nombre, edad y dirección. También tiene comportamiento, como caminar, hablar y comer.
+
+La clase `Persona` tendría variables para almacenar el estado de la persona, como su nombre, edad y dirección. También tendría métodos para representar el comportamiento de la persona, como caminar, hablar y comer.
+
+Por ejemplo, la clase `Persona` podría tener las siguientes variables:
+
++ `nombre`: El nombre de la persona
++ `edad`: La edad de la persona
++ `direccion`: La dirección de la persona
+
+También podría tener los siguientes métodos *(acciones)*:
+
++ `caminar()`: Hace que la persona camine
++ `hablar()`: Hace que la persona hable
++ `comer()`: Hace que la persona coma
+
+Otros ejemplos:
+
++ Un automóvil es un objeto que tiene estado, como su color, modelo y año. También tiene comportamiento, como conducir, frenar y girar.
++ Una casa es un objeto que tiene estado, como su tamaño, número de habitaciones y ubicación. También tiene comportamiento, como proporcionar refugio, seguridad y comodidad.
++ Una computadora es un objeto que tiene estado, como su procesador, memoria y almacenamiento. También tiene comportamiento, como ejecutar programas, almacenar datos y conectarse a Internet.
+
+![POO - EdxTeam](image-4.png)
+
+# <Span style = "color: #FF4767;">**Clase 6**</Span>
+
+**Fecha:** 16 de noviembre 2023
+
+### <span style = "color: #FF7F00">Compilador de Java</span>
+
+El compilador de Java es un programa informático que traduce el código fuente escrito en Java a código de máquina, que es un conjunto de instrucciones que puede ser ejecutado directamente por la computadora.
+
+### <span style = "color: FF7F00;">Instancia</span>
+
+Una instancia es un objeto concreto creado a partir de una clase, es decir, una representación específica de una clase. Tiene un estado y un comportamiento definidos por la clase a la que pertenece
+
+Por ejemplo, la clase `Persona` podria tener las siguientes variables de instancia:
+
++ `nombre: ` Nombre de la persona.
++ `edad: ` Edad de la persona.
+
+Las instancias se crean utilizando el operador new. Por ejemplo:
+
+```java
+Persona persona = new Persona();
+```
+
+Este código crea un objeto de la clase `Persona` con el estado y el comportamiento predeterminados de la clase `Persona`.
+
+Los objetos en Java pueden acceder a sus datos y métodos mediante el operador de acceso `[.]`. Por ejemplo, el siguiente código imprime el nombre de una persona:
+
+```java
+Persona persona = new Persona();
+persona.nombre = "Juan Pérez";
+
+System.out.println(persona.nombre); // Imprime "Juan Pérez"
+```
+
+### <span style = "color: #FF7F00;">Debugger</span>
+
+Es una herramienta de desarrollo de software que permite a los desarrolladores encontrar y corregir errores en el código fuente. Los depuradores proporcionan una variedad de funciones que ayudan a los desarrolladores a comprender cómo se ejecuta el código y a identificar los problemas.
+
+Funciones básicas de un depurador:
+
++ Pausar la ejecución del código.
++ Navegar por el código.
++ Examinar los valores de las variables.
++ Ejecutar el codigo paso a paso
+
+### <span style = "color: #FF7F00">Constructor</span>
+
+Es un método especial que se utiliza para inicializar un objeto recién creado. El constructor se llama cuando se crea una instancia de una clase.
+
+#### Caracteristicas
++ Tiene el mismo nombre de la clase.
++ Se ejecutra un unica vez.
++ Debe ser publico.
++ Puede ayudar inicializando las variables.
++ Puede haber mas de un constructor en la clase.
+
+### <span style = "color: #FF7F00;">Creacion de la clase</span>
+
+Dentro de una clase se pueden crear metodos o funciones para llamarlos dentro de la propia clase, pero lo ideal en POO es crear un `Proyecto Java`, donde se van a crear todas las clases y se las llamaran a una `clase Main`.
+
+Por ello lo recomendable es crear un archivo especifico para almacenar el proyecto con el comando
+
+1. Ctrl + Shift + N.
+2. Ctrl + Shift + P.
+3. Create Java Project.
+4. No build tools (Depende de lo que se quiera hacer).
+5. Seleccionar el espacio (carpeta) para almacenar.
+6. Darle un nombre al proyecto.
+
+De esta manera se crea una estructura de proyecta Java, ejemplo:
+
+![Muestra](image-5.png)
+
+# <span style = "color: #FF4767;">**Clase 7**</span>
+
+**Fecha:** 21 de noviembre
+
+## <span style = "color: #FF7F00"> BUCLES </span>
+
+Es una estructura de control que permite ejecutar un bloque de código repetidamente. Los bucles se utilizan para realizar tareas que deben repetirse un número determinado de veces, o mientras se cumpla una condición.
+
+Siendo tres: for, while y do-while
+
+#### <span style = "color: #FF7F00">**Sintaxis**</span>
+1. **For:**
+
+    ```java
+    for (int i = 0; i < 10; i++) {
+      System.out.println(i);
+    }
+    ```
+
+    La inicialización se ejecuta una sola vez, al principio del bucle.<span style= "color: #FF7F00;"> **La condición se evalúa al principio de cada iteración del bucle**</span>.
+
+    Si la condición es verdadera, se ejecuta el bloque de código. Si la condición es falsa, el bucle termina. El incremento se ejecuta al final de cada iteración del bucle.
+
+2. **Do-while:**
+
+    El bloque de código <span style = "color: #FF7F00;"> **se ejecuta al menos una vez**</span>, ***incluso*** si la condición no se cumple. La condición <span style = "color: #FF7F00;"> **se evalúa al final de cada iteración del bucle**</span>. Si la condición es verdadera, el bucle se repite. Si la condición es falsa, el bucle termina.
+
+    ```java
+    do {
+      // bloque de código
+    } while (condición);
+    ```
+
+3. **While:**
+
+    La condición <span style="color: #FF7F00"> **se evalúa al principio de cada iteración del bucle**</span>. Si la condición es verdadera, se ejecuta el bloque de código. Si la condición es falsa, el bucle termina.
+
+    ```java
+    int i = 0;
+
+    while (i < 10) {
+      System.out.println(i);
+      i++;
+    }
+    ```
+### ¿Cuándo se utilizan estos ciclos?
+
+  + El `for` se utiliza cuando se conoce el valor con el que se inicia, o cuando inicia y cuando este se va a detener.
+  + El `while` se utiliza que ejecutará algo hasta que una condición cambie, pero yo no conozco cuando cambiará la condición de salida.
+  + `DoWhile` se utiliza cuando se conoce de antemano que el bloque de instrucciones se ejecutará al menos una vez. Esto se debe a que el ciclo `do-while` evalúa la condición al final del bloque de instrucciones, por lo que el bloque de instrucciones se ejecutará al menos una vez, incluso si la condición es falsa.
+
+Se utilizan en una amplia variedad de aplicaciones, incluyendo la creación de menús, la navegación por árboles y la generación de gráficos.
+
+## <span style = "color: #FF7F00;">Tipos de variables</span>
+
+
++ <span style = "color: #FF7F00;">Variables primitivas:</span>
+Almacenan valores de tipos de datos primitivos, como números, caracteres y booleanos. Son tipos de datos básicos que no son objetos. Los tipos de datos primitivos en Java son los siguientes:
+
+    + byte: Almacena un número entero de 8 bits.
+    + short: Almacena un número entero de 16 bits.
+    + int: Almacena un número entero de 32 bits.
+    + long: Almacena un número entero de 64 bits.
+    + float: Almacena un número de coma flotante de 32 bits.
+    + double: Almacena un número de coma flotante de 64 bits.
+    + char: Almacena un carácter Unicode.
+    + boolean: Almacena un valor lógico, true o false.
+    + Variables de referencia
+
+    ![Tabla de variables primitivas](image-2.png)
+
+    <span style = "color: #FF0000">Nota:</span> Se recomienda utilizar camelCase,para nombrar variables.
+
++ <span style = "color: #FF7F00;">Variables de referencia:</span> Son variables que almacenan direcciones de memoria de objetos.
+
+    Los objetos en Java son instancias de clases.
+
++ <span style = "color: #FF7F00 ">Variables locales:</span> Son variables que se declaran dentro del cuerpo de un método.
+Variables primitivas
+
+    Solo son visibles dentro del método en el que se declaran.
+
+*Ejemplo:*
+
+``````java
+// Variable primitiva
+int numero = 10;
+
+// Variable de referencia
+Persona persona = new Persona();
+
+// Variable local
+int contador = 0;
+``````
+
++ En el primer ejemplo, la variable *numero* es una variable primitiva de tipo *int* que almacena el valor 10.
++ En el segundo ejemplo, la variable persona es una variable de referencia de tipo *Persona* que almacena la dirección de memoria de un objeto de la *clase Persona*.
++ En el tercer ejemplo, la variable *contador* es una variable local de tipo *int* que se declara dentro del método *main()*.
 
 ## <span style = "color: #FF7F00">**CASTEO** </span>
 Un `cast` es una conversión de un tipo de dato a otro. Los casteos se pueden realizar de dos maneras:
@@ -734,7 +928,7 @@ Se realiza automáticamente por el compilador de Java cuando un valor de un tipo
 1. Un tipo de dato más pequeño se puede asignar a un tipo de dato más grande sin pérdida de información. Por ejemplo, un entero se puede asignar a un float o un double.
 2. Un tipo de dato más grande se puede asignar a un tipo de dato más pequeño con pérdida de información. Por ejemplo, un float se puede asignar a un entero.
 
-Ejemplo:
+*Ejemplo:*
 ```java
 int entero = 10;
 float flotante = entero; // Casteo implícito de entero a flotante
@@ -754,7 +948,7 @@ El casteo explícito se realiza manualmente por el programador utilizando el ope
 
 El casteo explícito se puede utilizar para realizar un casteo de un tipo de dato a otro, incluso si el compilador de Java no lo permite de forma implícita.
 
-Ejemplos:
+*Ejemplos:*
 
 ```java
 int entero = 10;
@@ -767,6 +961,112 @@ char caracter = (char) cadena.charAt(0); // Casteo explícito de cadena a char
 
 + El compilador de Java no permite realizar un casteo implícito de `entero` a `byte`, por lo que se debe realizar un casteo explícito.
 + El compilador de Java no permite realizar un casteo implícito de  `cadena` a `char`, por lo que se debe realizar un casteo explícito.
+
+## <span style = "color: #FF7F00;">**PARSEO**</span>
+
+### ¿Qué es?
+
+El parseo es el proceso de convertir una cadena de texto en un objeto de un tipo de datos específico.
+
+### ¿Cómo se realiza?
+
+Se pueden realizar utilizando métodos estáticos de las clases de tipos primitivos o clases de objetos de referencia.
+
+### Algunos ejemplos de cómo se pueden utilizar los parseos en Java
+
+1. <span style = "color: #FF7F00;">Entrada/salida de datos:</span> Los parseos se pueden utilizar para leer datos de un archivo o entrada del usuario y almacenarlos en variables. También se pueden utilizar para escribir datos de variables en un archivo o salida del usuario.
+
+*Ejemplo 1:*
+
+```Java
+// Convertir una cadena de texto en un número entero
+
+int numero = Integer.parseInt("10");
+
+System.out.println(numero); // Imprime 10
+`````
+
+Este código convertirá la cadena "10" en un número entero y lo almacenará en la variable numero. Luego, imprimirá el valor de numero en consola.
+
+2. <span style ="color: #FF7F00;">Validación de datos:</span> Los parseos se pueden utilizar para validar los datos ingresados por el usuario. Por ejemplo, podemos usar el método parseInt() para validar que un usuario ingrese un número entero válido.
+
+*Ejemplo 2:*
+
+```Java
+// Validar que el usuario ingrese un número entero
+
+Scanner sc = new Scanner(System.in);
+
+System.out.println("Ingrese un número entero: ");
+int numero = sc.nextInt();
+
+if (numero < 0) {
+  System.out.println("El número debe ser mayor o igual a 0.");
+} else {
+  System.out.println("El número es válido.");
+}
+```
+
+Este código le pedirá al usuario que ingrese un número entero. Luego, usará el método parseInt() para convertir la entrada del usuario en un número entero. Si el número es menor que 0, el código imprimirá un mensaje de error. De lo contrario, el código imprimirá un mensaje de confirmación.
+
+3. <span style ="color: #FF7F00;">Conversión de formatos de datos:</span> Los parseos se pueden utilizar para convertir datos de un formato a otro. Por ejemplo, podemos usar el método parse() para convertir una fecha en formato de cadena a formato de objeto Date.
+
+*Ejemplo 3:*
+
+```Java
+// Convertir una fecha de cadena a objeto `Date`
+
+String fechaEnCadena = "2023-12-02";
+
+Date fecha = Date.parse(fechaEnCadena);
+
+System.out.println(fecha); // Imprime 2023-12-02
+```
+
+Este código convertirá la cadena "2023-12-02" en una fecha y la almacenará en la variable fecha. Luego, imprimirá la fecha en consola.
+
+## <span style = "color: #FF7F00;">Documentacion</span>
+
+ Es un conjunto de documentos que proporcionan información sobre el código fuente de un programa Java. Esta documentación puede ser utilizada por desarrolladores, usuarios o cualquier otra persona que necesite entender el código.
+
+Es una parte importante del desarrollo de software. Una buena documentación puede ayudar a otros desarrolladores a entender tu código y a utilizarlo de forma eficaz.
+
+ ### <span sytle = "color: #FF7F00;">Con que se genera?</span>
+
+ Utilizando el programa Javadoc. Javadoc es una herramienta que utiliza comentarios especiales en el código fuente para generar documentación HTML.
+
+ ### <span sytle = "color: #FF7F00;">Sintaxis</span>
+
+Comienzan con el símbolo `/**` y terminan con el símbolo `*/.` Dentro de estos comentarios, se pueden utilizar tags especiales para proporcionar información sobre el código.
+
+Algunos de los tags más comunes utilizados en la documentación Java son:
+
++ @author: Se utiliza para indicar el autor del código.
++ @version: Se utiliza para indicar la versión del código.
++ @param: Se utiliza para indicar los parámetros de un método o constructor.
++ @return: Se utiliza para indicar el valor devuelto por un método.
++ @throws: Se utiliza para indicar las excepciones que puede lanzar un método.
+
+*Ejemplo:*
+```java
+/**
+ * Este método suma dos números.
+ *
+ * @param a El primer número.
+ * @param b El segundo número.
+ * @return El resultado de la suma.
+ */
+public int sumar(int a, int b) {
+  return a + b;
+}
+
+```
+
+### <span style = "color: #FF7F00;">Propositos:</span>
+
++ Mejorar la comprensión del código: La documentación puede ayudar a los desarrolladores a entender el código más rápidamente y fácilmente.
++ Facilitar el mantenimiento del código: La documentación puede ayudar a los desarrolladores a mantener y mejorar el código.
++ Mejorar la documentación de la API: La documentación en Java puede ser utilizada para documentar la API de un programa Java.
 
 ## <span style = "color: #FF7F00">Variables y secuencia escape</span>
 
@@ -782,7 +1082,7 @@ char caracter = (char) cadena.charAt(0); // Casteo explícito de cadena a char
 |\f|Representa un salto de página.
 |\uxxxx|Representa un carácter Unicode.|
 
-Ejemplo:
+*Ejemplo:*
 
 ```java
 // Representa una nueva línea
@@ -875,6 +1175,10 @@ El símbolo € se representa con el código Unicode 0x20AC.
 
 Recordar el uso de `camelCase`
 
+# <span style = "color: #FF4767;">**Clase 8**</span>
+
+***Fecha:*** 28 de noviembre
+
 ## Metodos String
 
 |String|Funcion|
@@ -883,6 +1187,7 @@ Recordar el uso de `camelCase`
 |.Length  |Obtener la longitud del string|
 |Equals| Comparación|
 |.equalsIgnoreCase | Ignorar si es mayúsculas o minúscula|
+|.concat|Concatenar dos cadenas. Devuelve una nueva cadena que es la combinación de las dos cadenas originales.|
 
 ## Scanner
 
@@ -901,6 +1206,7 @@ System.out.println(numero);
 Este código imprimirá el número entero leído en la consola.
 
 ### Metodos Scanner
+
 |Estructura|Funcion|
 |-----|-----|
 |nextInt()| Se salta los espacios dejados en blanco hasta que encuentra un valor de tipo int|
@@ -908,6 +1214,103 @@ Este código imprimirá el número entero leído en la consola.
 |nextFloat() |Se salta los espacios dejados en blanco hasta que encuentra un valor de tipo float|
 |nextDouble()| Se salta los espacios dejados en blanco hasta que encuentra un valor de tipo double|
 |next() |Se salta los espacios dejados en blanco hasta que encuentra un token. Devuelve el token como un valor tipo String.|
+
+## <span style = "color: #FF7F00;">Unmutable</span>
+
+Un objeto inmutable es aquel cuyo estado no se puede cambiar una vez que ha sido creado. Esto significa que los atributos de un objeto inmutable no se pueden modificar después de que el objeto haya sido creado.
+
+### Ventajas
+
++ <span style = "color: #FF7F00;">Seguridad de concurrencia:</span> Los objetos inmutables son seguros para la concurrencia, ya que no se puede modificar su estado desde diferentes hilos.
++ <span style = "color: #FF7F00;">Eficiencia:</span> Los objetos inmutables son más eficientes que los objetos mutables, ya que no es necesario realizar copias del objeto para modificarlo.
++ <span style = "color: #FF7F00;">Facilidad de prueba:</span> Los objetos inmutables son más fáciles de probar que los objetos mutables, ya que no es necesario preocuparse por el estado del objeto.
+
+### Clases inmutables
+
++ Las clases que representan tipos primitivos, como `int`, `float`, `char`, etc.
++ Las clases que implementan la interfaz `final`.
++ Las clases que no tienen métodos que modifiquen el estado del objeto.
+
+Por ejemplo, la clase `String` es una clase inmutable. Esto significa que una vez que se crea una instancia de la clase String, su contenido no se puede modificar.
+
+### Como crear clases inmutables
+
+Para crear una clase inmutable, podemos seguir los siguientes pasos:
+
+1. Declarar la clase como `final`. Esto evitará que la clase se herede de otras clases.
+2. Declarar los atributos de la clase como `final`. Esto evitará que los atributos se modifiquen.
+3. No proporcionar métodos que modifiquen el estado del objeto.
+
+Por ejemplo, el siguiente código muestra una clase inmutable llamada `Persona`:
+
+```java
+public final class Persona {
+
+    private final String nombre;
+    private final int edad;
+
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+}
+
+```
+
+Esta clase tiene dos atributos, nombre y edad, que se declaran como final. Además, la clase no proporciona ningún método que modifique el estado del objeto.
+
+## <span style = "color: #FF7F00;">StringBuilder</span>
+
+Es una clase en Java que se utiliza para manipular cadenas. Es una clase mutable, lo que significa que su contenido se puede cambiar después de su creación.
+
+Proporciona una serie de métodos para manipular cadenas, entre ellos:
+
++ append(): Agrega texto a la cadena.
++ insert(): Inserta texto en la cadena en una posición determinada.
++ replace(): Reemplaza texto en la cadena.
++ delete(): Elimina texto de la cadena.
++ substring(): Devuelve una subcadena de la cadena.
+
+Es una alternativa a la clase String. La principal diferencia entre las dos clases es que StringBuilder es mutable
+
+Por ejemplo, el siguiente código muestra cómo utilizar la clase StringBuilder para concatenar dos cadenas:
+
+```java
+StringBuilder sb = new StringBuilder("Hola ");
+sb.append("mundo!");
+
+System.out.println(sb);
+
+```
+
+Este código imprimirá la siguiente salida:
+
+    Hola mundo!
+
+El siguiente código muestra cómo utilizar la clase StringBuilder para reemplazar texto en una cadena:
+
+```java
+StringBuilder sb = new StringBuilder("Hola mundo!");
+sb.replace(5, 7, "planeta");
+
+System.out.println(sb);
+
+```
+
+Este código imprimirá la siguiente salida:
+
+    Hola planeta!
+
+# <span style = "color: #FF4767;">Clase 9</span>
+***Fecha:*** 29 de noviembre
 
 ## ARRAYS
 Es una estructura de datos que permite almacenar una colección de valores de un mismo tipo. Los arrays se declaran utilizando la siguiente sintaxis:
@@ -928,186 +1331,6 @@ Por ejemplo, el siguiente código inicializa el array numeros con 10 enteros:
 int [] numeros = new int[10];
 ```
 
-# OPERADORES
-
-|Operator|Name|Example|
-|---|---|---|
-|+|Adicion|x + y|
-|-|Reduccion|x - y|
-|*|Multiplicacion|x * y|
-|/|División|x / y|
-|%|Módulo|x % y|
-|++|Incremento|++x|
-|--|Decremento|--x|
-|&& |Y|Logical and x < 5 && x < 10|
-| l l | O | Logical or x < 5 l l x < 4|
-|!| Logical not| !(x < 5 && x < 10)|
-|==| Equal to| x == y|
-|!=| Not equal| x != y|
-|> |Greater than |x > y|
-|< |Less than |x < y|
-|>=| Greater than or equal to| x >= y|
-|<=| Less than or equal to |x <= y|
-
-## Otros operadores
-|Operator| Example| Same As|
-|---|---|---|
-|= |x = 5| x = 5|
-|+=|x += 3 |x = x + 3|
-|-=| x -= 3| x = x - 3|
-|*=| x *= 3| x = x * 3|
-|/=| x /= 3| x = x / 3|
-|%=| x %= 3| x = x % 3|
-|&=| x &= 3| x = x & 3|
-|l=| x l= 3| x = x l 3|
-|^=| x ^= 3 |x = x ^ 3|
-|>>= |x >>= 3 |x = x >> 3|
-|<<= |x <<= 3 |x = x <<|
-
-## <span style = "color: #FF7F00;">**PROGRAMACION ORIENTADA A OBJETOS (POO)**</span>
-
-Es un paradigma de programación que organiza el código en torno a objetos. Son entidades que tienen estado y comportamiento. El estado de un objeto se representa mediante variables, y el comportamiento de un objeto se representa mediante métodos.
-
-Un ejemplo de la vida cotidiana de la POO es una persona. Una persona tiene estado, como su nombre, edad y dirección. También tiene comportamiento, como caminar, hablar y comer.
-
-La clase `Persona` tendría variables para almacenar el estado de la persona, como su nombre, edad y dirección. También tendría métodos para representar el comportamiento de la persona, como caminar, hablar y comer.
-
-Por ejemplo, la clase `Persona` podría tener las siguientes variables:
-
-+ `nombre`: El nombre de la persona
-+ `edad`: La edad de la persona
-+ `direccion`: La dirección de la persona
-
-También podría tener los siguientes métodos *(acciones)*:
-
-+ `caminar()`: Hace que la persona camine
-+ `hablar()`: Hace que la persona hable
-+ `comer()`: Hace que la persona coma
-
-Otros ejemplos:
-
-+ Un automóvil es un objeto que tiene estado, como su color, modelo y año. También tiene comportamiento, como conducir, frenar y girar.
-+ Una casa es un objeto que tiene estado, como su tamaño, número de habitaciones y ubicación. También tiene comportamiento, como proporcionar refugio, seguridad y comodidad.
-+ Una computadora es un objeto que tiene estado, como su procesador, memoria y almacenamiento. También tiene comportamiento, como ejecutar programas, almacenar datos y conectarse a Internet.
-
-![POO - EdxTeam](image-4.png)
-
-# <Span style = "color: #FF4767;">**SEXTA CLASE**</Span>
-
-**Fecha:** 16 de noviembre 2023
-
-### <span style = "color: #FF7F00">Compilador de Java</span>
-
-El compilador de Java es un programa informático que traduce el código fuente escrito en Java a código de máquina, que es un conjunto de instrucciones que puede ser ejecutado directamente por la computadora.
-
-### <span style = "color: FF7F00;">Instancia</span>
-
-Una instancia es un objeto concreto creado a partir de una clase, es decir, una representación específica de una clase. Tiene un estado y un comportamiento definidos por la clase a la que pertenece
-
-Por ejemplo, la clase `Persona` podria tener las siguientes variables de instancia:
-
-+ `nombre: ` Nombre de la persona.
-+ `edad: ` Edad de la persona.
-
-Las instancias se crean utilizando el operador new. Por ejemplo:
-
-```java
-Persona persona = new Persona();
-```
-
-Este código crea un objeto de la clase `Persona` con el estado y el comportamiento predeterminados de la clase `Persona`.
-
-Los objetos en Java pueden acceder a sus datos y métodos mediante el operador de acceso `[.]`. Por ejemplo, el siguiente código imprime el nombre de una persona:
-
-```java
-Persona persona = new Persona();
-persona.nombre = "Juan Pérez";
-
-System.out.println(persona.nombre); // Imprime "Juan Pérez"
-```
-
-### <span style = "color: #FF7F00;">Debugger</span>
-
-Es una herramienta de desarrollo de software que permite a los desarrolladores encontrar y corregir errores en el código fuente. Los depuradores proporcionan una variedad de funciones que ayudan a los desarrolladores a comprender cómo se ejecuta el código y a identificar los problemas.
-
-Funciones básicas de un depurador:
-
-+ Pausar la ejecución del código.
-+ Navegar por el código.
-+ Examinar los valores de las variables.
-+ Ejecutar el codigo paso a paso
-
-### <span style = "color: #FF7F00">Constructor</span>
-
-Es un método especial que se utiliza para inicializar un objeto recién creado. El constructor se llama cuando se crea una instancia de una clase.
-
-#### Caracteristicas
-+ Tiene el mismo nombre de la clase.
-+ Se ejecutra un unica vez.
-+ Debe ser publico.
-+ Puede ayudar inicializando las variables.
-+ Puede haber mas de un constructor en la clase.
-
-### <span style = "color: #FF7F00;">Creacion de la clase</span>
-
-Dentro de una clase se pueden crear metodos o funciones para llamarlos dentro de la propia clase, pero lo ideal en POO es crear un `Proyecto Java`, donde se van a crear todas las clases y se las llamaran a una `clase Main`.
-
-Por ello lo recomendable es crear un archivo especifico para almacenar el proyecto con el comando
-
-1. Ctrl + Shift + N.
-2. Ctrl + Shift + P.
-3. Create Java Project.
-4. No build tools (Depende de lo que se quiera hacer).
-5. Seleccionar el espacio (carpeta) para almacenar.
-6. Darle un nombre al proyecto.
-
-De esta manera se crea una estructura de proyecta Java, ejemplo:
-
-![Muestra](image-5.png)
-
-# <span style = "color: #FF4767;">**SEPTIMA CLASE**</span>
-
-**Fecha:** 21 de noviembre
-
-## <span style = "color: #FF7F00"> BUCLES </span>
-
-Es una estructura de control que permite ejecutar un bloque de código repetidamente. Los bucles se utilizan para realizar tareas que deben repetirse un número determinado de veces, o mientras se cumpla una condición.
-
-Siendo tres: for, while y do-while
-
-#### <span style = "color: #FF7F00">**Sintaxis**</span>
-1. **For:**
-
-    ```java
-    for (int i = 0; i < 10; i++) {
-      System.out.println(i);
-    }
-    ```
-
-    La inicialización se ejecuta una sola vez, al principio del bucle. La condición se evalúa al principio de cada iteración del bucle. Si la condición es verdadera, se ejecuta el bloque de código. Si la condición es falsa, el bucle termina. El incremento se ejecuta al final de cada iteración del bucle.
-
-2. **While:**
-
-    La condición se evalúa al principio de cada iteración del bucle. Si la condición es verdadera, se ejecuta el bloque de código. Si la condición es falsa, el bucle termina.
-
-    ```java
-    int i = 0;
-
-    while (i < 10) {
-      System.out.println(i);
-      i++;
-    }
-    ```
-
-3. **Do-while:**
-    El bloque de código se ejecuta al menos una vez, incluso si la condición no se cumple. La condición se evalúa al final de cada iteración del bucle. Si la condición es verdadera, el bucle se repite. Si la condición es falsa, el bucle termina.
-
-    ```java
-    do {
-      // bloque de código
-    } while (condición);
-    ```
-
-Se utilizan en una amplia variedad de aplicaciones, incluyendo la creación de menús, la navegación por árboles y la generación de gráficos.
+### <span style = "color: #FF7F00">Tipo de Dato Objeto</span>
 
 </dev>
