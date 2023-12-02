@@ -1183,11 +1183,26 @@ Recordar el uso de `camelCase`
 
 |String|Funcion|
 |---|---|
-|charAt(index) | Obtener un carácter|
-|.Length  |Obtener la longitud del string|
-|Equals| Comparación|
-|.equalsIgnoreCase | Ignorar si es mayúsculas o minúscula|
-|.concat|Concatenar dos cadenas. Devuelve una nueva cadena que es la combinación de las dos cadenas originales.|
+|.charAt(index) | Obtener un carácter|
+|.Length()  |Obtener la longitud del string|
+|.equalsIgnoreCase() | Ignorar si es mayúsculas o minúscula|
+|.concat()|Concatenar dos cadenas. Devuelve una nueva cadena que es la combinación de las dos cadenas originales.|
+|.equals()|Compara dos objetos|
+|indexOf()|Devuelve el índice del primer carácter que coincide con el carácter o la cadena especificados.|
+|.lastIndexOf()|Devuelve el índice del último carácter que coincide con el carácter o la cadena especificados.|
+|.substring()|Devuelve una nueva cadena que es una subcadena de la cadena actual.|
+|.replace()|Reemplaza todos los caracteres que coinciden con un carácter o una cadena especificados con otro carácter o cadena.|
+|.trim()	|Elimina los espacios en blanco del principio y del final de la cadena.|
+|.toLowerCase()|	Convierte la cadena a minúsculas.|
+|.toUpperCase()|	Convierte la cadena a mayúsculas.|
+|.compareTo()|	Compara la cadena actual con otra cadena, devuelve un valor negativo si la cadena actual es menor que la cadena especificada, un valor positivo si la cadena actual es mayor que la cadena especificada y un valor cero si las dos cadenas son iguales.|
+|.compareToIgnoreCase()|Compara la cadena actual con otra cadena, ignorando las diferencias entre mayúsculas y minúsculas.|
+|.contains()|Devuelve true si la cadena actual contiene la cadena especificada, false en caso contrario.|
+|.startsWith()|Devuelve true si la cadena actual comienza con la cadena especificada, false en caso contrario.|
+|.endsWith()|Devuelve true si la cadena actual termina con la cadena especificada, false en caso contrario.|
+|.join()|Concatena una serie de cadenas, usando un carácter especificado como separador.|
+|.split()|Divide la cadena actual en una matriz de cadenas, usando un carácter especificado como separador.|
+|.valueOf()|Convierte un valor primitivo en una cadena.|
 
 ## Scanner
 
@@ -1309,10 +1324,70 @@ Este código imprimirá la siguiente salida:
 
     Hola planeta!
 
+## <span style = "color: #FF7F00;">Equals</span>
+
+Es un método de la clase0Object que se utiliza para comparar dos ***objetos***. Este método devuelve un valor booleano que indica si los dos objetos son iguales o no.
+
+### Sintaxis
+
+```java
+boolean equals(Object obj)
+```
+Compara los dos objetos por referencia. Esto significa que si dos objetos son referencias al mismo objeto, el método `.equals()` devolverá `true`, caso contrario devolverá `false`.
+
+También es posible sobrecargar el método equals() para que compare dos objetos de acuerdo con criterios personalizados. Por ejemplo, podemos sobrecargar el método equals() para que compare dos objetos de tipo Persona en función de su nombre y edad.
+
+Por ejemplo, el siguiente código muestra cómo utilizar el método equals() para comparar dos cadenas:
+
+```java
+String cadena1 = "Hola mundo";
+String cadena2 = "Hola mundo";
+
+boolean sonIguales = cadena1.equals(cadena2);
+
+System.out.println(sonIguales);
+
+```
+### Tipos de equals
+
+1. `.equalsIgnoreCase()`
+
+El método ``.equalsIgnoreCase()` funciona de la siguiente manera:
+
+    1. Primero, el método convierte las dos cadenas a minúsculas.
+    1. Luego, el método compara las dos cadenas convertidas a minúsculas.
+    1. Si las dos cadenas convertidas a minúsculas son iguales, el método devuelve true.
+    1. Si las dos cadenas convertidas a minúsculas no son iguales, el método devuelve false.
+
 # <span style = "color: #FF4767;">Clase 9</span>
 ***Fecha:*** 29 de noviembre
 
-## ARRAYS
+    Nota: En esta clase se hizo una revision a los metodos de String
+
+## Garbage collection (GC)
+
+Es un mecanismo que se encarga de liberar la memoria que ya no está en uso por un programa. El GC es una forma de gestión automática de la memoria, que evita que los programadores tengan que preocuparse por liberar la memoria manualmente.
+
+Si un programa no libera la memoria que ya no necesita, puede provocar una fuga de memoria.
+
+Una fuga de memoria es un problema que ocurre cuando un programa no libera la memoria que ya no necesita. Esto puede provocar que el programa se quede sin memoria y se bloquee.
+
+El GC funciona de forma automática, sin intervención del programador. El programador no tiene que preocuparse por liberar la memoria manualmente.
+
+### Funcionalidad
+1. El GC rastrea las referencias a los objetos.
+1. Si un objeto no tiene ninguna referencia, significa que ya no es utilizado por el programa.
+1. El GC marca el objeto como "huérfano".
+1. En algún momento, el GC libera la memoria asignada a los objetos huérfanos.
+
+### Utilidad
+
++ Puede ayudar a evitar fugas de memoria. Una fuga de memoria es un problema que ocurre cuando un programa no libera la memoria que ya no necesita. Esto puede provocar que el programa se quede sin memoria y se bloquee. Puede ayudar a evitar fugas de memoria al liberar la memoria que ya no está en uso.
++ Puede ayudar a mejorar la seguridad de un programa. Una fuga de memoria puede permitir que un atacante acceda a datos confidenciales. Puede ayudar a mejorar la seguridad de un programa al liberar la memoria que ya no está en uso, lo que reduce el riesgo de fugas de memoria.
++ Puede ayudar a mejorar el rendimiento de un programa. Puede retrasar la ejecución de un programa, pero esto suele ser insignificante. En general, el GC puede ayudar a mejorar el rendimiento de un programa al evitar fugas de memoria, que pueden provocar un rendimiento degradado.
+
+## <span style = "color: #FF7F00;">ARRAY - LIST</span>
+
 Es una estructura de datos que permite almacenar una colección de valores de un mismo tipo. Los arrays se declaran utilizando la siguiente sintaxis:
 
 ```java
@@ -1330,7 +1405,5 @@ Por ejemplo, el siguiente código inicializa el array numeros con 10 enteros:
 ```java
 int [] numeros = new int[10];
 ```
-
-### <span style = "color: #FF7F00">Tipo de Dato Objeto</span>
 
 </dev>
