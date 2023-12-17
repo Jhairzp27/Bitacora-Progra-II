@@ -13,9 +13,11 @@ public class App {
         //objMujer.mujer(); No permite debido a que el constructor solo se lo llama una unica vez, arroja error
         
         System.out.println("------------------- MUJER 2--------");
-        objMujer2 = new Mujer("Susana");
+     objMujer2 = new Mujer("Susana");
         objMujer2.saludar();
         objMujer2.cantar();
         objMujer2.bailar();
+
     }
 }
+

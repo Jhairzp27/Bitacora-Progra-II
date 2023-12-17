@@ -1375,6 +1375,7 @@ Una fuga de memoria es un problema que ocurre cuando un programa no libera la me
 El GC funciona de forma automática, sin intervención del programador. El programador no tiene que preocuparse por liberar la memoria manualmente.
 
 ### Funcionalidad
+
 1. El GC rastrea las referencias a los objetos.
 1. Si un objeto no tiene ninguna referencia, significa que ya no es utilizado por el programa.
 1. El GC marca el objeto como "huérfano".
@@ -1386,7 +1387,7 @@ El GC funciona de forma automática, sin intervención del programador. El progr
 + Puede ayudar a mejorar la seguridad de un programa. Una fuga de memoria puede permitir que un atacante acceda a datos confidenciales. Puede ayudar a mejorar la seguridad de un programa al liberar la memoria que ya no está en uso, lo que reduce el riesgo de fugas de memoria.
 + Puede ayudar a mejorar el rendimiento de un programa. Puede retrasar la ejecución de un programa, pero esto suele ser insignificante. En general, el GC puede ayudar a mejorar el rendimiento de un programa al evitar fugas de memoria, que pueden provocar un rendimiento degradado.
 
-## <span style = "color: #FF7F00;">ARRAY - LIST</span>
+## <span style = "color: #FF7F00;">ARRAY</span>
 
 Es una estructura de datos que permite almacenar una colección de valores de un mismo tipo. Los arrays se declaran utilizando la siguiente sintaxis:
 
@@ -1405,5 +1406,406 @@ Por ejemplo, el siguiente código inicializa el array numeros con 10 enteros:
 ```java
 int [] numeros = new int[10];
 ```
+
+### Caracteristicas
+
++ Tamaño fijo: Los arrays en Java tienen un tamaño fijo una vez que se crean, lo que significa que no se pueden cambiar dinámicamente.
++ Tipo de datos homogéneos: Los elementos de un array deben ser del mismo tipo de datos.
++ Sintaxis: Se declaran con una longitud fija y pueden inicializarse en la declaración o con valores asignados posteriormente.
+
+```Java
+int[] numeros = new int[5]; // Array de enteros con tamaño 5
+numeros[0] = 10; // Asignando valor
+int[] valores = {1, 2, 3, 4, 5}; // Inicialización en la declaración
+```
+
+Acceso a elementos: Los elementos de un array se acceden mediante su índice(posición) comenzando desde 0.
+
+```java
+int primerElemento = valores[0]; // Accediendo al primer elemento
+```
+
+# <span style = "color: #FF4767">CLASE 10</span>
+
+***Fecha:***  30 de noviembre
+
+## <span style = "color: #FF7F00">ARRAY + LIST</span>
+
+ Es una clase en Java que implementa la interfaz List. Representa una lista dinámica que puede cambiar de tamaño durante la ejecución del programa. A diferencia de los arrays estándar, los ArrayList pueden aumentar o reducir su tamaño de manera dinámica, lo que los hace convenientes cuando se necesita flexibilidad en el almacenamiento de datos.
+
+### Caracteristicas
+
++ **Tamaño dinámico:** Puedes agregar o eliminar elementos de un ArrayList sin preocuparte por el tamaño inicial que definas.
++ **Acceso por índice:** Al igual que los arrays, los ArrayList permiten acceder a sus elementos mediante índices.
++ **Pueden contener diferentes tipos de datos:** A diferencia de los arrays tradicionales, los ArrayList pueden contener objetos de diferentes tipos (o clases), lo que los hace más versátiles.
++ **Métodos útiles:** Proporcionan métodos convenientes para realizar operaciones comunes como agregar elementos, eliminar elementos, buscar elementos, obtener el tamaño de la lista, entre otros.
+
+### Como se utiliza?
+
+```java
+import java.util.ArrayList;
+
+public class EjemploArrayList {
+    public static void main(String[] args) {
+        // Crear un ArrayList de enteros
+        ArrayList<Integer> numeros = new ArrayList<>();
+
+        // Agregar elementos al ArrayList
+        numeros.add(10);
+        numeros.add(20);
+        numeros.add(30);
+
+        // Acceder a elementos mediante índices
+        int primerElemento = numeros.get(0); // Obtener el primer elemento (índice 0)
+
+        // Eliminar un elemento
+        numeros.remove(1); // Eliminar el segundo elemento (índice 1)
+
+        // Tamaño del ArrayList
+        int tamaño = numeros.size(); // Obtener el tamaño del ArrayList
+
+        // Iterar a través de los elementos
+        for (int i = 0; i < numeros.size(); i++) {
+            System.out.println(numeros.get(i));
+        }
+    }
+}
+```
+
+## <span style = "color: #FF7F00">FOR-EACH</span>
+
+Permite recorrer fácilmente los elementos de una colección (arrays, listas, conjuntos, etc.) sin la necesidad de utilizar un contador o un índice explícito. Se utiliza para simplificar la iteración a través de estructuras de datos.
+
+```java
+for (TipoDeDato variable : coleccion) {
+    // Operaciones con la variable
+}
+```
+
++ `TipoDeDato` es el tipo de datos de los elementos de la colección.
++ `variable` es la variable que toma el valor de cada elemento en cada iteración.
++ `coleccion` es la colección (array, lista, conjunto, etc.) a través de la cual se está iterando.
+
+Ejemplo:
+
+```java
+int[] numeros = {1, 2, 3, 4, 5};
+
+for (int numero : numeros) {
+    System.out.println(numero);
+}
+```
+Esto imprimirá cada número del array numeros en líneas separadas.
+
+### Utilidad
+
++ Son más simples y limpios, eliminando la necesidad de rastrear índices o contar iteraciones.
++ Reducen la posibilidad de errores al iterar sobre elementos.
++ Mejoran la legibilidad del código al hacerlo más conciso.
+
+***NOTA:*** Los bucles `for-each` solo pueden utilizarse para recorrer una colección hacia adelante, sin acceso directo a índices inversos o manipulación directa de índices.
+
+# <span style = "color: #FF4767">CLASE 11</span>
+
+***Fecha:*** 01 de diciembre
+
+El siguiente bloque de codigo indica que:
+![Bloque Codigo ArrayList](image-7.png)
+
+```java
+  lstMujeres.add(2, new Mujer("Maria"));
+  //Indica el orden de la impresion, siendo esta la posicion 2, considerando que contabiliza desde la posicion 0
+```
+
+## Metodos utiles para
+
+Algunos de los métodos más comunes que se utilizan con `ArrayList` son:
+
+1. **`add(elemento)`**: Agrega un elemento al final de la lista.
+
+   ```java
+   ArrayList<Integer> lista = new ArrayList<>();
+   lista.add(5);
+   lista.add(10);
+   ```
+
+2. **`get(posición)`**: Obtiene el elemento en la posición específica de la lista.
+
+   ```java
+   int elemento = lista.get(0); // Obtiene el primer elemento (índice 0)
+   ```
+
+3. **`remove(posición)`**: Elimina el elemento en la posición especificada.
+
+   ```java
+   lista.remove(1); // Elimina el segundo elemento (índice 1)
+   ```
+
+4. **`size()`**: Devuelve el número de elementos en la lista.
+
+   ```java
+   int tamaño = lista.size(); // Devuelve la cantidad de elementos en la lista
+   ```
+
+5. **`clear()`**: Elimina todos los elementos de la lista.
+
+   ```java
+   lista.clear(); // Elimina todos los elementos de la lista
+   ```
+
+6. **`addAll(otraLista)`**: Agrega todos los elementos de otra lista a la lista actual.
+
+   ```java
+   ArrayList<Integer> otraLista = new ArrayList<>();
+   otraLista.add(20);
+   otraLista.add(30);
+   lista.addAll(otraLista); // Agrega todos los elementos de otraLista a lista
+   ```
+
+7. **`set(posición, elemento)`**: Reemplaza el elemento en la posición especificada por el nuevo elemento.
+
+   ```java
+   lista.set(1, 15); // Reemplaza el segundo elemento (índice 1) por 15
+   ```
+
+8. **`contains(elemento)`**: Verifica si la lista contiene el elemento especificado.
+
+   ```java
+   boolean contiene = lista.contains(10); // Verifica si la lista contiene el número 10
+   ```
+
+9. **`isEmpty()`**: Verifica si la lista está vacía.
+
+   ```java
+   boolean vacía = lista.isEmpty(); // Verifica si la lista está vacía
+   ```
+
+10. **`indexOf(elemento)`**: Devuelve la primera posición del elemento especificado. Si no existe, devuelve -1.
+
+   ```java
+   int posición = lista.indexOf(10); // Devuelve la posición del número 10 en la lista
+   ```
+
+11. **`lastIndexOf(elemento)`**: Devuelve la última posición del elemento especificado. Si no existe, devuelve -1.
+
+   ```java
+   int últimaPosición = lista.lastIndexOf(10); // Devuelve la última posición del número 10 en la lista
+   ```
+
+12. **`toArray()`**: Convierte el `ArrayList` en un array estándar.
+
+   ```java
+   Object[] array = lista.toArray(); // Convierte la lista en un array
+   ```
+
+Proporcionan funcionalidades básicas para agregar, eliminar, acceder y manipular buscar elementos, verificar si la lista está vacía, convertir la lista en un array y realizar otras operaciones de manejoen a la lista de forma dinámica.
+
+### Boxing y Unboxing
+
+El concepto de boxing y unboxing se refiere a la conversión entre tipos primitivos y sus equivalentes en tipos de objetos en Java.
+
++ **Boxing**: Es la conversión de un tipo primitivo a su correspondiente tipo de objeto. Por ejemplo, convertir un `int` a `Integer`, un `double` a `Double`, etc.
+
+  ```java
+  int enteroPrimitivo = 10;
+  Integer enteroObjeto = enteroPrimitivo; // Boxing: convierte el int en Integer automáticamente
+  ```
+
++ **Unboxing**: Es la operación inversa, la conversión de un objeto a su tipo primitivo equivalente.
+
+  ```java
+  Integer enteroObjeto = new Integer(20);
+  int enteroPrimitivo = enteroObjeto; // Unboxing: convierte Integer en int automáticamente
+  ```
+
+Estas conversiones automáticas son convenientes en Java, ya que permiten operar con tipos primitivos como si fueran objetos y viceversa, facilitando la manipulación de datos en muchas situaciones. Además, desde Java 5, este proceso se realiza de manera automática en muchos contextos, lo que hace que el código sea más legible y eficiente.
+
+# <span style = "color: #FF4767">CLASE 12</span>
+
+***Fecha:*** 05 de diciembre
+
+## Programacion Orientada a Objetos - Review
+
+ La programación orientada a objetos (POO) es un estilo de programación donde organizamos nuestro código alrededor de "objetos". Cada objeto tiene datos (llamados `atributos`) y acciones (llamadas `métodos` o `funciones`) asociadas a él. Esta metodología permite crear programas más estructurados, reutilizables y fáciles de mantener.
+
+ POO se basa en cuatro conceptos principales: *encapsulamiento, abstracción, herencia y polimorfismo*. Estos principios nos ayudan a escribir código más eficiente y organizado, similar a construir cosas con piezas LEGO donde cada pieza tiene su función específica y se puede combinar con otras para crear algo nuevo.
+
+### Explicacion detallada
+
+Imagina la *programación* como una fábrica de juguetes. En lugar de solo fabricar un juguete gigante, dividimos el proceso en pequeñas piezas. En la **programación orientada a objetos (POO)**, estas piezas son como los "objetos". Cada `objeto` tiene sus propias partes (llamadas datos o atributos) y cosas que puede hacer (llamadas acciones o `métodos`). Por ejemplo, un auto (`objeto`) tiene ruedas, color, y puede moverse, frenar y hacer sonidos.
+
+Ahora, piensa en el concepto de "*herencia*" como si fueran juguetes parecidos. Si tienes un robot y un cohete, ambos pueden volar. Así que podríamos decir que *comparten algo en común*: la habilidad de volar. En programación, puedes crear objetos nuevos basados en otros ya existentes, `heredando` sus características.
+
+Luego está el "*encapsulamiento*", que es como poner partes de un juguete en una caja. Algunas piezas están escondidas y no puedes verlas o cambiarlas desde afuera. Esto ayuda a `proteger` las partes importantes y mantener todo ordenado.
+
+Finalmente, el "*polimorfismo*" es como tener muchos juguetes de diferentes colores, pero todos pueden hacer lo mismo. Por ejemplo, un avión de juguete puede ser rojo o azul, pero todos vuelan. En POO, diferentes objetos pueden hacer la misma acción, aunque de maneras un poco diferentes.
+
+En resumen, la programación orientada a objetos es como construir cosas geniales usando piezas pequeñas, organizadas y reutilizables.
+
+![Alt text](image-6.png)
+
+# <span style = "color: #FF4767">CLASE 13</span>
+
+***Fecha:*** 06 de diciembre
+
+## Tarjeta de credito
+
+En esta clase se analizo de forma detallada las caracteristicas que tiene una tarjeta de debito/credito para su correcto funcionamiento.
+Siendo asi que deberia constar de las siguientes partes:
+
+### Analisis
+
+1. **Atributos de la tarjeta de crédito:**
+   + **Número de tarjeta:** Almacenar el número de la tarjeta de crédito.
+   + **Nombre del titular:** Guardar el nombre del titular de la tarjeta.
+   + **Fecha de expiración:** Mantener la fecha de expiración de la tarjeta.
+   + **Código de seguridad:** Almacenar el código de seguridad de la tarjeta.
+
+2. **Métodos asociados con la tarjeta de crédito:**
+   + **Constructor:** Crear una tarjeta de crédito con los detalles proporcionados.
+   + **Getters y Setters:** Permitir acceder y modificar los atributos de la tarjeta.
+   + **Validación de la tarjeta:** Verificar si el número de tarjeta es válido.
+   + **Procesamiento de pago:** Simular el procesamiento de un pago utilizando la tarjeta.
+   + **Verificación de la fecha de expiración:** Comprobar si la tarjeta ha expirado.
+
+3. **Seguridad:**
+   + **Encapsulamiento:** Proteger los atributos de la tarjeta para que solo se puedan modificar de manera controlada.
+   + **Privacidad de datos:** Asegurar que la información sensible de la tarjeta se maneje de manera segura.
+
+4. **Estructura del programa:**
+   + **Clase principal (`main`):** Crear instancias de la clase `TarjetaCredito` y utilizar sus métodos.
+   + **Clase `TarjetaCredito`:** Definir la estructura de la tarjeta de crédito.
+
+5. **Usabilidad:**
+   + **Claridad en los métodos:** Asegurarse de que los nombres de los métodos sean intuitivos y descriptivos.
+   + **Interfaz de usuario (opcional):** Si se requiere interacción con el usuario, puede ser útil tener una interfaz amigable.
+
+6. **Posibles ampliaciones futuras:**
+   + **Métodos adicionales:** Identificar qué otras funcionalidades podrían agregarse en el futuro.
+   + **Manejo de errores:** Pensar en cómo manejar errores o excepciones.
+
+## HASH
+
+También conocida como función hash se utiliza para convertir datos de tamaño *variable* en valores de tamaño *fijo*, normalmente con fines de *indexación* o *búsqueda* eficiente. En el contexto de las colecciones, como `HashMap`, `HashSet` o `HashTable`, la función hash se utiliza para asignar claves únicas a valores almacenados en estas estructuras de datos.
+
+La función hash toma una entrada (como una cadena, un número u otro objeto) y genera un valor único, generalmente de longitud fija, que se utiliza como identificador o dirección para almacenar o buscar la información relacionada.
+
+La función hash se usa principalmente para calcular la posición donde se almacenará o buscará un elemento. Por ejemplo, en un `HashMap`, la clave se convierte en un valor hash mediante la función hash y se utiliza para determinar la ubicación del valor asociado en una tabla interna de la estructura de datos.
+
+La eficacia de una función hash radica en su capacidad para generar un hash único para cada posible entrada y en minimizar las colisiones (cuando dos entradas diferentes producen el mismo hash). Una buena función hash distribuirá los elementos uniformemente en la estructura de datos subyacente, optimizando así la eficiencia en la búsqueda y recuperación de valores.
+
+En resumen, en Java, la función hash se utiliza para generar identificadores únicos (hashes) a partir de datos de entrada y se aplica ampliamente en colecciones como HashMap para optimizar la indexación y búsqueda de datos.
+
+### Hash Table
+
+Es una estructura de datos que implementa la interfaz `Map` y se utiliza para almacenar pares de clave-valor. Es similar a `HashMap` pero es sincronizada, lo que significa que es segura para subprocesos (thread-safe).
+
+Las `HashTable` permiten almacenar datos mediante una clave única asociada a un valor. Algunas características clave incluyen:
+
++ **Clave única:** Cada clave puede estar asociada a un solo valor. No puede haber claves duplicadas.
+
++ **Seguridad de subprocesos:** Las operaciones en una `HashTable` son sincronizadas, lo que significa que es seguro usarla en entornos con múltiples hilos (threads).
+
++ **Búsqueda eficiente:** La búsqueda de valores basada en una clave en una `HashTable` es rápida y eficiente, generalmente en tiempo constante.
+
+Aquí tienes un ejemplo básico de cómo se usa `HashTable` en Java:
+
+```java
+import java.util.Hashtable;
+
+public class Main {
+    public static void main(String[] args) {
+        // Crear una Hashtable
+        Hashtable<String, Integer> hashtable = new Hashtable<>();
+
+        // Agregar elementos
+        hashtable.put("a", 1);
+        hashtable.put("b", 2);
+        hashtable.put("c", 3);
+
+        // Acceder a un valor mediante su clave
+        int valor = hashtable.get("b");
+        System.out.println("El valor asociado a 'b' es: " + valor);
+    }
+}
+```
+
+Es importante tener en cuenta que, si bien `HashTable` ofrece sincronización para el acceso a los datos, esta característica puede afectar el rendimiento en comparación con otras implementaciones no sincronizadas, como `HashMap`. En versiones más recientes de Java, se prefieren otras implementaciones más modernas y flexibles, como `HashMap` o `ConcurrentHashMap`, a menos que se requiera específicamente la sincronización que proporciona `HashTable`.
+
+# <span style = "color: #FF4767">CLASE 14</span>
+
+***Fecha:*** 07 de diciembre
+
+## Super Market
+
+Para que la tarjeta de credito sirva es necesario saber que esta debe utilizarse en un ambiente que le permita realizar la compra, por ello se realcionara con un Super Market para este ejemplo.
+
+De tal manera que el mismo deberia estar estructurado de la siguiente manera:
+
+### Análisis
+
+1. **Gestión de Productos:**
+   + **Base de datos de productos:** Crear una lista de productos con sus detalles (nombre, precio, cantidad disponible, etc.).
+   + **Agregar/eliminar productos:** Permitir la actualización de la base de datos de productos.
+
+2. **Proceso de Compra:**
+   + **Carrito de compras:** Permitir agregar y eliminar elementos.
+   + **Cálculo del total:** Calcular el costo total de los productos en el carrito.
+   + **Procesamiento de pago:** Utilizar la tarjeta de crédito para completar la transacción.
+
+3. **Interacción con la Tarjeta de Crédito:**
+   + **Conexión con la tarjeta:** Integrar el sistema de la tarjeta de crédito para el pago.
+   + **Validación de la tarjeta:** Verificar la autenticidad de la tarjeta para realizar la transacción.
+
+4. **Interfaz de Usuario:**
+   + **Pantalla de selección de productos:** Mostrar los productos disponibles para comprar.
+   + **Carrito de compras visual:** Mostrar los productos agregados y su precio total.
+   + **Pantalla de pago:** Interfaz para ingresar los detalles de la tarjeta y completar la transacción.
+
+5. **Seguridad y Privacidad:**
+   + **Cifrado de datos:** Mantener la seguridad de la información de la tarjeta.
+   + **Protección de datos personales:** Asegurar la privacidad de la información del cliente.
+
+6. **Funcionalidades Adicionales:**
+   + **Historial de compras:** Guardar un registro de compras anteriores.
+   + **Descuentos y ofertas:** Implementar ofertas especiales para ciertos productos.
+
+7. **Flujo del Programa:**
+   + **Clase principal (`main`):** Dirigir el flujo de operaciones del supermercado.
+   + **Clases y métodos:** Organizar el código en clases y métodos que manejen cada funcionalidad.
+
+8. **Manejo de Errores:**
+   + **Validación de entradas:** Verificar que los datos ingresados sean válidos.
+   + **Manejo de excepciones:** Implementar acciones para manejar errores inesperados.
+
+# <span style = "color: #FF4767">CLASE 15</span>
+
+***Fecha:*** 08 de diciembre
+
+  <div align = "center">
+  NO HUBO CLASE POR FERIADO DE FIESTAS DE QUITO
+  </div>
+
+# <span style = "color: #FF4767">CLASE 16</span>
+
+***Fecha:*** 12 de diciembre
+
+  <div align = "center">
+  REVISION DE POLIRETOS
+  </div>
+
+# <span style = "color: #FF4767">CLASE 17</span>
+
+***Fecha:*** 13 de diciembre
+
+## Introduccion a Bases de Datos
+
+
+
+# <span style = "color: #FF4767">CLASE 18</span>
+***Fecha:*** 14 de diciembre
+
+# <span style = "color: #FF4767">CLASE 19</span>
+***Fecha:*** 15 de diciembre
 
 </dev>
