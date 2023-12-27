@@ -536,8 +536,9 @@ Es un lenguaje de marcado donde se le puede agregar formato a documentos de text
 </code></pre>
 <h3 id="23-span-style--%22color-0000ff%22im%C3%A1genes">2.3 <span style = "color: #0000FF;">Imágenes</h3>
 <p>Para insertar imágenes, se agrega un signo de exclamación (!) al principio.</p>
-<p><em>Ejemplo</em>:
-! [Texto alternativo] (ruta/imagen.jpg)</p>
+<p><em>Ejemplo</em>:</p>
+<pre class="hljs"><code><div>! [Texto alternativo] (ruta/imagen.jpg)
+</div></code></pre>
 <h3 id="24-span-style-%22color-0000ff%22-tablas">2.4 <span style= "color: #0000FF;"> Tablas</h3>
 <h4 id="estructura">Estructura</h4>
 <p>Utiliza el carácter de barra vertical (|) para separar las columnas y los guiones (-) para definir la línea de encabezado y separar las filas de la tabla. Por ejemplo:</p>
@@ -592,11 +593,10 @@ Es un lenguaje de marcado donde se le puede agregar formato a documentos de text
 <p>Para insertar colores al texto será necesario escribir de la siguiente manera:</p>
 <p><code>&lt;span style=&quot;color: #RRGGBB;&quot;&gt;Este texto es de color #RRGGBB&lt;/span&gt;</code></p>
 <p>La sintaxis general para ponerle colores al texto Markdown es la siguiente:</p>
-<p><span style="color: #RRGGBB;">Este texto es de color #RRGGBB</span>
-Utiliza el código con precaución. Más información</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"color: #RRGGBB;"</span>&gt;</span>Este texto es de color #RRGGBB<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</div></code></pre>
 <p><strong>Donde:</strong></p>
-<p><code>#RRGGBB</code> es el valor hexadecimal del color.
-El valor hexadecimal del color está compuesto por dos pares de números hexadecimales, cada uno de los cuales representa un componente del color:</p>
+<p><code>#RRGGBB</code> es el valor hexadecimal del color.El valor hexadecimal del color está compuesto por dos pares de números hexadecimales, cada uno de los cuales representa un componente del color:</p>
 <ul>
 <li>R (rojo): 00 a FF</li>
 <li>G (verde): 00 a FF</li>

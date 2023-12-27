@@ -146,7 +146,10 @@ Para crear enlaces, encierra el texto del enlace entre corchetes [] y luego colo
 Para insertar imágenes, se agrega un signo de exclamación (!) al principio.
 
 *Ejemplo*:
-       ! [Texto alternativo] (ruta/imagen.jpg)
+
+```markDown
+! [Texto alternativo] (ruta/imagen.jpg)
+```
 
 ### 2.4 <span style= "color: #0000FF;"> Tablas
 
@@ -182,13 +185,13 @@ Para insertar colores al texto será necesario escribir de la siguiente manera:
 
 La sintaxis general para ponerle colores al texto Markdown es la siguiente:
 
+```html
 <span style="color: #RRGGBB;">Este texto es de color #RRGGBB</span>
-Utiliza el código con precaución. Más información
+```
 
 **Donde:**
 
-`#RRGGBB` es el valor hexadecimal del color.
-El valor hexadecimal del color está compuesto por dos pares de números hexadecimales, cada uno de los cuales representa un componente del color:
+`#RRGGBB` es el valor hexadecimal del color.El valor hexadecimal del color está compuesto por dos pares de números hexadecimales, cada uno de los cuales representa un componente del color:
 
 + R (rojo): 00 a FF
 + G (verde): 00 a FF
