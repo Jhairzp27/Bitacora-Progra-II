@@ -1,0 +1,2441 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="span-style%22color-ff4767%22clase-1span"><span style="color: #FF4767;"><strong>Clase 1</strong></span></h1>
+<p><strong>Fecha:</strong> 07 de noviembre 2023</p>
+<p><em><strong>Nota:</strong></em> <em>Para la clase de programación II, es recomendable practicar (jugar) mecanografía</em></p>
+<h1 id="p-style%22text-align-center%22span-style--%22color-007acc%22ide-visual-studio-codespan-img-src%22httpsrawgithubusercontentcomdelta456delta456masterimgvscodepng%22-alt%22vscode-logo%22-width%2224%22"><p style="text-align: center;"><span style = "color: #007ACC;">IDE Visual Studio Code</span> <a href="https://code.visualstudio.com/"><img src="https://raw.githubusercontent.com/Delta456/Delta456/master/img/vscode.png" alt="vscode logo" width="24"></a></h1>
+ </p>
+<h2 id="%C2%BFqu%C3%A9-es">¿Qué es?</h2>
+<p>Visual Studio Code es un editor de código fuente y de código abierto.
+Destaca por ser multiplataforma y será el utilizado en esta materia.</p>
+<h3 id="span-style--%22color-007acc%22pasos-para-el-funcionamiento-del-ide"><span style = "color: #007ACC;">PASOS PARA EL FUNCIONAMIENTO DEL IDE</h3>
+<ol start="0">
+<li>Se instaló el jdk en oracle.</li>
+<li>Se instaló gitbash.</li>
+<li>Se instaló el VSCode.</li>
+<li>Se creó una cuenta de github.</li>
+<li>Se integró la cuenta github al VSCode.</li>
+<li>Consola.</li>
+</ol>
+<h3 id="span-style-%22color-007acc%22configuraci%C3%B3n-de-vscodespan"><span style= "color: #007ACC;">Configuración de VSCode</span></h3>
+<ul>
+<li>Se vinculó la cuenta de GitHub dentro de VSCode para poder trabajar en la nube.</li>
+<li>Se creó una carpeta para la materia en OneDrive para poder trabajar.</li>
+<li>Dentro de esta se creó una carpeta <em><strong>.md</strong></em> para trabajar MarkDown, misma que permitirá llevar los <strong>apuntes</strong> de la clase.</li>
+<li>Dentro de VSC es necesario instalar las respectivas <em>extensiones</em> para que se pueda trabajar en los proyectos de acorde a sus lenguajes.</li>
+<li>Se instaló la extensión llamada <strong>(Extension Pack for Java)</strong>.</li>
+</ul>
+<h2 id="consola">Consola</h2>
+<h3 id="%C2%BFqu%C3%A9-es">¿Qué es?</h3>
+<p>La consola o terminal, es una interfaz de línea de comandos que permite inteactuar a los usuarios con el sistema operativo.</p>
+<h3 id="%C2%BFpor-qu%C3%A9-configurarla">¿Por qué configurarla?</h3>
+<p>Es recomendable personalizarla para que el ambiente sea más acogedor debido a que se trabajará en ella frecuentemente.</p>
+<h3 id="%C2%BFc%C3%B3mo-configurarla">¿Cómo configurarla?</h3>
+<p>Para hacerlo más amigable con el usuario se utilizará:</p>
+<ul>
+<li><a href="ttps://ohmyposh.dev">Oh my posh</a></li>
+</ul>
+<p>Dentro de este se encuentran las instrucciones para personalizar el terminal tanto de PowerShell como el Gitbash, permitiéndole personalizar:</p>
+<ul>
+<li>Tipografía: JetBrains Mono, MesloLGL Nerd Font</li>
+<li>Theme</li>
+<li>Icons</li>
+</ul>
+<p>Los cambios efectuados en estos, se verán contemplado en VSCode.</p>
+<hr>
+<p>workdirectory: workspace --&gt; directorio de trabajo</p>
+<hr>
+<h1 id="span-style-%22color-ff4767%22clase-2span"><span style ="color: #FF4767;"><strong>Clase 2</strong></span></h1>
+<p><strong>Fecha:</strong> 08 de noviembre de 2023</p>
+<h2 id="span-style--%22color-007acc%22-mejores-comandos-parra-vscspan"><span style = "color: #007ACC;"> Mejores comandos parra VSC</span></h2>
+<ol>
+<li>
+<p>Papeleta de Comandos: <strong>CTRL + SHIF + P</strong></p>
+<p>Y escribir &quot;Abreviatura de comandos&quot;</p>
+</li>
+<li>
+<p>Abrir terminal: <strong>CTRL + J</strong></p>
+</li>
+<li>
+<p>Quick Open: <strong>CTRL + P</strong></p>
+<p>Esto servirá para cambiar entre archivos.</p>
+</li>
+<li>
+<p>Togle Sidebar: <strong>CTRL + B</strong></p>
+<p>Abrirá y cerrará rápidamente el menú lateral izquierdo (esqueleto).</p>
+</li>
+<li>
+<p>Multi cursor (Multi-Select): <strong>CTRL + D, CTRL + F2</strong></p>
+<p>Con este se crearán cursores en diversas líneas de donde se tenga la palabra seleccionada.</p>
+<p>Es importante recalcar que <strong>CTRL + F2</strong> realizará el cambio en todo el documento.</p>
+</li>
+<li>
+<p>Cortado matricial: <strong>ALT + SHIFT RATÓN</strong></p>
+<p>Es importante poner el cursor en el prinicipio, aplastar el cortar y posteriormente marcar hasta el final, siendo así que cortará en forma de matriz.</p>
+</li>
+<li>
+<p>Copy Line: <strong>SHIFT + ALT + UP or SHIFT + ALT + DOWN</strong></p>
+<p>Repetirá la linea seleccionada en dirección a la cual se le haya indicado con el <em>up</em> y <em>down</em> del teclado.</p>
+</li>
+<li>
+<p>Mover la linea seleccionada: <strong>ALT + UP or DOWN</strong></p>
+<p>Moverá la línea o bloque seleccionado en dirección que se le indique.</p>
+</li>
+<li>
+<p>Comentar en bloque (Multi-Line): <strong>ALT + SHIFT +A</strong></p>
+<p>Comenta en forma varias línea al mismo tiempo</p>
+<p><em>Ejemplo:</em></p>
+<pre><code> /* código escrito
+     código escrito */
+</code></pre>
+<p>No se puede descomentar en forma de comando.</p>
+</li>
+<li>
+<p>Comentar una línea (Single line): <strong>CTRL + K + C</strong>
+Comenta como si fuera una sola línea (puede funcionar seleccionando varias líneas).</p>
+<p>Para <strong>descomentar</strong> la o las líneas se utilizará <strong>CTRL + K+ U</strong>.</p>
+</li>
+<li>
+<p>Line cut : <strong>CTRL + X</strong></p>
+</li>
+<li>
+<p>Vista previa lateral: <strong>CTRL + K + V</strong></p>
+</li>
+<li>
+<p>Cerrar: <strong>CTRL +F4</strong></p>
+</li>
+<li>
+<p>Dividir pantalla: <strong>CTRL + SHIFT + 5</strong></p>
+</li>
+<li>
+<p><span style = "color: #FF0000"><strong>CERRAR UN PROCESO EJECUTADO:</strong></span> <strong>CTRL + C</strong></p>
+</li>
+</ol>
+<h1 id="p-style%22text-align-center-margin-0-auto%22span-style--%22color-0000ff%22markdown-tda-href%22%22img-alt%22markdown%22-title%22markdown%22-height%2228px%22-src%22httpsiimgurcomeo5z1xvpng%22-atd"><p style="text-align: center; margin: 0 auto;"><span style = "color: #0000FF"><strong>MarkDown</strong>  <td><a href="#"><img alt="Markdown" title="Markdown" height="28px" src="https://i.imgur.com/eO5z1xV.png" /></a></td></h1>
+</span>
+</p>
+Es un lenguaje de marcado donde se le puede agregar formato a documentos de texto plano.
+<h2 id="20-span-style-%22color-0000ff%22-comandos-principales-span">2.0 <span style ="color: #0000FF"> <strong>Comandos principales</strong> </span></h2>
+<h3 id="21-span-style--%22color-0000ff%22textosspan">2.1 <span style = "color: #0000FF;">Textos</span></h3>
+<table>
+<thead>
+<tr>
+<th>Funcionalidad</th>
+<th>Símbolo</th>
+<th>Muestra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Título Grande</td>
+<td>#</td>
+<td></td>
+</tr>
+<tr>
+<td>Título Mediano</td>
+<td>##</td>
+<td></td>
+</tr>
+<tr>
+<td>Título Pequeño</td>
+<td>###</td>
+<td></td>
+</tr>
+<tr>
+<td>Palabras en negrita</td>
+<td><strong>palabra</strong></td>
+<td><strong>palabra</strong></td>
+</tr>
+<tr>
+<td>Palabras en cursiva</td>
+<td><em>palabra</em></td>
+<td><em>palabra</em></td>
+</tr>
+<tr>
+<td>Palabras en negrita y cursiva</td>
+<td><em><strong>palabra</strong></em></td>
+<td><em><strong>palabra</strong></em></td>
+</tr>
+<tr>
+<td>Texto tachado</td>
+<td>~~  Texto  ~~</td>
+<td><s>Texto</s></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nota</strong>: Los títulos no se pueden mostrar debido a que no cumple con las reglas de MD al mostrarlo así.</p>
+<h3 id="22-span-style--%22color-0000ff%22enlaces">2.2 <span style = "color: #0000FF;">Enlaces</h3>
+<p>Para crear enlaces, encierra el texto del enlace entre corchetes [] y luego coloca la URL del enlace entre paréntesis ().</p>
+<p><em>Ejemplo</em>:</p>
+<pre><code>[Texto del enlace](http://www.ejemplo.com)
+</code></pre>
+<h3 id="23-span-style--%22color-0000ff%22im%C3%A1genes">2.3 <span style = "color: #0000FF;">Imágenes</h3>
+<p>Para insertar imágenes, se agrega un signo de exclamación (!) al principio.</p>
+<p><em>Ejemplo</em>:
+! [Texto alternativo] (ruta/imagen.jpg)</p>
+<h3 id="24-span-style-%22color-0000ff%22-tablas">2.4 <span style= "color: #0000FF;"> Tablas</h3>
+<h4 id="estructura">Estructura</h4>
+<p>Utiliza el carácter de barra vertical (|) para separar las columnas y los guiones (-) para definir la línea de encabezado y separar las filas de la tabla. Por ejemplo:</p>
+<table>
+<thead>
+<tr>
+<th>Encabezado 1</th>
+<th>Encabezado 2</th>
+<th>Encabezado 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dato 1</td>
+<td>Dato 2</td>
+<td>Dato 3</td>
+</tr>
+<tr>
+<td>Dato 4</td>
+<td>Dato 5</td>
+<td>Dato 6</td>
+</tr>
+</tbody>
+</table>
+<h4 id="alineaci%C3%B3n-de-las-columnas">Alineación de las columnas</h4>
+<p>Puedes alinear el texto en las columnas utilizando dos puntos ( <code>:</code> ) antes o después del guion de separación. Por ejemplo, :--- alinea a la izquierda, ---: alinea a la derecha y :---: alinea al centro. Por ejemplo:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Alineado a la izquierda</th>
+<th style="text-align:center">Alineado al centro</th>
+<th style="text-align:right">Alineado a la derecha</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Dato 1</td>
+<td style="text-align:center">Dato 2</td>
+<td style="text-align:right">Dato 3</td>
+</tr>
+<tr>
+<td style="text-align:left">Dato 4</td>
+<td style="text-align:center">Dato 5</td>
+<td style="text-align:right">Dato 6</td>
+</tr>
+</tbody>
+</table>
+<h3 id="25-span-style--%22color-0000ff%22c%C3%B3digo">2.5 <span style = "color: #0000FF;">Código</h3>
+<p>Para crear código en una línea utiliza el acento grave (`). Por ejemplo:</p>
+<p><code>var nombre = &quot;John&quot;;</code>.</p>
+<h3 id="26-span-style--%22color-0000ff%22insertar-colores">2.6 <span style = "color: #0000FF;">Insertar colores</h3>
+<p>Para insertar colores al texto será necesario escribir de la siguiente manera:</p>
+<p><code>&lt;span style=&quot;color: #RRGGBB;&quot;&gt;Este texto es de color #RRGGBB&lt;/span&gt;</code></p>
+<p>La sintaxis general para ponerle colores al texto Markdown es la siguiente:</p>
+<p><span style="color: #RRGGBB;">Este texto es de color #RRGGBB</span>
+Utiliza el código con precaución. Más información</p>
+<p><strong>Donde:</strong></p>
+<p><code>#RRGGBB</code> es el valor hexadecimal del color.
+El valor hexadecimal del color está compuesto por dos pares de números hexadecimales, cada uno de los cuales representa un componente del color:</p>
+<ul>
+<li>R (rojo): 00 a FF</li>
+<li>G (verde): 00 a FF</li>
+<li>B (azul): 00 a FF</li>
+</ul>
+<p><strong>EJEMPLO:</strong></p>
+<table>
+<thead>
+<tr>
+<th>COLOR</th>
+<th>SINTÁXIS</th>
+<th>VISUALIZACIÓN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blanco</td>
+<td>#FFFFFF</td>
+<td><span style="color: #FFFFFF;">Este texto es blanco</span></td>
+</tr>
+<tr>
+<td>Rosa pastel</td>
+<td>#FFF0F5</td>
+<td><span style="color: #FFF0F5;"> Este texto es rosa pastel</span></td>
+</tr>
+<tr>
+<td><strong>Verde</strong></td>
+<td>#F0FFF0, #CCFFCC</td>
+<td><span style="color: #F0FFF0;">Verde lima</span> <span style="color: #CCFFCC;">Verde pastel</span></td>
+</tr>
+<tr>
+<td>Verde</td>
+<td>#00FF00</td>
+<td><span style="color: #00FF00;">Este texto es verde</span></td>
+</tr>
+<tr>
+<td><strong>Amarillo</strong></td>
+<td>#FFFFE0, #FFFACD</td>
+<td><span style="color: #FFFFE0;">Amarillo pastel</span>, <span style="color: #FFFACD;"> Amarillo claro</span></td>
+</tr>
+<tr>
+<td>Lavanda pastel</td>
+<td>#E0FFFF</td>
+<td><span style="color: #E0FFFF;">Este texto es lavanda pastel</span></td>
+</tr>
+<tr>
+<td><strong>Azul</strong></td>
+<td>#B2FFFF, #AFEEEE</td>
+<td><span style="color: #B2FFFF;">Azul pastel</span><code>,</code><span style="color: #AFEEEE;">Azul cielo</span></td>
+</tr>
+<tr>
+<td>Cian</td>
+<td>#00FFFF</td>
+<td><span style="color: #00FFFF;">Este texto es cian</span></td>
+</tr>
+<tr>
+<td>Azul</td>
+<td>#0000FF</td>
+<td><span style="color: #0000FF;">Este texto es azul</span></td>
+</tr>
+<tr>
+<td>Magenta</td>
+<td>#FF00FF</td>
+<td><span style="color: #FF00FF;">Este texto es magenta</span></td>
+</tr>
+<tr>
+<td>Naranja pastel</td>
+<td>#FFE0B2</td>
+<td><span style="color: #FFE0B2;">Este texto es naranja pastel</span></td>
+</tr>
+<tr>
+<td>Amarillo</td>
+<td>#FFFF00</td>
+<td><span style="color: #FFFF00;">Este texto es amarillo</span></td>
+</tr>
+<tr>
+<td>Naranja brillante</td>
+<td>#FF7F45</td>
+<td><span style="color: #FF7F45;">Este texto es naranja más brillante</span></td>
+</tr>
+<tr>
+<td>Naranja más fuerte</td>
+<td>#FF9F00</td>
+<td><span style="color: #FF9F00;"> Naranja mas fuerte</span></td>
+</tr>
+<tr>
+<td>Naranja fuerte</td>
+<td>#FF7F00</td>
+<td><span style="color: #FF7F00;">Este texto es naranja fuerte</span></td>
+</tr>
+<tr>
+<td><strong>Rojo</strong></td>
+<td>#FF0000</td>
+<td><span style="color: #FF0000;">Rojo</span></td>
+</tr>
+<tr>
+<td><strong>Gris</strong></td>
+<td>#EEEEEE, #D3D3D3</td>
+<td><span style="color: #EEEEEE;">Gris claro</span><code>,</code><span style="color: #D3D3D3;">Gris oscuro</span></td>
+</tr>
+<tr>
+<td>Negro</td>
+<td>#000000</td>
+<td><span style="color: #000000;">Este texto es negro</span></td>
+</tr>
+</tbody>
+</table>
+<h1 id="span-style--%22color-ff4767%22clase-3span"><span style = "color: #FF4767;"><strong>Clase 3</strong></span></h1>
+<p><strong>Fecha:</strong> 9 de noviembre de 2023</p>
+<h1 id="p-style%22text-align-center-margin-0-auto%22-span-style--%22color-ff7f45%22gitspan-img-src%22httpsrawgithubusercontentcomdelta456delta456masterimggitpng%22-alt%22git-logo%22-width%2224%22p"><p style="text-align: center; margin: 0 auto;"> <span style = "color: #FF7F45;"><strong>GIT</strong></span> <a href="https://git-scm.com/"><img src="https://raw.githubusercontent.com/Delta456/Delta456/master/img/git.png" alt="git logo" width="24"></a></p></h1>
+<h2 id="%C2%BFqu%C3%A9-es">¿Qué es?</h2>
+<p>Es un sistema de control de versiones distribuido que permite a los desarrolladores rastrear los cambios en los archivos y el código fuente. Permitiendo hacer un seguimiento del código.</p>
+<h2 id="span-style--%22color-ff7f45%22intrducci%C3%B3n-git"><span style = "color: #FF7F45;"><strong>Intrducción Git</strong></h2>
+<table>
+<thead>
+<tr>
+<th>COMANDOS</th>
+<th>FUNCIONALIDAD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em><strong>git config --global user.name &quot;nombre&quot;</strong></em></td>
+<td>Crea tu usuario con el nombre que le indiques</td>
+</tr>
+<tr>
+<td><em><strong>git config --global user.email [email]</strong></em></td>
+<td>Valida tus credenciales con tu email</td>
+</tr>
+<tr>
+<td><em><strong>git config user.name</strong></em></td>
+<td>Verificar la <strong>identidad</strong> del usuario</td>
+</tr>
+<tr>
+<td><em><strong>git config user.email</strong></em></td>
+<td>Verificar el <strong>email</strong> del usuario</td>
+</tr>
+<tr>
+<td><em><strong>git init</strong></em></td>
+<td>Inciacializar repositorio se liga con el branch master</td>
+</tr>
+<tr>
+<td><em><strong>git add</strong></em></td>
+<td>Añadir todo lo que hay en el directorio actual</td>
+</tr>
+<tr>
+<td><em><strong>git add fileName.ext</strong></em></td>
+<td>Agrega el documento indicado</td>
+</tr>
+<tr>
+<td><em><strong>git status</strong></em></td>
+<td>Revisa las condiciones en las que estás trabajando, es decir <em>(commits or branch master)</em>.</td>
+</tr>
+<tr>
+<td><em><strong>git reset</strong></em></td>
+<td>Se utiliza para restablecer el estado del repositorio de Git a un punto anterior en el historial. Puede utilizarse para deshacer cambios locales, descartar commits o volver a una rama anterior.</td>
+</tr>
+<tr>
+<td><em><strong>git rm --cached git rm --cached</strong></em></td>
+<td>Esto para quitar el documento seleccionado que se agregó</td>
+</tr>
+<tr>
+<td><em><strong>git commit-m &quot;C1: prj-start&quot;</strong></em></td>
+<td>Inicia el commit,  es una instantánea de los cambios realizados en un proyecto. Cada commit contiene archivos modificados,cambios realizados en cada archivo, mensaje de confirmación</td>
+</tr>
+<tr>
+<td><em><strong>git branch &quot;master&quot;</strong></em></td>
+<td>Renombrar la rama master a &quot;main&quot;</td>
+</tr>
+<tr>
+<td><em><strong>git switch  &quot;NameBranch&quot;</strong></em></td>
+<td>Se cambia a la rama indicada</td>
+</tr>
+<tr>
+<td><em><strong>git branch</strong></em></td>
+<td>Muestra cuantas ramas existen y en que rama nos encontramos con un (*), considerar que esta se crea con todo el contenido que se tiene</td>
+</tr>
+<tr>
+<td><em><strong>git log</strong></em></td>
+<td>Para ver el historial de cambios</td>
+</tr>
+</tbody>
+</table>
+<p>Cada que se agrega un archivo, estos se agregan a una rama main, esto se llama <strong>BRANCH</strong></p>
+<pre><code>&gt;---- branch --- git:(master / main)
+        Archivos a comitear
+        o
+        Archivos no agregados
+</code></pre>
+<h4 id="commit">Commit</h4>
+<p>El nombre del código se encuentra resaltado</p>
+<p>[master (root-commit) <strong>ac362b4</strong>] C1: prj-star</p>
+<p>Y este se vera modificado con cada commit y su respsectivo comentario</p>
+<p>Recuerda que debes hacer un solo documento, no varios</p>
+<h1 id="p-style%22text-align-center-margin-0-auto%22-span-style--%22color-ff9f00-%22gitbashspanp"><p style="text-align: center; margin: 0 auto;"> <span style = "color: #FF9F00 ;"><strong>GitBash</strong></span></p></h1>
+<h2 id="span-style--%22color-ff9f00%22%C2%BFqu%C3%A9-es-gitbashspan"><span style = "color: #FF9F00;">¿Qué es GitBash?</span></h2>
+<ul>
+<li>Es una aplicación de línea de comandos que proporciona una interfaz de usuario para el sistema de control de versiones Git.</li>
+<li>Es una herramienta que le permite interactuar con Git desde la línea de comandos.</li>
+</ul>
+<h2 id="span-style--%22color-ff9f00%22%C2%BFqu%C3%A9-es-linuxspan"><span style = "color: #FF9F00;">¿Qué es <strong>Linux</strong>?</span></h2>
+<p>Es un sistema operativo de código abierto y gratuito que se basa en el núcleo Linux. El núcleo Linux es el software que gestiona directamente el hardware de un sistema y sus recursos, como la CPU, la memoria y el almacenamiento</p>
+<hr>
+<p><span style = "color: #FF9F00;"><strong>Dato curioso:</strong></span> Linux  y Gitbash fue creado por Linus Torvalds.</p>
+<p>Por ello GitBash es un acercamiento a Linux.</p>
+<hr>
+<h2 id="span-style--%22color-ff9f00-%22introducci%C3%B3n-de-linuxspan"><span style = "color: #FF9F00; "><strong>Introducción de Linux</strong></span></h2>
+<table>
+<thead>
+<tr>
+<th>COMANDOS</th>
+<th>FUNCIONALIDAD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em><strong>pwd</strong></em></td>
+<td>ver el directorio actual (dir. actual)</td>
+</tr>
+<tr>
+<td><em><strong>tab</strong></em></td>
+<td>Autocompletar</td>
+</tr>
+<tr>
+<td><em><strong>cd</strong></em></td>
+<td>Volver al directorio, con <strong>ctrl+a, e</strong> edita el nombre el fichero</td>
+</tr>
+<tr>
+<td><em><strong>cd &quot;nombreArchivo&quot;/</strong></em></td>
+<td>Entra al archivo</td>
+</tr>
+<tr>
+<td><em><strong>cd ..</strong></em></td>
+<td>Entra al archivo <strong>ctrl+a, e</strong> edita el nombre el fichero</td>
+</tr>
+<tr>
+<td><em><strong>ls</strong></em></td>
+<td>Listado del fichero con <strong>ctrl +r</strong> (buscar)</td>
+</tr>
+<tr>
+<td><em><strong>ls-l</strong></em></td>
+<td>Listado del fichero (vertical) <strong>ctrl +r</strong> (buscar)</td>
+</tr>
+<tr>
+<td><em><strong>touch file.txt</strong></em></td>
+<td>Crea un fichero</td>
+</tr>
+<tr>
+<td><em><strong>echo &quot;Texto a imprimir&quot; &gt;&gt; fileNAME.extension</strong></em></td>
+<td>Se utiliza para imprimir texto en la terminal de Git Bash</td>
+</tr>
+<tr>
+<td><em><strong>cat file.txt</strong></em></td>
+<td>Permite visualizar el contenido de los archivos en la terminal de Git Bash. <strong>ctrl + l o clear</strong> (limpiar la terminal)</td>
+</tr>
+<tr>
+<td><em><strong>rm archivo.txt</strong></em></td>
+<td>Elimina el archivo</td>
+</tr>
+<tr>
+<td><em><strong>rm -r carpeta1</strong></em></td>
+<td>Eliminar un directorio</td>
+</tr>
+<tr>
+<td><em><strong>rm archivo1.txt archivo2.txt</strong></em></td>
+<td>Eliminar varios archivos</td>
+</tr>
+<tr>
+<td><em><strong>rm -r carpeta1/</strong></em></td>
+<td>Eliminar un archivo de forma recursiva</td>
+</tr>
+<tr>
+<td><em><strong>rm -i archivo.txt</strong></em></td>
+<td>Eliminar un archivo de forma segura</td>
+</tr>
+<tr>
+<td><em><strong>cp file.txt newfile.txt</strong></em></td>
+<td>Copiar</td>
+</tr>
+<tr>
+<td><em><strong>mv file.txt newfile.txt</strong></em></td>
+<td>Renombrar</td>
+</tr>
+<tr>
+<td><em><strong>ls -a</strong></em></td>
+<td>Se utiliza para listar todos los archivos y directorios, incluidos los archivos ocultos, en la terminal</td>
+</tr>
+</tbody>
+</table>
+<p><Span style = "color: #FF0000"><strong>Para terminar un proceso Cntrl + c</strong></Span></p>
+<h1 id="p-style%22text-align-center-margin-0-auto%22span-style--%22color-f7f%22-github-tda-href%22%22img-alt%22github%22-title%22github%22-height%2228px%22-src%22httpsiimgurcomdzgetvvpng%22--atdspanp"><p style="text-align: center; margin: 0 auto;"><span style = "color: #F7F"> <strong>GitHub</strong> <td><a href="#"><img alt="GitHub" title="GitHub" height="28px" src="https://i.imgur.com/DZgetVv.png" /> </a></td></span></p></h1>
+<h2 id="%C2%BFqu%C3%A9-es">¿Qué es?</h2>
+<p>Es una plataforma de desarrollo de código fuente que facilita a los desarrolladores colaborar en proyectos de código. Ademas de ser una herramienta para colabarar en codigo.</p>
+<h3 id="span-style--%22color-f7f%22elementosspan"><span style = "color: #F7F"><strong>Elementos</strong></span></h3>
+<ul>
+<li><span style = "color: #F7F" >Repositorios de código:</span> Los repositorios de código son el lugar donde los desarrolladores almacenan y administran su código fuente. Los repositorios de GitHub se pueden compartir públicamente o privadamente.</li>
+<li><span style = "color: #F7F" > Control de versiones:</span> Utiliza el sistema de control de versiones Git para realizar un seguimiento de los cambios en el código fuente. Esto permite a los desarrolladores restaurar versiones anteriores del código y colaborar en cambios sin sobrescribirse entre sí.</li>
+<li><span style = "color: #F7F" >Foros:</span> Proporciona foros para que los desarrolladores puedan discutir sobre proyectos y pedir ayuda.</li>
+<li><span style = "color: #F7F" >Issues:</span> Proporciona una función de Issues para que los desarrolladores puedan informar de errores y solicitar nuevas funciones.</li>
+<li><span style = "color: #F7F" >Pull requests:</span> Proporciona una función de Pull requests para que los desarrolladores puedan solicitar que sus cambios se incorporen a un proyecto.</li>
+</ul>
+<h1 id="span-style%22color-ff4767%22clase-4span"><span style="color: #FF4767;"><strong>Clase 4</strong></span></h1>
+<p><strong>Fecha:</strong> 10 de noviembre 2023</p>
+<h1 id="p-style%22text-align-center-margin-0-auto%22span-style--%22color-ff7f00-%22-java-a-href%22%22img-alt%22java%22-title%22java%22-height-%2228px%22-src%22httpsimgicons8comcolor48000000java-coffee-cup-logopng%22--a-tdspanp"><p style="text-align: center; margin: 0 auto;"><span style = "color: #FF7F00 ;"> <strong>JAVA</strong> <a href="#"><img alt="Java" title="Java" height ="28px"                        src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" /> </a> </td></span></p></h1>
+<h2 id="span-style--%22color-ff7f00-%22origenspan"><span style = "color: #FF7F00 ;">Origen</span></h2>
+<p>El equipo original de la empresa estaba formado por James Gosling, Eric Schmidt, John Gaga, Patrick Naughton y Wayne Rosing.</p>
+<p>El proyecto fue dirigido por James Gosling, quien se inspiró en su trabajo en el lenguaje de programación C++, que era un lenguaje poderoso pero complejo. Gosling quería crear un lenguaje que fuera más fácil de aprender y usar, pero que aún así fuera potente y capaz.</p>
+<p>El nombre &quot;Java&quot; proviene de la isla de Java, en Indonesia. Gosling quería un nombre que fuera corto, fácil de recordar y que evocara una sensación de exotismo y aventura.</p>
+<h2 id="span-style--%22color-ff7f00%22%C2%BFqu%C3%A9-esspan"><span style = "color: #FF7F00;"><strong>¿Qué es?</strong></span></h2>
+<p>Es un lenguaje de programación multiplataforma, seguro y orientado a objetos que se utiliza para crear una amplia gama de aplicaciones.</p>
+<h2 id="span-style--%22color-ff7f00%22%C2%BFpara-qu%C3%A9-sirvespan"><span style = "color: #FF7F00;"><strong>¿Para qué sirve?</strong></span></h2>
+<p>Su finalidad es crear software para una amplia gama de dispositivos y plataformas. Es un lenguaje de programación multiplataforma, lo que significa que el código escrito en Java se puede ejecutar en cualquier plataforma que tenga instalada la Máquina Virtual Java (JVM). Esto hace que Java sea una opción popular para el desarrollo de aplicaciones móviles, ya que las aplicaciones Java se pueden ejecutar en dispositivos Android, iOS y Windows Phone.</p>
+<ul>
+<li><span style = "color: #FF7F00;" >Multiplataforma:</span> El código escrito en Java se puede ejecutar en cualquier plataforma que tenga instalada la JVM.</li>
+<li><span style = "color: #FF7F00;">Seguro:</span> Java está diseñado para prevenir errores y ataques maliciosos.</li>
+<li><span style = "color: #FF7F00;">Versátil:</span> Se puede utilizar para crear una amplia gama de aplicaciones.</li>
+</ul>
+<h2 id="span-style--%22color-ff7f00%22elementosspan"><span style = "color: #FF7F00;">Elementos</span></h2>
+<ol>
+<li><span style = "color: #FF7F00;">Paquetes:</span> Son una forma de organizar el código en Java. Un paquete es un conjunto de clases que están relacionadas entre sí.</li>
+<li><span style = "color: #FF7F00;">Clases:</span> Son la unidad básica de construcción en Java. Una clase define un tipo de dato, que puede ser utilizado para crear objetos.</li>
+<li><span style = "color: #FF7F00;"> Objetos:</span> Son instancias de clases. Un objeto tiene sus propios datos y métodos.</li>
+<li><span style ="color: #FF7F00;">Métodos:</span> Son las acciones que pueden realizar los objetos.</li>
+<li><span style = "color: #FF7F00;">Variables:</span> Se utilizan para almacenar datos.</li>
+<li><span style = "color: #FF7F00;">Constantes:</span> Las constantes son variables que no pueden cambiar su valor.</li>
+<li><span style = "color: #FF7F00;">Operadores:</span> Los operadores se utilizan para realizar operaciones matemáticas y lógicas.</li>
+<li><span style = "color: #FF7F00;" >Sentencias:</span> Las sentencias son instrucciones que se ejecutan en Java.</li>
+</ol>
+<h2 id="span-style--%22color-ff7f00%22estructuraspan"><span style = "color: #FF7F00;">Estructura</span></h2>
+<pre><code>proyecto
+    paquete
+        src
+            clase
+                metodos
+                variables
+                constantes
+</code></pre>
+<h3 id="span-style--%22color-ff7f00%22-estructura-del-codigospan"><span style = "color: #FF7F00;"> Estructura del codigo</span></h3>
+<p>El código debe estar bien estructurado y organizado. Se recomienda utilizar sangrías y espacios en blanco para mejorar la legibilidad del código.</p>
+<p>La clase main es la clase que se ejecuta cuando se inicia un programa Java. La sintaxis de una clase main en Java es la siguiente:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Nombre_de_la_clase</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>{
+
+        <span class="hljs-comment">/* Methods
+        *  Variables
+        *  Constantes
+        */</span>
+    }
+}
+</div></code></pre>
+<ul>
+<li>
+<p>La palabra clave <code>public</code>: indica que la clase es accesible desde cualquier parte del programa.</p>
+</li>
+<li>
+<p>La palabra clave <code>class</code>: indica que se está declarando una clase.</p>
+</li>
+<li>
+<p>El nombre de la clase: es una cadena de caracteres que identifica a la clase.</p>
+</li>
+<li>
+<p>La palabra clave <code>public</code>: indica que el método main es accesible desde cualquier parte del programa.</p>
+</li>
+<li>
+<p>La palabra clave <code>static</code>: indica que el método main no está asociado a ningún objeto.</p>
+</li>
+<li>
+<p>La palabra clave <code>void</code>: indica que el método main no devuelve ningún valor.</p>
+</li>
+<li>
+<p>El nombre del método: es una cadena de caracteres que identifica al método.</p>
+</li>
+<li>
+<p>Los argumentos: son los datos que se pasan al método main cuando se llama. Los argumentos pueden ser de cualquier tipo de dato.</p>
+</li>
+<li>
+<p>El cuerpo del método: es el código que se ejecuta cuando se llama al método main.</p>
+</li>
+</ul>
+<p><span style = "color: #FF0000;"><em><strong>IMPORTANTE:</strong></em></span></p>
+<ul>
+<li>
+<p>La clase <code>main</code> es una parte esencial de cualquier programa Java. Es la clase que inicia el programa y ejecuta su código.</p>
+</li>
+<li>
+<p>El codigo siempre debe contener esa <span style = "color: #FF7F00;">estructura</span> para que funcione el programa. Por ello es importante que las llaves <span style = "color: #FF0000;"><strong>{ }</strong></span> se encuentren bien colocadas, caso contrario nos arrojara un problema.</p>
+</li>
+<li>
+<p>Ademas de siempre controlar cada linea de codigo con un <span style="color:#FF0000;"><strong>;</strong></span> para que valide aquella linea.</p>
+</li>
+</ul>
+<p><em>Ejemplo:</em></p>
+<img align = "center" src = "https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/Structure-ED-Team.png">
+<h2 id="span-style-%22color-ff7f00%22console-commandsspan"><span style ="color: #FF7F00;">Console commands</span></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Funcionalidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>java <em><strong>nombre del archivo.java</strong></em></td>
+<td>Compila el programa en consola</td>
+</tr>
+<tr>
+<td>cat <em><strong>nombre del archivo.java</strong></em></td>
+<td>Muestra lo que tiene el archivo escrito</td>
+</tr>
+</tbody>
+</table>
+<h1 id="span-style--%22color-ff4767%22-clase-5span"><span style = "color: #FF4767;"> <strong>Clase 5</strong></span></h1>
+<p><strong>Fecha:</strong> 14 de noviembre 2023</p>
+<p><strong>Nota:</strong> Cuando se habla de creación de procedimiento se habla de una programación estructurada.</p>
+<p><span style = "color: #FF7F00">Dato curioso:</span> El area mejor pagada dentro de JAVA es Java EE.</p>
+<h2 id="span-style--%22color-ff7f00%22-estructuras-de-controlspan"><span style = "color: #FF7F00"> <strong>Estructuras de control</strong></span></h2>
+<p>Son instrucciones que permiten alterar el flujo normal de ejecucion de un programa. Existen tres tipos de estructuras:</p>
+<h3 id="span-style--%22color-ff7f00%22-estructuras-de-selecci%C3%B3nspan"><span style = "color: FF7F00"> Estructuras de selección:</span></h3>
+<p>Estas estructuras permiten ejecutar un bloque de código dependiendo de si se cumple o no una condición</p>
+<ol>
+<li>
+<p>if-else:</p>
+<p>Esta estructura permite ejecutar un bloque de código si se cumple una condición, o un bloque diferente de código si no se cumple la condición.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> numero = <span class="hljs-number">10</span>;
+
+<span class="hljs-keyword">if</span> (numero &gt; <span class="hljs-number">5</span>) {
+  System.out.println(<span class="hljs-string">"El número es mayor que 5"</span>);
+} <span class="hljs-keyword">else</span> {
+  System.out.println(<span class="hljs-string">"El número es menor o igual que 5"</span>);
+}
+</div></code></pre>
+</li>
+<li>
+<p>Switch:</p>
+<p>Esta estructura permite ejecutar un bloque de código diferente en función del valor de una variable.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> dia = <span class="hljs-number">2</span>;
+
+<span class="hljs-keyword">switch</span> (dia) {
+  <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+    System.out.println(<span class="hljs-string">"Es lunes"</span>);
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+    System.out.println(<span class="hljs-string">"Es martes"</span>);
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">default</span>:
+    System.out.println(<span class="hljs-string">"No es un día de la semana"</span>);
+    <span class="hljs-keyword">break</span>;
+}
+
+</div></code></pre>
+</li>
+</ol>
+<h3 id="span-style--%22color-ff7f00%22-estructuras-de-iteraci%C3%B3n-span"><span style = "color: FF7F00"> Estructuras de iteración: </span></h3>
+<p>Estas estructuras permiten ejecutar un bloque de código repetidamente</p>
+<ul>
+<li>
+<p>For:</p>
+<p>Esta estructura permite ejecutar un bloque de código un número determinado de veces.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+System.out.println(i);
+}
+</div></code></pre>
+</li>
+<li>
+<p>While:
+Esta estructura permite ejecutar un bloque de código mientras se cumpla una condición.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">10</span>) {
+System.out.println(i);
+i++;
+}
+</div></code></pre>
+</li>
+<li>
+<p>Do-while:</p>
+<p>Similar a la estructura while, pero el bloque de código se ejecuta al menos una vez, incluso si la condición no se cumple.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">do</span> {
+  System.out.println(i);
+  i++;
+} <span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">10</span>);
+</div></code></pre>
+</li>
+</ul>
+<h3 id="span-style--%22color-ff7f00%22estructuras-de-saltospan"><span style = "color: #FF7F00">Estructuras de salto:</span></h3>
+<p>Estas estructuras permiten saltar a una instrucción específica en el código.</p>
+<ul>
+<li>
+<p><strong>Break:</strong></p>
+<p>Permite salir de un bucle.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+  <span class="hljs-keyword">if</span> (i == <span class="hljs-number">5</span>) {
+    <span class="hljs-keyword">break</span>;
+  }
+
+  System.out.println(i);
+}
+</div></code></pre>
+</li>
+<li>
+<p><strong>Continue:</strong></p>
+<p>Permite pasar a la siguiente iteración de un bucle.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+  <span class="hljs-keyword">if</span> (i == <span class="hljs-number">5</span>) {
+    <span class="hljs-keyword">continue</span>;
+  }
+
+  System.out.println(i);
+}
+</div></code></pre>
+</li>
+<li>
+<p><strong>Return:</strong></p>
+<p>Permite salir de una función y retornar un valor en especifico.</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sumar</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span></span>{
+  <span class="hljs-keyword">if</span> (a &lt; <span class="hljs-number">0</span> || b &lt; <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+  }
+
+  <span class="hljs-keyword">return</span> a + b;
+}
+</div></code></pre>
+</li>
+</ul>
+<h2 id="span-style--%22color-ff7f00%22-metodos-span"><span style = "color: #FF7F00"> METODOS </span></h2>
+<p>Es un bloque de código que se puede llamar desde cualquier parte del programa.</p>
+<p>Se utilizan para realizar tareas específicas, como calcular una suma, mostrar un mensaje o leer un archivo.</p>
+<p>La estructura de un método en Java es la siguiente:</p>
+<pre class="hljs"><code><div>[ modificadores ] <span class="hljs-function">tipo_de_retorno <span class="hljs-title">nombre_del_metodo</span><span class="hljs-params">([ argumentos ])</span> </span>{
+  <span class="hljs-comment">// código del método</span>
+}
+</div></code></pre>
+<p>Los modificadores son opcionales y se utilizan para controlar el acceso al método. Los tipos de modificadores que se pueden utilizar son:</p>
+<ul>
+<li>
+<p><strong>public:</strong> el método es accesible desde cualquier parte del programa.</p>
+</li>
+<li>
+<p><strong>protected:</strong> el método es accesible desde la misma clase y sus subclases.</p>
+</li>
+<li>
+<p><strong>private:</strong> el método solo es accesible desde la misma clase.</p>
+</li>
+</ul>
+<p>El tipo de retorno es el tipo de dato que se devuelve por el método. Si el método no devuelve ningún valor, el tipo de retorno es <code>void</code>.</p>
+<p>El <em>nombre</em> del método es una cadena de caracteres que identifica al método.</p>
+<p>Los <em>argumentos</em> son los datos que se pasan al método cuando se llama. Los argumentos pueden ser de cualquier tipo de dato.</p>
+<p>El <em>cuerpo</em> del método es el código que se ejecuta cuando se llama al método.</p>
+<p><em>Ejemplo:</em></p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sumar</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{
+  <span class="hljs-keyword">return</span> a + b;
+}
+</div></code></pre>
+<p>Este método se llama <code>sumar</code> y tiene dos argumentos, <code>a</code> y <code>b</code>. El tipo de retorno del método es <code>int</code>, que indica que el método devuelve un valor de tipo entero. El cuerpo del método simplemente suma los valores de los argumentos y devuelve el resultado.</p>
+<p>Pueden tener cualquier número de argumentos y cualquier tipo de retorno.</p>
+<p>Se pueden utilizar para modularizar el código y hacerlo más fácil de entender y mantener. También se pueden utilizar para reutilizar el código en diferentes partes del programa.</p>
+<p>Se pueden utilizar en:</p>
+<ul>
+<li>Para calcular una suma.</li>
+<li>Para mostrar un mensaje.</li>
+<li>Para leer un archivo.</li>
+<li>Para validar los datos de un usuario.</li>
+</ul>
+<h2 id="span-style--%22color-ff7f00%22-clase-span"><span style = "color: #FF7F00"> <strong>CLASE</strong> </span></h2>
+<p>Es una plantilla que define la forma de un objeto.Usa una especificación de clase para construir objetos</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NombreDeLaClase</span> </span>{
+
+  <span class="hljs-comment">// Declaraciones de variables</span>
+
+  <span class="hljs-comment">// Declaraciones de métodos</span>
+
+}
+</div></code></pre>
+<p>En Java, una clase es una plantilla que define la forma de un objeto. Especifica los datos y el código que operará en esos datos. Java usa una especificación de clase para construir objetos. Los objetos son instancias de una clase.</p>
+<p>Una clase se define utilizando la palabra clave class. La sintaxis de una clase en Java es la siguiente:</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NombreDeLaClase</span> </span>{
+
+  <span class="hljs-comment">// Declaraciones de variables</span>
+
+  <span class="hljs-comment">// Declaraciones de métodos</span>
+
+}
+</div></code></pre>
+<p>Utiliza el código con precaución. Más información
+Las declaraciones de variables definen los datos que almacenará la clase. Las declaraciones de métodos definen las acciones que puede realizar la clase.</p>
+<p><strong>Ejemplo:</strong></p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MiClase</span> </span>{
+
+  <span class="hljs-comment">// Declaraciones de variables</span>
+  <span class="hljs-keyword">int</span> numero;
+  String nombre;
+
+  <span class="hljs-comment">// Declaraciones de métodos</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">saludar</span><span class="hljs-params">()</span> </span>{
+    System.out.println(<span class="hljs-string">"Hola, mi nombre es "</span> + nombre);
+  }
+
+}
+</div></code></pre>
+<p>Para crear un objeto de una clase, se utiliza la palabra clave new. La sintaxis para crear un objeto de una clase es la siguiente:</p>
+<pre class="hljs"><code><div>NombreDeLaClase objeto = <span class="hljs-keyword">new</span> NombreDeLaClase();
+</div></code></pre>
+<h2 id="span-style--%22color-ff7f00%22comparacion-entre-clase-y-metodospan"><span style = "color: #FF7F00">Comparacion entre clase y metodo</span></h2>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Clase</th>
+<th>Método</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Definición</td>
+<td>Plantilla que define la forma de un objeto</td>
+<td>Bloque de código que se puede llamar desde cualquier parte del programa.</td>
+</tr>
+<tr>
+<td>Datos</td>
+<td>Almacena datos</td>
+<td>No almacena datos</td>
+</tr>
+<tr>
+<td>Código</td>
+<td>Define acciones que puede realizar la clase</td>
+<td>Ejecuta acciones</td>
+</tr>
+<tr>
+<td>Acceso</td>
+<td>Puede ser privado, protegido, público o por defecto</td>
+<td>Puede ser público, protegido o privado</td>
+</tr>
+<tr>
+<td>Instancias</td>
+<td>Puede crearse una instancia de la clase</td>
+<td>No se puede crear una instancia de un método</td>
+</tr>
+</tbody>
+</table>
+<p>Por ejemplo, la siguiente clase define una clase llamada Persona con dos variables, nombre y edad, y un método, saludar():</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Persona</span> </span>{
+
+  <span class="hljs-comment">// Declaraciones de variables</span>
+  String nombre;
+  <span class="hljs-keyword">int</span> edad;
+
+  <span class="hljs-comment">// Declaraciones de métodos</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">saludar</span><span class="hljs-params">()</span> </span>{
+    System.out.println(<span class="hljs-string">"Hola, mi nombre es "</span> + nombre);
+  }
+
+}
+</div></code></pre>
+<h1 id="operadores">OPERADORES</h1>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Name</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>Adicion</td>
+<td>x + y</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Reduccion</td>
+<td>x - y</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Multiplicacion</td>
+<td>x * y</td>
+</tr>
+<tr>
+<td>/</td>
+<td>División</td>
+<td>x / y</td>
+</tr>
+<tr>
+<td>%</td>
+<td>Módulo</td>
+<td>x % y</td>
+</tr>
+<tr>
+<td>++</td>
+<td>Incremento</td>
+<td>++x</td>
+</tr>
+<tr>
+<td>--</td>
+<td>Decremento</td>
+<td>--x</td>
+</tr>
+<tr>
+<td>&amp;&amp;</td>
+<td>Y</td>
+<td>Logical and x &lt; 5 &amp;&amp; x &lt; 10</td>
+</tr>
+<tr>
+<td>l l</td>
+<td>O</td>
+<td>Logical or x &lt; 5 l l x &lt; 4</td>
+</tr>
+<tr>
+<td>!</td>
+<td>Logical not</td>
+<td>!(x &lt; 5 &amp;&amp; x &lt; 10)</td>
+</tr>
+<tr>
+<td>==</td>
+<td>Equal to</td>
+<td>x == y</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>Not equal</td>
+<td>x != y</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>Greater than</td>
+<td>x &gt; y</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>Less than</td>
+<td>x &lt; y</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>Greater than or equal to</td>
+<td>x &gt;= y</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>Less than or equal to</td>
+<td>x &lt;= y</td>
+</tr>
+</tbody>
+</table>
+<h2 id="otros-operadores">Otros operadores</h2>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Example</th>
+<th>Same As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>x = 5</td>
+<td>x = 5</td>
+</tr>
+<tr>
+<td>+=</td>
+<td>x += 3</td>
+<td>x = x + 3</td>
+</tr>
+<tr>
+<td>-=</td>
+<td>x -= 3</td>
+<td>x = x - 3</td>
+</tr>
+<tr>
+<td>*=</td>
+<td>x *= 3</td>
+<td>x = x * 3</td>
+</tr>
+<tr>
+<td>/=</td>
+<td>x /= 3</td>
+<td>x = x / 3</td>
+</tr>
+<tr>
+<td>%=</td>
+<td>x %= 3</td>
+<td>x = x % 3</td>
+</tr>
+<tr>
+<td>&amp;=</td>
+<td>x &amp;= 3</td>
+<td>x = x &amp; 3</td>
+</tr>
+<tr>
+<td>l=</td>
+<td>x l= 3</td>
+<td>x = x l 3</td>
+</tr>
+<tr>
+<td>^=</td>
+<td>x ^= 3</td>
+<td>x = x ^ 3</td>
+</tr>
+<tr>
+<td>&gt;&gt;=</td>
+<td>x &gt;&gt;= 3</td>
+<td>x = x &gt;&gt; 3</td>
+</tr>
+<tr>
+<td>&lt;&lt;=</td>
+<td>x &lt;&lt;= 3</td>
+<td>x = x &lt;&lt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="span-style--%22color-ff7f00%22programacion-orientada-a-objetos-poospan"><span style = "color: #FF7F00;"><strong>PROGRAMACION ORIENTADA A OBJETOS (POO)</strong></span></h2>
+<p>Es un paradigma de programación que organiza el código en torno a objetos. Son entidades que tienen estado y comportamiento. El estado de un objeto se representa mediante variables, y el comportamiento de un objeto se representa mediante métodos.</p>
+<p>Un ejemplo de la vida cotidiana de la POO es una persona. Una persona tiene estado, como su nombre, edad y dirección. También tiene comportamiento, como caminar, hablar y comer.</p>
+<p>La clase <code>Persona</code> tendría variables para almacenar el estado de la persona, como su nombre, edad y dirección. También tendría métodos para representar el comportamiento de la persona, como caminar, hablar y comer.</p>
+<p>Por ejemplo, la clase <code>Persona</code> podría tener las siguientes variables:</p>
+<ul>
+<li><code>nombre</code>: El nombre de la persona</li>
+<li><code>edad</code>: La edad de la persona</li>
+<li><code>direccion</code>: La dirección de la persona</li>
+</ul>
+<p>También podría tener los siguientes métodos <em>(acciones)</em>:</p>
+<ul>
+<li><code>caminar()</code>: Hace que la persona camine</li>
+<li><code>hablar()</code>: Hace que la persona hable</li>
+<li><code>comer()</code>: Hace que la persona coma</li>
+</ul>
+<p>Otros ejemplos:</p>
+<ul>
+<li>Un automóvil es un objeto que tiene estado, como su color, modelo y año. También tiene comportamiento, como conducir, frenar y girar.</li>
+<li>Una casa es un objeto que tiene estado, como su tamaño, número de habitaciones y ubicación. También tiene comportamiento, como proporcionar refugio, seguridad y comodidad.</li>
+<li>Una computadora es un objeto que tiene estado, como su procesador, memoria y almacenamiento. También tiene comportamiento, como ejecutar programas, almacenar datos y conectarse a Internet.</li>
+</ul>
+<img align="center" src = "https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/POO-EdxTeam.png">
+<h1 id="span-style--%22color-ff4767%22clase-6span"><Span style = "color: #FF4767;"><strong>Clase 6</strong></Span></h1>
+<p><strong>Fecha:</strong> 16 de noviembre 2023</p>
+<h3 id="span-style--%22color-ff7f00%22compilador-de-javaspan"><span style = "color: #FF7F00">Compilador de Java</span></h3>
+<p>El compilador de Java es un programa informático que traduce el código fuente escrito en Java a código de máquina, que es un conjunto de instrucciones que puede ser ejecutado directamente por la computadora.</p>
+<h3 id="span-style--%22color-ff7f00%22instanciaspan"><span style = "color: FF7F00;">Instancia</span></h3>
+<p>Una instancia es un objeto concreto creado a partir de una clase, es decir, una representación específica de una clase. Tiene un estado y un comportamiento definidos por la clase a la que pertenece</p>
+<p>Por ejemplo, la clase <code>Persona</code> podria tener las siguientes variables de instancia:</p>
+<ul>
+<li><code>nombre: </code> Nombre de la persona.</li>
+<li><code>edad: </code> Edad de la persona.</li>
+</ul>
+<p>Las instancias se crean utilizando el operador new. Por ejemplo:</p>
+<pre class="hljs"><code><div>Persona persona = <span class="hljs-keyword">new</span> Persona();
+</div></code></pre>
+<p>Este código crea un objeto de la clase <code>Persona</code> con el estado y el comportamiento predeterminados de la clase <code>Persona</code>.</p>
+<p>Los objetos en Java pueden acceder a sus datos y métodos mediante el operador de acceso <code>[.]</code>. Por ejemplo, el siguiente código imprime el nombre de una persona:</p>
+<pre class="hljs"><code><div>Persona persona = <span class="hljs-keyword">new</span> Persona();
+persona.nombre = <span class="hljs-string">"Juan Pérez"</span>;
+
+System.out.println(persona.nombre); <span class="hljs-comment">// Imprime "Juan Pérez"</span>
+</div></code></pre>
+<h3 id="span-style--%22color-ff7f00%22debuggerspan"><span style = "color: #FF7F00;">Debugger</span></h3>
+<p>Es una herramienta de desarrollo de software que permite a los desarrolladores encontrar y corregir errores en el código fuente. Los depuradores proporcionan una variedad de funciones que ayudan a los desarrolladores a comprender cómo se ejecuta el código y a identificar los problemas.</p>
+<p>Funciones básicas de un depurador:</p>
+<ul>
+<li>Pausar la ejecución del código.</li>
+<li>Navegar por el código.</li>
+<li>Examinar los valores de las variables.</li>
+<li>Ejecutar el codigo paso a paso</li>
+</ul>
+<h3 id="span-style--%22color-ff7f00%22constructorspan"><span style = "color: #FF7F00">Constructor</span></h3>
+<p>Es un método especial que se utiliza para inicializar un objeto recién creado. El constructor se llama cuando se crea una instancia de una clase.</p>
+<h4 id="caracteristicas">Caracteristicas</h4>
+<ul>
+<li>Tiene el mismo nombre de la clase.</li>
+<li>Se ejecutra un unica vez.</li>
+<li>Debe ser publico.</li>
+<li>Puede ayudar inicializando las variables.</li>
+<li>Puede haber mas de un constructor en la clase.</li>
+</ul>
+<h3 id="span-style--%22color-ff7f00%22creacion-de-la-clasespan"><span style = "color: #FF7F00;">Creacion de la clase</span></h3>
+<p>Dentro de una clase se pueden crear metodos o funciones para llamarlos dentro de la propia clase, pero lo ideal en POO es crear un <code>Proyecto Java</code>, donde se van a crear todas las clases y se las llamaran a una <code>clase Main</code>.</p>
+<p>Por ello lo recomendable es crear un archivo especifico para almacenar el proyecto con el comando</p>
+<ol>
+<li>Ctrl + Shift + N.</li>
+<li>Ctrl + Shift + P.</li>
+<li>Create Java Project.</li>
+<li>No build tools (Depende de lo que se quiera hacer).</li>
+<li>Seleccionar el espacio (carpeta) para almacenar.</li>
+<li>Darle un nombre al proyecto.</li>
+</ol>
+<p>De esta manera se crea una estructura de proyecta Java, ejemplo:</p>
+<img align = "center" src = "https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/MuestraVsCode.png">
+<h1 id="span-style--%22color-ff4767%22clase-7span"><span style = "color: #FF4767;"><strong>Clase 7</strong></span></h1>
+<p><strong>Fecha:</strong> 21 de noviembre</p>
+<h2 id="span-style--%22color-ff7f00%22-bucles-span"><span style = "color: #FF7F00"> BUCLES </span></h2>
+<p>Es una estructura de control que permite ejecutar un bloque de código repetidamente. Los bucles se utilizan para realizar tareas que deben repetirse un número determinado de veces, o mientras se cumpla una condición.</p>
+<p>Siendo tres: for, while y do-while</p>
+<h4 id="span-style--%22color-ff7f00%22sintaxisspan"><span style = "color: #FF7F00"><strong>Sintaxis</strong></span></h4>
+<ol>
+<li>
+<p><strong>For:</strong></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+  System.out.println(i);
+}
+</div></code></pre>
+<p>La inicialización se ejecuta una sola vez, al principio del bucle.<span style= "color: #FF7F00;"> <strong>La condición se evalúa al principio de cada iteración del bucle</strong></span>.</p>
+<p>Si la condición es verdadera, se ejecuta el bloque de código. Si la condición es falsa, el bucle termina. El incremento se ejecuta al final de cada iteración del bucle.</p>
+</li>
+<li>
+<p><strong>Do-while:</strong></p>
+<p>El bloque de código <span style = "color: #FF7F00;"> <strong>se ejecuta al menos una vez</strong></span>, <em><strong>incluso</strong></em> si la condición no se cumple. La condición <span style = "color: #FF7F00;"> <strong>se evalúa al final de cada iteración del bucle</strong></span>. Si la condición es verdadera, el bucle se repite. Si la condición es falsa, el bucle termina.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">do</span> {
+  <span class="hljs-comment">// bloque de código</span>
+} <span class="hljs-keyword">while</span> (condición);
+</div></code></pre>
+</li>
+<li>
+<p><strong>While:</strong></p>
+<p>La condición <span style="color: #FF7F00"> <strong>se evalúa al principio de cada iteración del bucle</strong></span>. Si la condición es verdadera, se ejecuta el bloque de código. Si la condición es falsa, el bucle termina.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">10</span>) {
+  System.out.println(i);
+  i++;
+}
+</div></code></pre>
+</li>
+</ol>
+<h3 id="%C2%BFcu%C3%A1ndo-se-utilizan-estos-ciclos">¿Cuándo se utilizan estos ciclos?</h3>
+<ul>
+<li>El <code>for</code> se utiliza cuando se conoce el valor con el que se inicia, o cuando inicia y cuando este se va a detener.</li>
+<li>El <code>while</code> se utiliza que ejecutará algo hasta que una condición cambie, pero yo no conozco cuando cambiará la condición de salida.</li>
+<li><code>DoWhile</code> se utiliza cuando se conoce de antemano que el bloque de instrucciones se ejecutará al menos una vez. Esto se debe a que el ciclo <code>do-while</code> evalúa la condición al final del bloque de instrucciones, por lo que el bloque de instrucciones se ejecutará al menos una vez, incluso si la condición es falsa.</li>
+</ul>
+<p>Se utilizan en una amplia variedad de aplicaciones, incluyendo la creación de menús, la navegación por árboles y la generación de gráficos.</p>
+<h2 id="span-style--%22color-ff7f00%22tipos-de-variablesspan"><span style = "color: #FF7F00;">Tipos de variables</span></h2>
+<ul>
+<li>
+<p><span style = "color: #FF7F00;">Variables primitivas:</span>
+Almacenan valores de tipos de datos primitivos, como números, caracteres y booleanos. Son tipos de datos básicos que no son objetos. Los tipos de datos primitivos en Java son los siguientes:</p>
+<ul>
+<li>byte: Almacena un número entero de 8 bits.</li>
+<li>short: Almacena un número entero de 16 bits.</li>
+<li>int: Almacena un número entero de 32 bits.</li>
+<li>long: Almacena un número entero de 64 bits.</li>
+<li>float: Almacena un número de coma flotante de 32 bits.</li>
+<li>double: Almacena un número de coma flotante de 64 bits.</li>
+<li>char: Almacena un carácter Unicode.</li>
+<li>boolean: Almacena un valor lógico, true o false.</li>
+<li>Variables de referencia</li>
+</ul>
+</li>
+</ul>
+<img align = "center" src = "https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/TablaDeVariablesPrimitivas.png">
+<p><span style = "color: #FF0000">Nota:</span> Se recomienda utilizar camelCase,para nombrar variables.</p>
+<ul>
+<li>
+<p><span style = "color: #FF7F00;">Variables de referencia:</span> Son variables que almacenan direcciones de memoria de objetos.</p>
+<p>Los objetos en Java son instancias de clases.</p>
+</li>
+<li>
+<p><span style = "color: #FF7F00 ">Variables locales:</span> Son variables que se declaran dentro del cuerpo de un método.
+Variables primitivas</p>
+<p>Solo son visibles dentro del método en el que se declaran.</p>
+</li>
+</ul>
+<p><em>Ejemplo:</em></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// Variable primitiva</span>
+<span class="hljs-keyword">int</span> numero = <span class="hljs-number">10</span>;
+
+<span class="hljs-comment">// Variable de referencia</span>
+Persona persona = <span class="hljs-keyword">new</span> Persona();
+
+<span class="hljs-comment">// Variable local</span>
+<span class="hljs-keyword">int</span> contador = <span class="hljs-number">0</span>;
+</div></code></pre>
+<ul>
+<li>En el primer ejemplo, la variable <em>numero</em> es una variable primitiva de tipo <em>int</em> que almacena el valor 10.</li>
+<li>En el segundo ejemplo, la variable persona es una variable de referencia de tipo <em>Persona</em> que almacena la dirección de memoria de un objeto de la <em>clase Persona</em>.</li>
+<li>En el tercer ejemplo, la variable <em>contador</em> es una variable local de tipo <em>int</em> que se declara dentro del método <em>main()</em>.</li>
+</ul>
+<h2 id="span-style--%22color-ff7f00%22casteo-span"><span style = "color: #FF7F00"><strong>CASTEO</strong> </span></h2>
+<p>Un <code>cast</code> es una conversión de un tipo de dato a otro. Los casteos se pueden realizar de dos maneras:</p>
+<h3 id="casteo-impl%C3%ADcito">Casteo implícito</h3>
+<p>Se realiza automáticamente por el compilador de Java cuando un valor de un tipo de dato se asigna a una variable de otro tipo de dato. El compilador de Java realiza el casteo implícito de acuerdo con las siguientes reglas:</p>
+<ol>
+<li>Un tipo de dato más pequeño se puede asignar a un tipo de dato más grande sin pérdida de información. Por ejemplo, un entero se puede asignar a un float o un double.</li>
+<li>Un tipo de dato más grande se puede asignar a un tipo de dato más pequeño con pérdida de información. Por ejemplo, un float se puede asignar a un entero.</li>
+</ol>
+<p><em>Ejemplo:</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> entero = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">float</span> flotante = entero; <span class="hljs-comment">// Casteo implícito de entero a flotante</span>
+
+String cadena = <span class="hljs-string">"Hola"</span>;
+<span class="hljs-keyword">int</span> numero = cadena.length(); <span class="hljs-comment">// Casteo implícito de cadena a entero</span>
+
+</div></code></pre>
+<ul>
+<li>
+<p>El compilador de Java realiza el casteo implícito de <code>entero</code> a <code>flotante</code> sin pérdida de información.</p>
+</li>
+<li>
+<p>El compilador de Java realiza el casteo implícito de <code>cadena</code> a <code>entero</code> con pérdida de información.</p>
+</li>
+</ul>
+<h3 id="casteo-expl%C3%ADcito">Casteo explícito</h3>
+<p>El casteo explícito se realiza manualmente por el programador utilizando el operador (). El operador () se utiliza para indicar al compilador que se debe realizar un casteo explícito.</p>
+<p>El casteo explícito se puede utilizar para realizar un casteo de un tipo de dato a otro, incluso si el compilador de Java no lo permite de forma implícita.</p>
+<p><em>Ejemplos:</em></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> entero = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">byte</span> byte1 = (<span class="hljs-keyword">byte</span>) entero; <span class="hljs-comment">// Casteo explícito de entero a byte</span>
+
+String cadena = <span class="hljs-string">"Hola"</span>;
+<span class="hljs-keyword">char</span> caracter = (<span class="hljs-keyword">char</span>) cadena.charAt(<span class="hljs-number">0</span>); <span class="hljs-comment">// Casteo explícito de cadena a char</span>
+
+</div></code></pre>
+<ul>
+<li>El compilador de Java no permite realizar un casteo implícito de <code>entero</code> a <code>byte</code>, por lo que se debe realizar un casteo explícito.</li>
+<li>El compilador de Java no permite realizar un casteo implícito de  <code>cadena</code> a <code>char</code>, por lo que se debe realizar un casteo explícito.</li>
+</ul>
+<h2 id="span-style--%22color-ff7f00%22parseospan"><span style = "color: #FF7F00;"><strong>PARSEO</strong></span></h2>
+<h3 id="%C2%BFqu%C3%A9-es">¿Qué es?</h3>
+<p>El parseo es el proceso de convertir una cadena de texto en un objeto de un tipo de datos específico.</p>
+<h3 id="%C2%BFc%C3%B3mo-se-realiza">¿Cómo se realiza?</h3>
+<p>Se pueden realizar utilizando métodos estáticos de las clases de tipos primitivos o clases de objetos de referencia.</p>
+<h3 id="algunos-ejemplos-de-c%C3%B3mo-se-pueden-utilizar-los-parseos-en-java">Algunos ejemplos de cómo se pueden utilizar los parseos en Java</h3>
+<ol>
+<li><span style = "color: #FF7F00;">Entrada/salida de datos:</span> Los parseos se pueden utilizar para leer datos de un archivo o entrada del usuario y almacenarlos en variables. También se pueden utilizar para escribir datos de variables en un archivo o salida del usuario.</li>
+</ol>
+<p><em>Ejemplo 1:</em></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// Convertir una cadena de texto en un número entero</span>
+
+<span class="hljs-keyword">int</span> numero = Integer.parseInt(<span class="hljs-string">"10"</span>);
+
+System.out.println(numero); <span class="hljs-comment">// Imprime 10</span>
+</div></code></pre>
+<p>Este código convertirá la cadena &quot;10&quot; en un número entero y lo almacenará en la variable numero. Luego, imprimirá el valor de numero en consola.</p>
+<ol start="2">
+<li><span style ="color: #FF7F00;">Validación de datos:</span> Los parseos se pueden utilizar para validar los datos ingresados por el usuario. Por ejemplo, podemos usar el método parseInt() para validar que un usuario ingrese un número entero válido.</li>
+</ol>
+<p><em>Ejemplo 2:</em></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// Validar que el usuario ingrese un número entero</span>
+
+Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);
+
+System.out.println(<span class="hljs-string">"Ingrese un número entero: "</span>);
+<span class="hljs-keyword">int</span> numero = sc.nextInt();
+
+<span class="hljs-keyword">if</span> (numero &lt; <span class="hljs-number">0</span>) {
+  System.out.println(<span class="hljs-string">"El número debe ser mayor o igual a 0."</span>);
+} <span class="hljs-keyword">else</span> {
+  System.out.println(<span class="hljs-string">"El número es válido."</span>);
+}
+</div></code></pre>
+<p>Este código le pedirá al usuario que ingrese un número entero. Luego, usará el método parseInt() para convertir la entrada del usuario en un número entero. Si el número es menor que 0, el código imprimirá un mensaje de error. De lo contrario, el código imprimirá un mensaje de confirmación.</p>
+<ol start="3">
+<li><span style ="color: #FF7F00;">Conversión de formatos de datos:</span> Los parseos se pueden utilizar para convertir datos de un formato a otro. Por ejemplo, podemos usar el método parse() para convertir una fecha en formato de cadena a formato de objeto Date.</li>
+</ol>
+<p><em>Ejemplo 3:</em></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// Convertir una fecha de cadena a objeto `Date`</span>
+
+String fechaEnCadena = <span class="hljs-string">"2023-12-02"</span>;
+
+Date fecha = Date.parse(fechaEnCadena);
+
+System.out.println(fecha); <span class="hljs-comment">// Imprime 2023-12-02</span>
+</div></code></pre>
+<p>Este código convertirá la cadena &quot;2023-12-02&quot; en una fecha y la almacenará en la variable fecha. Luego, imprimirá la fecha en consola.</p>
+<h2 id="span-style--%22color-ff7f00%22documentacionspan"><span style = "color: #FF7F00;">Documentacion</span></h2>
+<p>Es un conjunto de documentos que proporcionan información sobre el código fuente de un programa Java. Esta documentación puede ser utilizada por desarrolladores, usuarios o cualquier otra persona que necesite entender el código.</p>
+<p>Es una parte importante del desarrollo de software. Una buena documentación puede ayudar a otros desarrolladores a entender tu código y a utilizarlo de forma eficaz.</p>
+<h3 id="span-sytle--%22color-ff7f00%22con-que-se-generaspan"><span sytle = "color: #FF7F00;">Con que se genera?</span></h3>
+<p>Utilizando el programa Javadoc. Javadoc es una herramienta que utiliza comentarios especiales en el código fuente para generar documentación HTML.</p>
+<h3 id="span-sytle--%22color-ff7f00%22sintaxisspan"><span sytle = "color: #FF7F00;">Sintaxis</span></h3>
+<p>Comienzan con el símbolo <code>/**</code> y terminan con el símbolo <code>*/.</code> Dentro de estos comentarios, se pueden utilizar tags especiales para proporcionar información sobre el código.</p>
+<p>Algunos de los tags más comunes utilizados en la documentación Java son:</p>
+<ul>
+<li>@author: Se utiliza para indicar el autor del código.</li>
+<li>@version: Se utiliza para indicar la versión del código.</li>
+<li>@param: Se utiliza para indicar los parámetros de un método o constructor.</li>
+<li>@return: Se utiliza para indicar el valor devuelto por un método.</li>
+<li>@throws: Se utiliza para indicar las excepciones que puede lanzar un método.</li>
+</ul>
+<p><em>Ejemplo:</em></p>
+<pre class="hljs"><code><div><span class="hljs-comment">/**
+ * Este método suma dos números.
+ *
+ * <span class="hljs-doctag">@param</span> a El primer número.
+ * <span class="hljs-doctag">@param</span> b El segundo número.
+ * <span class="hljs-doctag">@return</span> El resultado de la suma.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sumar</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{
+  <span class="hljs-keyword">return</span> a + b;
+}
+
+</div></code></pre>
+<h3 id="span-style--%22color-ff7f00%22propositosspan"><span style = "color: #FF7F00;">Propositos:</span></h3>
+<ul>
+<li>Mejorar la comprensión del código: La documentación puede ayudar a los desarrolladores a entender el código más rápidamente y fácilmente.</li>
+<li>Facilitar el mantenimiento del código: La documentación puede ayudar a los desarrolladores a mantener y mejorar el código.</li>
+<li>Mejorar la documentación de la API: La documentación en Java puede ser utilizada para documentar la API de un programa Java.</li>
+</ul>
+<h2 id="span-style--%22color-ff7f00%22variables-y-secuencia-escapespan"><span style = "color: #FF7F00">Variables y secuencia escape</span></h2>
+<table>
+<thead>
+<tr>
+<th>Secuencia de escape</th>
+<th>Funcionalidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\n</td>
+<td>Representa una nueva línea.</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>Representa un tabulador.</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>Representa un retorno de carro.</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>Representa un retroceso.</td>
+</tr>
+<tr>
+<td>'</td>
+<td>Representa una comilla simple.</td>
+</tr>
+<tr>
+<td>&quot;</td>
+<td>Representa una comilla doble.</td>
+</tr>
+<tr>
+<td>\ \</td>
+<td>Representa una barra invertida.</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>Representa un salto de página.</td>
+</tr>
+<tr>
+<td>\uxxxx</td>
+<td>Representa un carácter Unicode.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Ejemplo:</em></p>
+<pre class="hljs"><code><div><span class="hljs-comment">// Representa una nueva línea</span>
+System.out.println(<span class="hljs-string">"Hola, mundo!\n"</span>);
+</div></code></pre>
+<p><em><strong>Imprime:</strong></em> Hola, mundo!</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// Representa un tabulador</span>
+System.out.println(<span class="hljs-string">"Hola, \tmundo!"</span>);
+
+</div></code></pre>
+<p><em><strong>Imprime:</strong></em>
+Hola,  __  mundo!</p>
+<pre class="hljs"><code><div>
+<span class="hljs-comment">// Representa un retorno de carro</span>
+System.out.println(<span class="hljs-string">"Hola,\rmundo!"</span>);
+</div></code></pre>
+<p><em><strong>Imprime:</strong></em></p>
+<p>Hola,</p>
+<p>mundo!</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// Representa un retroceso</span>
+System.out.println(<span class="hljs-string">"Hola, \bmundo!"</span>);
+</div></code></pre>
+<p><em><strong>Imprime:</strong></em></p>
+<p>Hola,</p>
+<p>mundo!</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// Representa una comilla simple</span>
+System.out.println(<span class="hljs-string">"El nombre del perro es \"Paco\"."</span>);
+</div></code></pre>
+<p><em><strong>Imprime:</strong></em>
+&quot;El nombre del perro es &quot;Paco&quot;.&quot;</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// Representa una comilla doble</span>
+System.out.println(<span class="hljs-string">"El nombre del perro es 'Paco'."</span>);
+</div></code></pre>
+<p><em><strong>Imprime:</strong></em>
+'El nombre del perro es &quot;Paco&quot;.'</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// Representa una barra invertida</span>
+System.out.println(<span class="hljs-string">"La barra invertida es \"\\\\\"."</span>);
+</div></code></pre>
+<p><em><strong>Imprime:</strong></em> La barra invertida es &quot;&quot;.</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// Representa un salto de página</span>
+System.out.println(<span class="hljs-string">"Página 1\fPágina 2"</span>);
+</div></code></pre>
+<p><em><strong>Imprime:</strong></em></p>
+<p>Página 1</p>
+<p>Página 2</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// Representa un carácter Unicode</span>
+System.out.println(<span class="hljs-string">"El símbolo € se representa con el código Unicode 0x20AC."</span>);
+</div></code></pre>
+<p><em><strong>Imprime:</strong></em>
+El símbolo € se representa con el código Unicode 0x20AC.</p>
+<h2 id="span-style--%22color-ff7f00%22reglas-para-nombrar-variablesspan"><span style = "color: #FF7F00">Reglas para nombrar variables</span></h2>
+<ul>
+<li>Los nombres pueden contener letras, dígitos, guiones bajos y símbolos de dólar.</li>
+<li>Los nombres deben comenzar con una letra.</li>
+<li>Los nombres deben comenzar con una letra minúscula y no pueden contener espacios en blanco.</li>
+<li>Los nombres también pueden comenzar con <code>$</code> y <code>_</code> .</li>
+<li>Los nombres distinguen entre mayúsculas y minúsculas (&quot;<code>myVar</code>&quot; y &quot;<code>myvar</code>&quot; son variables diferentes).</li>
+<li>Las palabras reservadas (como las palabras clave de Java, como <code>int</code> o <code>boolean</code>) no se pueden usar como nombre</li>
+</ul>
+<p>Recordar el uso de <code>camelCase</code></p>
+<h1 id="span-style--%22color-ff4767%22clase-8span"><span style = "color: #FF4767;"><strong>Clase 8</strong></span></h1>
+<p><em><strong>Fecha:</strong></em> 28 de noviembre</p>
+<h2 id="metodos-string">Metodos String</h2>
+<table>
+<thead>
+<tr>
+<th>String</th>
+<th>Funcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.charAt(index)</td>
+<td>Obtener un carácter</td>
+</tr>
+<tr>
+<td>.Length()</td>
+<td>Obtener la longitud del string</td>
+</tr>
+<tr>
+<td>.equalsIgnoreCase()</td>
+<td>Ignorar si es mayúsculas o minúscula</td>
+</tr>
+<tr>
+<td>.concat()</td>
+<td>Concatenar dos cadenas. Devuelve una nueva cadena que es la combinación de las dos cadenas originales.</td>
+</tr>
+<tr>
+<td>.equals()</td>
+<td>Compara dos objetos</td>
+</tr>
+<tr>
+<td>indexOf()</td>
+<td>Devuelve el índice del primer carácter que coincide con el carácter o la cadena especificados.</td>
+</tr>
+<tr>
+<td>.lastIndexOf()</td>
+<td>Devuelve el índice del último carácter que coincide con el carácter o la cadena especificados.</td>
+</tr>
+<tr>
+<td>.substring()</td>
+<td>Devuelve una nueva cadena que es una subcadena de la cadena actual.</td>
+</tr>
+<tr>
+<td>.replace()</td>
+<td>Reemplaza todos los caracteres que coinciden con un carácter o una cadena especificados con otro carácter o cadena.</td>
+</tr>
+<tr>
+<td>.trim()</td>
+<td>Elimina los espacios en blanco del principio y del final de la cadena.</td>
+</tr>
+<tr>
+<td>.toLowerCase()</td>
+<td>Convierte la cadena a minúsculas.</td>
+</tr>
+<tr>
+<td>.toUpperCase()</td>
+<td>Convierte la cadena a mayúsculas.</td>
+</tr>
+<tr>
+<td>.compareTo()</td>
+<td>Compara la cadena actual con otra cadena, devuelve un valor negativo si la cadena actual es menor que la cadena especificada, un valor positivo si la cadena actual es mayor que la cadena especificada y un valor cero si las dos cadenas son iguales.</td>
+</tr>
+<tr>
+<td>.compareToIgnoreCase()</td>
+<td>Compara la cadena actual con otra cadena, ignorando las diferencias entre mayúsculas y minúsculas.</td>
+</tr>
+<tr>
+<td>.contains()</td>
+<td>Devuelve true si la cadena actual contiene la cadena especificada, false en caso contrario.</td>
+</tr>
+<tr>
+<td>.startsWith()</td>
+<td>Devuelve true si la cadena actual comienza con la cadena especificada, false en caso contrario.</td>
+</tr>
+<tr>
+<td>.endsWith()</td>
+<td>Devuelve true si la cadena actual termina con la cadena especificada, false en caso contrario.</td>
+</tr>
+<tr>
+<td>.join()</td>
+<td>Concatena una serie de cadenas, usando un carácter especificado como separador.</td>
+</tr>
+<tr>
+<td>.split()</td>
+<td>Divide la cadena actual en una matriz de cadenas, usando un carácter especificado como separador.</td>
+</tr>
+<tr>
+<td>.valueOf()</td>
+<td>Convierte un valor primitivo en una cadena.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="scanner">Scanner</h2>
+<p>Es una clase que se utiliza para leer datos de una fuente de entrada. La fuente de entrada puede ser la consola, un archivo o cualquier otro flujo de datos.</p>
+<p>Proporciona una serie de métodos para leer datos de diferentes tipos. Por ejemplo, el método <code>nextInt()</code> lee un número entero, el método <code>nextDouble()</code> lee un número decimal y el método <code>nextLine()</code> lee una cadena de caracteres.</p>
+<pre class="hljs"><code><div>Scanner scanner = <span class="hljs-keyword">new</span> Scanner(System.in);
+
+<span class="hljs-keyword">int</span> numero = scanner.nextInt();
+
+System.out.println(numero);
+
+</div></code></pre>
+<p>Este código imprimirá el número entero leído en la consola.</p>
+<h3 id="metodos-scanner">Metodos Scanner</h3>
+<table>
+<thead>
+<tr>
+<th>Estructura</th>
+<th>Funcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nextInt()</td>
+<td>Se salta los espacios dejados en blanco hasta que encuentra un valor de tipo int</td>
+</tr>
+<tr>
+<td>nextLong()</td>
+<td>Se salta los espacios dejados en blanco hasta que encuentra un valor de tipo long</td>
+</tr>
+<tr>
+<td>nextFloat()</td>
+<td>Se salta los espacios dejados en blanco hasta que encuentra un valor de tipo float</td>
+</tr>
+<tr>
+<td>nextDouble()</td>
+<td>Se salta los espacios dejados en blanco hasta que encuentra un valor de tipo double</td>
+</tr>
+<tr>
+<td>next()</td>
+<td>Se salta los espacios dejados en blanco hasta que encuentra un token. Devuelve el token como un valor tipo String.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="span-style--%22color-ff7f00%22unmutablespan"><span style = "color: #FF7F00;">Unmutable</span></h2>
+<p>Un objeto inmutable es aquel cuyo estado no se puede cambiar una vez que ha sido creado. Esto significa que los atributos de un objeto inmutable no se pueden modificar después de que el objeto haya sido creado.</p>
+<h3 id="ventajas">Ventajas</h3>
+<ul>
+<li><span style = "color: #FF7F00;">Seguridad de concurrencia:</span> Los objetos inmutables son seguros para la concurrencia, ya que no se puede modificar su estado desde diferentes hilos.</li>
+<li><span style = "color: #FF7F00;">Eficiencia:</span> Los objetos inmutables son más eficientes que los objetos mutables, ya que no es necesario realizar copias del objeto para modificarlo.</li>
+<li><span style = "color: #FF7F00;">Facilidad de prueba:</span> Los objetos inmutables son más fáciles de probar que los objetos mutables, ya que no es necesario preocuparse por el estado del objeto.</li>
+</ul>
+<h3 id="clases-inmutables">Clases inmutables</h3>
+<ul>
+<li>Las clases que representan tipos primitivos, como <code>int</code>, <code>float</code>, <code>char</code>, etc.</li>
+<li>Las clases que implementan la interfaz <code>final</code>.</li>
+<li>Las clases que no tienen métodos que modifiquen el estado del objeto.</li>
+</ul>
+<p>Por ejemplo, la clase <code>String</code> es una clase inmutable. Esto significa que una vez que se crea una instancia de la clase String, su contenido no se puede modificar.</p>
+<h3 id="como-crear-clases-inmutables">Como crear clases inmutables</h3>
+<p>Para crear una clase inmutable, podemos seguir los siguientes pasos:</p>
+<ol>
+<li>Declarar la clase como <code>final</code>. Esto evitará que la clase se herede de otras clases.</li>
+<li>Declarar los atributos de la clase como <code>final</code>. Esto evitará que los atributos se modifiquen.</li>
+<li>No proporcionar métodos que modifiquen el estado del objeto.</li>
+</ol>
+<p>Por ejemplo, el siguiente código muestra una clase inmutable llamada <code>Persona</code>:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Persona</span> </span>{
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String nombre;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> edad;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Persona</span><span class="hljs-params">(String nombre, <span class="hljs-keyword">int</span> edad)</span> </span>{
+        <span class="hljs-keyword">this</span>.nombre = nombre;
+        <span class="hljs-keyword">this</span>.edad = edad;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getNombre</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> nombre;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getEdad</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> edad;
+    }
+}
+
+</div></code></pre>
+<p>Esta clase tiene dos atributos, nombre y edad, que se declaran como final. Además, la clase no proporciona ningún método que modifique el estado del objeto.</p>
+<h2 id="span-style--%22color-ff7f00%22stringbuilderspan"><span style = "color: #FF7F00;">StringBuilder</span></h2>
+<p>Es una clase en Java que se utiliza para manipular cadenas. Es una clase mutable, lo que significa que su contenido se puede cambiar después de su creación.</p>
+<p>Proporciona una serie de métodos para manipular cadenas, entre ellos:</p>
+<ul>
+<li>append(): Agrega texto a la cadena.</li>
+<li>insert(): Inserta texto en la cadena en una posición determinada.</li>
+<li>replace(): Reemplaza texto en la cadena.</li>
+<li>delete(): Elimina texto de la cadena.</li>
+<li>substring(): Devuelve una subcadena de la cadena.</li>
+</ul>
+<p>Es una alternativa a la clase String. La principal diferencia entre las dos clases es que StringBuilder es mutable</p>
+<p>Por ejemplo, el siguiente código muestra cómo utilizar la clase StringBuilder para concatenar dos cadenas:</p>
+<pre class="hljs"><code><div>StringBuilder sb = <span class="hljs-keyword">new</span> StringBuilder(<span class="hljs-string">"Hola "</span>);
+sb.append(<span class="hljs-string">"mundo!"</span>);
+
+System.out.println(sb);
+
+</div></code></pre>
+<p>Este código imprimirá la siguiente salida:</p>
+<pre><code>Hola mundo!
+</code></pre>
+<p>El siguiente código muestra cómo utilizar la clase StringBuilder para reemplazar texto en una cadena:</p>
+<pre class="hljs"><code><div>StringBuilder sb = <span class="hljs-keyword">new</span> StringBuilder(<span class="hljs-string">"Hola mundo!"</span>);
+sb.replace(<span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-string">"planeta"</span>);
+
+System.out.println(sb);
+
+</div></code></pre>
+<p>Este código imprimirá la siguiente salida:</p>
+<pre><code>Hola planeta!
+</code></pre>
+<h2 id="span-style--%22color-ff7f00%22equalsspan"><span style = "color: #FF7F00;">Equals</span></h2>
+<p>Es un método de la clase0Object que se utiliza para comparar dos <em><strong>objetos</strong></em>. Este método devuelve un valor booleano que indica si los dos objetos son iguales o no.</p>
+<h3 id="sintaxis">Sintaxis</h3>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">equals</span><span class="hljs-params">(Object obj)</span>
+</span></div></code></pre>
+<p>Compara los dos objetos por referencia. Esto significa que si dos objetos son referencias al mismo objeto, el método <code>.equals()</code> devolverá <code>true</code>, caso contrario devolverá <code>false</code>.</p>
+<p>También es posible sobrecargar el método equals() para que compare dos objetos de acuerdo con criterios personalizados. Por ejemplo, podemos sobrecargar el método equals() para que compare dos objetos de tipo Persona en función de su nombre y edad.</p>
+<p>Por ejemplo, el siguiente código muestra cómo utilizar el método equals() para comparar dos cadenas:</p>
+<pre class="hljs"><code><div>String cadena1 = <span class="hljs-string">"Hola mundo"</span>;
+String cadena2 = <span class="hljs-string">"Hola mundo"</span>;
+
+<span class="hljs-keyword">boolean</span> sonIguales = cadena1.equals(cadena2);
+
+System.out.println(sonIguales);
+
+</div></code></pre>
+<h3 id="tipos-de-equals">Tipos de equals</h3>
+<ol>
+<li><code>.equalsIgnoreCase()</code></li>
+</ol>
+<p>El método ``.equalsIgnoreCase()` funciona de la siguiente manera:</p>
+<pre><code>1. Primero, el método convierte las dos cadenas a minúsculas.
+1. Luego, el método compara las dos cadenas convertidas a minúsculas.
+1. Si las dos cadenas convertidas a minúsculas son iguales, el método devuelve true.
+1. Si las dos cadenas convertidas a minúsculas no son iguales, el método devuelve false.
+</code></pre>
+<h1 id="span-style--%22color-ff4767%22clase-9span"><span style = "color: #FF4767;">Clase 9</span></h1>
+<p><em><strong>Fecha:</strong></em> 29 de noviembre</p>
+<pre><code>Nota: En esta clase se hizo una revision a los metodos de String
+</code></pre>
+<h2 id="garbage-collection-gc">Garbage collection (GC)</h2>
+<p>Es un mecanismo que se encarga de liberar la memoria que ya no está en uso por un programa. El GC es una forma de gestión automática de la memoria, que evita que los programadores tengan que preocuparse por liberar la memoria manualmente.</p>
+<p>Si un programa no libera la memoria que ya no necesita, puede provocar una fuga de memoria.</p>
+<p>Una fuga de memoria es un problema que ocurre cuando un programa no libera la memoria que ya no necesita. Esto puede provocar que el programa se quede sin memoria y se bloquee.</p>
+<p>El GC funciona de forma automática, sin intervención del programador. El programador no tiene que preocuparse por liberar la memoria manualmente.</p>
+<h3 id="funcionalidad">Funcionalidad</h3>
+<ol>
+<li>El GC rastrea las referencias a los objetos.</li>
+<li>Si un objeto no tiene ninguna referencia, significa que ya no es utilizado por el programa.</li>
+<li>El GC marca el objeto como &quot;huérfano&quot;.</li>
+<li>En algún momento, el GC libera la memoria asignada a los objetos huérfanos.</li>
+</ol>
+<h3 id="utilidad">Utilidad</h3>
+<ul>
+<li>Puede ayudar a evitar fugas de memoria. Una fuga de memoria es un problema que ocurre cuando un programa no libera la memoria que ya no necesita. Esto puede provocar que el programa se quede sin memoria y se bloquee. Puede ayudar a evitar fugas de memoria al liberar la memoria que ya no está en uso.</li>
+<li>Puede ayudar a mejorar la seguridad de un programa. Una fuga de memoria puede permitir que un atacante acceda a datos confidenciales. Puede ayudar a mejorar la seguridad de un programa al liberar la memoria que ya no está en uso, lo que reduce el riesgo de fugas de memoria.</li>
+<li>Puede ayudar a mejorar el rendimiento de un programa. Puede retrasar la ejecución de un programa, pero esto suele ser insignificante. En general, el GC puede ayudar a mejorar el rendimiento de un programa al evitar fugas de memoria, que pueden provocar un rendimiento degradado.</li>
+</ul>
+<h2 id="span-style--%22color-ff7f00%22arrayspan"><span style = "color: #FF7F00;">ARRAY</span></h2>
+<p>Es una estructura de datos que permite almacenar una colección de valores de un mismo tipo. Los arrays se declaran utilizando la siguiente sintaxis:</p>
+<pre class="hljs"><code><div>    tipo_dato [] nombre_array;
+</div></code></pre>
+<p>Una vez declarado un array, se debe inicializar. La inicialización se puede realizar utilizando la siguiente sintaxis:</p>
+<pre class="hljs"><code><div>    nombre_array = <span class="hljs-keyword">new</span> tipo_dato[tamaño];
+</div></code></pre>
+<p>Por ejemplo, el siguiente código inicializa el array numeros con 10 enteros:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> [] numeros = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">10</span>];
+</div></code></pre>
+<h3 id="caracteristicas">Caracteristicas</h3>
+<ul>
+<li>Tamaño fijo: Los arrays en Java tienen un tamaño fijo una vez que se crean, lo que significa que no se pueden cambiar dinámicamente.</li>
+<li>Tipo de datos homogéneos: Los elementos de un array deben ser del mismo tipo de datos.</li>
+<li>Sintaxis: Se declaran con una longitud fija y pueden inicializarse en la declaración o con valores asignados posteriormente.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span>[] numeros = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">5</span>]; <span class="hljs-comment">// Array de enteros con tamaño 5</span>
+numeros[<span class="hljs-number">0</span>] = <span class="hljs-number">10</span>; <span class="hljs-comment">// Asignando valor</span>
+<span class="hljs-keyword">int</span>[] valores = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>}; <span class="hljs-comment">// Inicialización en la declaración</span>
+</div></code></pre>
+<p>Acceso a elementos: Los elementos de un array se acceden mediante su índice(posición) comenzando desde 0.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> primerElemento = valores[<span class="hljs-number">0</span>]; <span class="hljs-comment">// Accediendo al primer elemento</span>
+</div></code></pre>
+<h1 id="span-style--%22color-ff4767%22clase-10span"><span style = "color: #FF4767">CLASE 10</span></h1>
+<p><em><strong>Fecha:</strong></em>  30 de noviembre</p>
+<h2 id="span-style--%22color-ff7f00%22array--listspan"><span style = "color: #FF7F00">ARRAY + LIST</span></h2>
+<p>Es una clase en Java que implementa la interfaz List. Representa una lista dinámica que puede cambiar de tamaño durante la ejecución del programa. A diferencia de los arrays estándar, los ArrayList pueden aumentar o reducir su tamaño de manera dinámica, lo que los hace convenientes cuando se necesita flexibilidad en el almacenamiento de datos.</p>
+<h3 id="caracteristicas">Caracteristicas</h3>
+<ul>
+<li><strong>Tamaño dinámico:</strong> Puedes agregar o eliminar elementos de un ArrayList sin preocuparte por el tamaño inicial que definas.</li>
+<li><strong>Acceso por índice:</strong> Al igual que los arrays, los ArrayList permiten acceder a sus elementos mediante índices.</li>
+<li><strong>Pueden contener diferentes tipos de datos:</strong> A diferencia de los arrays tradicionales, los ArrayList pueden contener objetos de diferentes tipos (o clases), lo que los hace más versátiles.</li>
+<li><strong>Métodos útiles:</strong> Proporcionan métodos convenientes para realizar operaciones comunes como agregar elementos, eliminar elementos, buscar elementos, obtener el tamaño de la lista, entre otros.</li>
+</ul>
+<h3 id="como-se-utiliza">Como se utiliza?</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.ArrayList;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EjemploArrayList</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-comment">// Crear un ArrayList de enteros</span>
+        ArrayList&lt;Integer&gt; numeros = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
+
+        <span class="hljs-comment">// Agregar elementos al ArrayList</span>
+        numeros.add(<span class="hljs-number">10</span>);
+        numeros.add(<span class="hljs-number">20</span>);
+        numeros.add(<span class="hljs-number">30</span>);
+
+        <span class="hljs-comment">// Acceder a elementos mediante índices</span>
+        <span class="hljs-keyword">int</span> primerElemento = numeros.get(<span class="hljs-number">0</span>); <span class="hljs-comment">// Obtener el primer elemento (índice 0)</span>
+
+        <span class="hljs-comment">// Eliminar un elemento</span>
+        numeros.remove(<span class="hljs-number">1</span>); <span class="hljs-comment">// Eliminar el segundo elemento (índice 1)</span>
+
+        <span class="hljs-comment">// Tamaño del ArrayList</span>
+        <span class="hljs-keyword">int</span> tamaño = numeros.size(); <span class="hljs-comment">// Obtener el tamaño del ArrayList</span>
+
+        <span class="hljs-comment">// Iterar a través de los elementos</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; numeros.size(); i++) {
+            System.out.println(numeros.get(i));
+        }
+    }
+}
+</div></code></pre>
+<h2 id="span-style--%22color-ff7f00%22for-eachspan"><span style = "color: #FF7F00">FOR-EACH</span></h2>
+<p>Permite recorrer fácilmente los elementos de una colección (arrays, listas, conjuntos, etc.) sin la necesidad de utilizar un contador o un índice explícito. Se utiliza para simplificar la iteración a través de estructuras de datos.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> (TipoDeDato variable : coleccion) {
+    <span class="hljs-comment">// Operaciones con la variable</span>
+}
+</div></code></pre>
+<ul>
+<li><code>TipoDeDato</code> es el tipo de datos de los elementos de la colección.</li>
+<li><code>variable</code> es la variable que toma el valor de cada elemento en cada iteración.</li>
+<li><code>coleccion</code> es la colección (array, lista, conjunto, etc.) a través de la cual se está iterando.</li>
+</ul>
+<p>Ejemplo:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span>[] numeros = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>};
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> numero : numeros) {
+    System.out.println(numero);
+}
+</div></code></pre>
+<p>Esto imprimirá cada número del array numeros en líneas separadas.</p>
+<h3 id="utilidad">Utilidad</h3>
+<ul>
+<li>Son más simples y limpios, eliminando la necesidad de rastrear índices o contar iteraciones.</li>
+<li>Reducen la posibilidad de errores al iterar sobre elementos.</li>
+<li>Mejoran la legibilidad del código al hacerlo más conciso.</li>
+</ul>
+<p><em><strong>NOTA:</strong></em> Los bucles <code>for-each</code> solo pueden utilizarse para recorrer una colección hacia adelante, sin acceso directo a índices inversos o manipulación directa de índices.</p>
+<h1 id="span-style--%22color-ff4767%22clase-11span"><span style = "color: #FF4767">CLASE 11</span></h1>
+<p><em><strong>Fecha:</strong></em> 01 de diciembre</p>
+<p>El siguiente bloque de codigo indica que:</p>
+<img align = "center" src ="https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/BloqCodigoArrayList.png">
+<pre class="hljs"><code><div>  lstMujeres.add(<span class="hljs-number">2</span>, <span class="hljs-keyword">new</span> Mujer(<span class="hljs-string">"Maria"</span>));
+  <span class="hljs-comment">//Indica el orden de la impresion, siendo esta la posicion 2, considerando que contabiliza desde la posicion 0</span>
+</div></code></pre>
+<h2 id="metodos-utiles-para">Metodos utiles para</h2>
+<p>Algunos de los métodos más comunes que se utilizan con <code>ArrayList</code> son:</p>
+<ol>
+<li>
+<p><strong><code>add(elemento)</code></strong>: Agrega un elemento al final de la lista.</p>
+<pre class="hljs"><code><div>ArrayList&lt;Integer&gt; lista = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
+lista.add(<span class="hljs-number">5</span>);
+lista.add(<span class="hljs-number">10</span>);
+</div></code></pre>
+</li>
+<li>
+<p><strong><code>get(posición)</code></strong>: Obtiene el elemento en la posición específica de la lista.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> elemento = lista.get(<span class="hljs-number">0</span>); <span class="hljs-comment">// Obtiene el primer elemento (índice 0)</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong><code>remove(posición)</code></strong>: Elimina el elemento en la posición especificada.</p>
+<pre class="hljs"><code><div>lista.remove(<span class="hljs-number">1</span>); <span class="hljs-comment">// Elimina el segundo elemento (índice 1)</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong><code>size()</code></strong>: Devuelve el número de elementos en la lista.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> tamaño = lista.size(); <span class="hljs-comment">// Devuelve la cantidad de elementos en la lista</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong><code>clear()</code></strong>: Elimina todos los elementos de la lista.</p>
+<pre class="hljs"><code><div>lista.clear(); <span class="hljs-comment">// Elimina todos los elementos de la lista</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong><code>addAll(otraLista)</code></strong>: Agrega todos los elementos de otra lista a la lista actual.</p>
+<pre class="hljs"><code><div>ArrayList&lt;Integer&gt; otraLista = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
+otraLista.add(<span class="hljs-number">20</span>);
+otraLista.add(<span class="hljs-number">30</span>);
+lista.addAll(otraLista); <span class="hljs-comment">// Agrega todos los elementos de otraLista a lista</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong><code>set(posición, elemento)</code></strong>: Reemplaza el elemento en la posición especificada por el nuevo elemento.</p>
+<pre class="hljs"><code><div>lista.set(<span class="hljs-number">1</span>, <span class="hljs-number">15</span>); <span class="hljs-comment">// Reemplaza el segundo elemento (índice 1) por 15</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong><code>contains(elemento)</code></strong>: Verifica si la lista contiene el elemento especificado.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">boolean</span> contiene = lista.contains(<span class="hljs-number">10</span>); <span class="hljs-comment">// Verifica si la lista contiene el número 10</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong><code>isEmpty()</code></strong>: Verifica si la lista está vacía.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">boolean</span> vacía = lista.isEmpty(); <span class="hljs-comment">// Verifica si la lista está vacía</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong><code>indexOf(elemento)</code></strong>: Devuelve la primera posición del elemento especificado. Si no existe, devuelve -1.</p>
+</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> posición = lista.indexOf(<span class="hljs-number">10</span>); <span class="hljs-comment">// Devuelve la posición del número 10 en la lista</span>
+</div></code></pre>
+<ol start="11">
+<li><strong><code>lastIndexOf(elemento)</code></strong>: Devuelve la última posición del elemento especificado. Si no existe, devuelve -1.</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> últimaPosición = lista.lastIndexOf(<span class="hljs-number">10</span>); <span class="hljs-comment">// Devuelve la última posición del número 10 en la lista</span>
+</div></code></pre>
+<ol start="12">
+<li><strong><code>toArray()</code></strong>: Convierte el <code>ArrayList</code> en un array estándar.</li>
+</ol>
+<pre class="hljs"><code><div>Object[] array = lista.toArray(); <span class="hljs-comment">// Convierte la lista en un array</span>
+</div></code></pre>
+<p>Proporcionan funcionalidades básicas para agregar, eliminar, acceder y manipular buscar elementos, verificar si la lista está vacía, convertir la lista en un array y realizar otras operaciones de manejoen a la lista de forma dinámica.</p>
+<h3 id="boxing-y-unboxing">Boxing y Unboxing</h3>
+<p>El concepto de boxing y unboxing se refiere a la conversión entre tipos primitivos y sus equivalentes en tipos de objetos en Java.</p>
+<ul>
+<li>
+<p><strong>Boxing</strong>: Es la conversión de un tipo primitivo a su correspondiente tipo de objeto. Por ejemplo, convertir un <code>int</code> a <code>Integer</code>, un <code>double</code> a <code>Double</code>, etc.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> enteroPrimitivo = <span class="hljs-number">10</span>;
+Integer enteroObjeto = enteroPrimitivo; <span class="hljs-comment">// Boxing: convierte el int en Integer automáticamente</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong>Unboxing</strong>: Es la operación inversa, la conversión de un objeto a su tipo primitivo equivalente.</p>
+<pre class="hljs"><code><div>Integer enteroObjeto = <span class="hljs-keyword">new</span> Integer(<span class="hljs-number">20</span>);
+<span class="hljs-keyword">int</span> enteroPrimitivo = enteroObjeto; <span class="hljs-comment">// Unboxing: convierte Integer en int automáticamente</span>
+</div></code></pre>
+</li>
+</ul>
+<p>Estas conversiones automáticas son convenientes en Java, ya que permiten operar con tipos primitivos como si fueran objetos y viceversa, facilitando la manipulación de datos en muchas situaciones. Además, desde Java 5, este proceso se realiza de manera automática en muchos contextos, lo que hace que el código sea más legible y eficiente.</p>
+<h1 id="span-style--%22color-ff4767%22clase-12span"><span style = "color: #FF4767">CLASE 12</span></h1>
+<p><em><strong>Fecha:</strong></em> 05 de diciembre</p>
+<h2 id="programacion-orientada-a-objetos---review">Programacion Orientada a Objetos - Review</h2>
+<p>La programación orientada a objetos (POO) es un estilo de programación donde organizamos nuestro código alrededor de &quot;objetos&quot;. Cada objeto tiene datos (llamados <code>atributos</code>) y acciones (llamadas <code>métodos</code> o <code>funciones</code>) asociadas a él. Esta metodología permite crear programas más estructurados, reutilizables y fáciles de mantener.</p>
+<p>POO se basa en cuatro conceptos principales: <em>encapsulamiento, abstracción, herencia y polimorfismo</em>. Estos principios nos ayudan a escribir código más eficiente y organizado, similar a construir cosas con piezas LEGO donde cada pieza tiene su función específica y se puede combinar con otras para crear algo nuevo.</p>
+<h3 id="explicacion-detallada">Explicacion detallada</h3>
+<p>Imagina la <em>programación</em> como una fábrica de juguetes. En lugar de solo fabricar un juguete gigante, dividimos el proceso en pequeñas piezas. En la <strong>programación orientada a objetos (POO)</strong>, estas piezas son como los &quot;objetos&quot;. Cada <code>objeto</code> tiene sus propias partes (llamadas datos o atributos) y cosas que puede hacer (llamadas acciones o <code>métodos</code>). Por ejemplo, un auto (<code>objeto</code>) tiene ruedas, color, y puede moverse, frenar y hacer sonidos.</p>
+<p>Ahora, piensa en el concepto de &quot;<em>herencia</em>&quot; como si fueran juguetes parecidos. Si tienes un robot y un cohete, ambos pueden volar. Así que podríamos decir que <em>comparten algo en común</em>: la habilidad de volar. En programación, puedes crear objetos nuevos basados en otros ya existentes, <code>heredando</code> sus características.</p>
+<p>Luego está el &quot;<em>encapsulamiento</em>&quot;, que es como poner partes de un juguete en una caja. Algunas piezas están escondidas y no puedes verlas o cambiarlas desde afuera. Esto ayuda a <code>proteger</code> las partes importantes y mantener todo ordenado.</p>
+<p>Finalmente, el &quot;<em>polimorfismo</em>&quot; es como tener muchos juguetes de diferentes colores, pero todos pueden hacer lo mismo. Por ejemplo, un avión de juguete puede ser rojo o azul, pero todos vuelan. En POO, diferentes objetos pueden hacer la misma acción, aunque de maneras un poco diferentes.</p>
+<p>En resumen, la programación orientada a objetos es como construir cosas geniales usando piezas pequeñas, organizadas y reutilizables.</p>
+<img align ="center" src="https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/ComputerAndJava.png">
+<h1 id="span-style--%22color-ff4767%22clase-13span"><span style = "color: #FF4767">CLASE 13</span></h1>
+<p><em><strong>Fecha:</strong></em> 06 de diciembre</p>
+<h2 id="tarjeta-de-credito">Tarjeta de credito</h2>
+<p>En esta clase se analizo de forma detallada las caracteristicas que tiene una tarjeta de debito/credito para su correcto funcionamiento.
+Siendo asi que deberia constar de las siguientes partes:</p>
+<h3 id="analisis">Analisis</h3>
+<ol>
+<li>
+<p><strong>Atributos de la tarjeta de crédito:</strong></p>
+<ul>
+<li><strong>Número de tarjeta:</strong> Almacenar el número de la tarjeta de crédito.</li>
+<li><strong>Nombre del titular:</strong> Guardar el nombre del titular de la tarjeta.</li>
+<li><strong>Fecha de expiración:</strong> Mantener la fecha de expiración de la tarjeta.</li>
+<li><strong>Código de seguridad:</strong> Almacenar el código de seguridad de la tarjeta.</li>
+</ul>
+</li>
+<li>
+<p><strong>Métodos asociados con la tarjeta de crédito:</strong></p>
+<ul>
+<li><strong>Constructor:</strong> Crear una tarjeta de crédito con los detalles proporcionados.</li>
+<li><strong>Getters y Setters:</strong> Permitir acceder y modificar los atributos de la tarjeta.</li>
+<li><strong>Validación de la tarjeta:</strong> Verificar si el número de tarjeta es válido.</li>
+<li><strong>Procesamiento de pago:</strong> Simular el procesamiento de un pago utilizando la tarjeta.</li>
+<li><strong>Verificación de la fecha de expiración:</strong> Comprobar si la tarjeta ha expirado.</li>
+</ul>
+</li>
+<li>
+<p><strong>Seguridad:</strong></p>
+<ul>
+<li><strong>Encapsulamiento:</strong> Proteger los atributos de la tarjeta para que solo se puedan modificar de manera controlada.</li>
+<li><strong>Privacidad de datos:</strong> Asegurar que la información sensible de la tarjeta se maneje de manera segura.</li>
+</ul>
+</li>
+<li>
+<p><strong>Estructura del programa:</strong></p>
+<ul>
+<li><strong>Clase principal (<code>main</code>):</strong> Crear instancias de la clase <code>TarjetaCredito</code> y utilizar sus métodos.</li>
+<li><strong>Clase <code>TarjetaCredito</code>:</strong> Definir la estructura de la tarjeta de crédito.</li>
+</ul>
+</li>
+<li>
+<p><strong>Usabilidad:</strong></p>
+<ul>
+<li><strong>Claridad en los métodos:</strong> Asegurarse de que los nombres de los métodos sean intuitivos y descriptivos.</li>
+<li><strong>Interfaz de usuario (opcional):</strong> Si se requiere interacción con el usuario, puede ser útil tener una interfaz amigable.</li>
+</ul>
+</li>
+<li>
+<p><strong>Posibles ampliaciones futuras:</strong></p>
+<ul>
+<li><strong>Métodos adicionales:</strong> Identificar qué otras funcionalidades podrían agregarse en el futuro.</li>
+<li><strong>Manejo de errores:</strong> Pensar en cómo manejar errores o excepciones.</li>
+</ul>
+</li>
+</ol>
+<h2 id="hash">HASH</h2>
+<p>También conocida como función hash se utiliza para convertir datos de tamaño <em>variable</em> en valores de tamaño <em>fijo</em>, normalmente con fines de <em>indexación</em> o <em>búsqueda</em> eficiente. En el contexto de las colecciones, como <code>HashMap</code>, <code>HashSet</code> o <code>HashTable</code>, la función hash se utiliza para asignar claves únicas a valores almacenados en estas estructuras de datos.</p>
+<p>La función hash toma una entrada (como una cadena, un número u otro objeto) y genera un valor único, generalmente de longitud fija, que se utiliza como identificador o dirección para almacenar o buscar la información relacionada.</p>
+<p>La función hash se usa principalmente para calcular la posición donde se almacenará o buscará un elemento. Por ejemplo, en un <code>HashMap</code>, la clave se convierte en un valor hash mediante la función hash y se utiliza para determinar la ubicación del valor asociado en una tabla interna de la estructura de datos.</p>
+<p>La eficacia de una función hash radica en su capacidad para generar un hash único para cada posible entrada y en minimizar las colisiones (cuando dos entradas diferentes producen el mismo hash). Una buena función hash distribuirá los elementos uniformemente en la estructura de datos subyacente, optimizando así la eficiencia en la búsqueda y recuperación de valores.</p>
+<p>En resumen, en Java, la función hash se utiliza para generar identificadores únicos (hashes) a partir de datos de entrada y se aplica ampliamente en colecciones como HashMap para optimizar la indexación y búsqueda de datos.</p>
+<h3 id="hash-table">Hash Table</h3>
+<p>Es una estructura de datos que implementa la interfaz <code>Map</code> y se utiliza para almacenar pares de clave-valor. Es similar a <code>HashMap</code> pero es sincronizada, lo que significa que es segura para subprocesos (thread-safe).</p>
+<p>Las <code>HashTable</code> permiten almacenar datos mediante una clave única asociada a un valor. Algunas características clave incluyen:</p>
+<ul>
+<li>
+<p><strong>Clave única:</strong> Cada clave puede estar asociada a un solo valor. No puede haber claves duplicadas.</p>
+</li>
+<li>
+<p><strong>Seguridad de subprocesos:</strong> Las operaciones en una <code>HashTable</code> son sincronizadas, lo que significa que es seguro usarla en entornos con múltiples hilos (threads).</p>
+</li>
+<li>
+<p><strong>Búsqueda eficiente:</strong> La búsqueda de valores basada en una clave en una <code>HashTable</code> es rápida y eficiente, generalmente en tiempo constante.</p>
+</li>
+</ul>
+<p>Aquí tienes un ejemplo básico de cómo se usa <code>HashTable</code> en Java:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Hashtable;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-comment">// Crear una Hashtable</span>
+        Hashtable&lt;String, Integer&gt; hashtable = <span class="hljs-keyword">new</span> Hashtable&lt;&gt;();
+
+        <span class="hljs-comment">// Agregar elementos</span>
+        hashtable.put(<span class="hljs-string">"a"</span>, <span class="hljs-number">1</span>);
+        hashtable.put(<span class="hljs-string">"b"</span>, <span class="hljs-number">2</span>);
+        hashtable.put(<span class="hljs-string">"c"</span>, <span class="hljs-number">3</span>);
+
+        <span class="hljs-comment">// Acceder a un valor mediante su clave</span>
+        <span class="hljs-keyword">int</span> valor = hashtable.get(<span class="hljs-string">"b"</span>);
+        System.out.println(<span class="hljs-string">"El valor asociado a 'b' es: "</span> + valor);
+    }
+}
+</div></code></pre>
+<p>Es importante tener en cuenta que, si bien <code>HashTable</code> ofrece sincronización para el acceso a los datos, esta característica puede afectar el rendimiento en comparación con otras implementaciones no sincronizadas, como <code>HashMap</code>. En versiones más recientes de Java, se prefieren otras implementaciones más modernas y flexibles, como <code>HashMap</code> o <code>ConcurrentHashMap</code>, a menos que se requiera específicamente la sincronización que proporciona <code>HashTable</code>.</p>
+<h1 id="span-style--%22color-ff4767%22clase-14span"><span style = "color: #FF4767">CLASE 14</span></h1>
+<p><em><strong>Fecha:</strong></em> 07 de diciembre</p>
+<h2 id="super-market">Super Market</h2>
+<p>Para que la tarjeta de credito sirva es necesario saber que esta debe utilizarse en un ambiente que le permita realizar la compra, por ello se realcionara con un Super Market para este ejemplo.</p>
+<p>De tal manera que el mismo deberia estar estructurado de la siguiente manera:</p>
+<h3 id="an%C3%A1lisis">Análisis</h3>
+<ol>
+<li>
+<p><strong>Gestión de Productos:</strong></p>
+<ul>
+<li><strong>Base de datos de productos:</strong> Crear una lista de productos con sus detalles (nombre, precio, cantidad disponible, etc.).</li>
+<li><strong>Agregar/eliminar productos:</strong> Permitir la actualización de la base de datos de productos.</li>
+</ul>
+</li>
+<li>
+<p><strong>Proceso de Compra:</strong></p>
+<ul>
+<li><strong>Carrito de compras:</strong> Permitir agregar y eliminar elementos.</li>
+<li><strong>Cálculo del total:</strong> Calcular el costo total de los productos en el carrito.</li>
+<li><strong>Procesamiento de pago:</strong> Utilizar la tarjeta de crédito para completar la transacción.</li>
+</ul>
+</li>
+<li>
+<p><strong>Interacción con la Tarjeta de Crédito:</strong></p>
+<ul>
+<li><strong>Conexión con la tarjeta:</strong> Integrar el sistema de la tarjeta de crédito para el pago.</li>
+<li><strong>Validación de la tarjeta:</strong> Verificar la autenticidad de la tarjeta para realizar la transacción.</li>
+</ul>
+</li>
+<li>
+<p><strong>Interfaz de Usuario:</strong></p>
+<ul>
+<li><strong>Pantalla de selección de productos:</strong> Mostrar los productos disponibles para comprar.</li>
+<li><strong>Carrito de compras visual:</strong> Mostrar los productos agregados y su precio total.</li>
+<li><strong>Pantalla de pago:</strong> Interfaz para ingresar los detalles de la tarjeta y completar la transacción.</li>
+</ul>
+</li>
+<li>
+<p><strong>Seguridad y Privacidad:</strong></p>
+<ul>
+<li><strong>Cifrado de datos:</strong> Mantener la seguridad de la información de la tarjeta.</li>
+<li><strong>Protección de datos personales:</strong> Asegurar la privacidad de la información del cliente.</li>
+</ul>
+</li>
+<li>
+<p><strong>Funcionalidades Adicionales:</strong></p>
+<ul>
+<li><strong>Historial de compras:</strong> Guardar un registro de compras anteriores.</li>
+<li><strong>Descuentos y ofertas:</strong> Implementar ofertas especiales para ciertos productos.</li>
+</ul>
+</li>
+<li>
+<p><strong>Flujo del Programa:</strong></p>
+<ul>
+<li><strong>Clase principal (<code>main</code>):</strong> Dirigir el flujo de operaciones del supermercado.</li>
+<li><strong>Clases y métodos:</strong> Organizar el código en clases y métodos que manejen cada funcionalidad.</li>
+</ul>
+</li>
+<li>
+<p><strong>Manejo de Errores:</strong></p>
+<ul>
+<li><strong>Validación de entradas:</strong> Verificar que los datos ingresados sean válidos.</li>
+<li><strong>Manejo de excepciones:</strong> Implementar acciones para manejar errores inesperados.</li>
+</ul>
+</li>
+</ol>
+<h1 id="span-style--%22color-ff4767%22clase-15span"><span style = "color: #FF4767">CLASE 15</span></h1>
+<p><em><strong>Fecha:</strong></em> 08 de diciembre</p>
+  <div align = "center">
+  NO HUBO CLASE POR FERIADO DE FIESTAS DE QUITO
+  </div>
+<h1 id="span-style--%22color-ff4767%22clase-16span"><span style = "color: #FF4767">CLASE 16</span></h1>
+<p><em><strong>Fecha:</strong></em> 12 de diciembre</p>
+  <div align = "center">
+  REVISION DE POLIRETOS
+  </div>
+<h1 id="span-style--%22color-ff4767%22clase-17span"><span style = "color: #FF4767">CLASE 17</span></h1>
+<p><em><strong>Fecha:</strong></em> 13 de diciembre</p>
+<h2 id="introduccion-a-bases-de-datos">Introduccion a Bases de Datos</h2>
+<h1 id="span-style--%22color-ff4767%22clase-18span"><span style = "color: #FF4767">CLASE 18</span></h1>
+<p><em><strong>Fecha:</strong></em> 14 de diciembre</p>
+<h1 id="span-style--%22color-ff4767%22clase-19span"><span style = "color: #FF4767">CLASE 19</span></h1>
+<p><em><strong>Fecha:</strong></em> 15 de diciembre</p>
+</dev>
+
+</body>
+</html>

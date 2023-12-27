@@ -1,6 +1,4 @@
 
-<body style = "color: #333">
-
 # <span style="color: #FF4767;">**Clase 1**</span>
 
 **Fecha:** 07 de noviembre 2023
@@ -414,7 +412,7 @@ public class Nombre_de_la_clase{
 
 *Ejemplo:*
 
-![Structure - ED Team](image-1.png)
+<img align = "center" src = "https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/Structure-ED-Team.png">
 
 ## <span style ="color: #FF7F00;">Console commands</span>
 
@@ -746,7 +744,7 @@ Otros ejemplos:
 + Una casa es un objeto que tiene estado, como su tamaño, número de habitaciones y ubicación. También tiene comportamiento, como proporcionar refugio, seguridad y comodidad.
 + Una computadora es un objeto que tiene estado, como su procesador, memoria y almacenamiento. También tiene comportamiento, como ejecutar programas, almacenar datos y conectarse a Internet.
 
-![POO - EdxTeam](image-4.png)
+<img align="center" src = "https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/POO-EdxTeam.png">
 
 # <Span style = "color: #FF4767;">**Clase 6**</Span>
 
@@ -819,7 +817,7 @@ Por ello lo recomendable es crear un archivo especifico para almacenar el proyec
 
 De esta manera se crea una estructura de proyecta Java, ejemplo:
 
-![Muestra](image-5.png)
+<img align = "center" src = "https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/MuestraVsCode.png">
 
 # <span style = "color: #FF4767;">**Clase 7**</span>
 
@@ -890,9 +888,9 @@ Almacenan valores de tipos de datos primitivos, como números, caracteres y bool
     + boolean: Almacena un valor lógico, true o false.
     + Variables de referencia
 
-    ![Tabla de variables primitivas](image-2.png)
+<img align = "center" src = "https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/TablaDeVariablesPrimitivas.png">
 
-    <span style = "color: #FF0000">Nota:</span> Se recomienda utilizar camelCase,para nombrar variables.
+  <span style = "color: #FF0000">Nota:</span> Se recomienda utilizar camelCase,para nombrar variables.
 
 + <span style = "color: #FF7F00;">Variables de referencia:</span> Son variables que almacenan direcciones de memoria de objetos.
 
@@ -1512,7 +1510,8 @@ Esto imprimirá cada número del array numeros en líneas separadas.
 ***Fecha:*** 01 de diciembre
 
 El siguiente bloque de codigo indica que:
-![Bloque Codigo ArrayList](image-7.png)
+
+<img align = "center" src ="https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/BloqCodigoArrayList.png">
 
 ```java
   lstMujeres.add(2, new Mujer("Maria"));
@@ -1644,7 +1643,7 @@ Finalmente, el "*polimorfismo*" es como tener muchos juguetes de diferentes colo
 
 En resumen, la programación orientada a objetos es como construir cosas geniales usando piezas pequeñas, organizadas y reutilizables.
 
-![Computer and Java](image-6.png)
+<img align ="center" src="https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/ComputerAndJava.png">
 
 # <span style = "color: #FF4767">CLASE 13</span>
 
@@ -1811,5 +1810,3 @@ De tal manera que el mismo deberia estar estructurado de la siguiente manera:
 ***Fecha:*** 15 de diciembre
 
 </dev>
-
-</body>
