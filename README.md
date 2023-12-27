@@ -1,4 +1,6 @@
 
+<body style = "color: #333">
+
 # <span style="color: #FF4767;">**Clase 1**</span>
 
 **Fecha:** 07 de noviembre 2023
@@ -94,7 +96,7 @@ workdirectory: workspace --> directorio de trabajo
     Moverá la línea o bloque seleccionado en dirección que se le indique.
 9. Comentar en bloque (Multi-Line): **ALT + SHIFT +A**
 
-    Comenta en forma varias línea al mismo tiempo 
+    Comenta en forma varias línea al mismo tiempo
     
     *Ejemplo:*
 
@@ -1642,7 +1644,7 @@ Finalmente, el "*polimorfismo*" es como tener muchos juguetes de diferentes colo
 
 En resumen, la programación orientada a objetos es como construir cosas geniales usando piezas pequeñas, organizadas y reutilizables.
 
-![Alt text](image-6.png)
+![Computer and Java](image-6.png)
 
 # <span style = "color: #FF4767">CLASE 13</span>
 
@@ -1809,3 +1811,5 @@ De tal manera que el mismo deberia estar estructurado de la siguiente manera:
 ***Fecha:*** 15 de diciembre
 
 </dev>
+
+</body>
