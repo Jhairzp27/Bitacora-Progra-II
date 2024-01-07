@@ -1804,12 +1804,114 @@ De tal manera que el mismo deberia estar estructurado de la siguiente manera:
 
 ## Introduccion a Bases de Datos
 
+### ¿Qué son bases de datos?
 
+Son sistemas organizados para almacenar, gestionar y recuperar información de manera estructura.
+
+### ¿Para que sirven?
+
+Sirven para facilitar la organización, la búsqueda y la manipulación de información de manera eficiente
+
+### ¿Como se utilizan?
+
+Se pueden emplear de diferentes maneras, por ejemplo:
+
+**1. Almacenamiento de datos:** Las bases de datos son como almacenes donde se guardan datos estructurados. Pueden contener información sobre clientes, productos, transacciones financieras, inventarios, registros médicos y mucho más.
+
+**2. Aplicaciones web y móviles:** La mayoría de las aplicaciones que usamos hoy en día, ya sea en un navegador web o en un dispositivo móvil, dependen de bases de datos para almacenar y recuperar información. Por ejemplo, redes sociales, tiendas en línea, servicios de streaming, aplicaciones bancarias, etc.
+
+**3. Sistemas de gestión empresarial:** Grandes empresas utilizan bases de datos para gestionar sus operaciones diarias. Estos sistemas pueden abarcar desde la gestión de recursos humanos y contabilidad hasta la cadena de suministro y la gestión de clientes.
+
+**4. Análisis y Business Intelligence:** Las bases de datos son fundamentales para analizar datos. Herramientas de Business Intelligence utilizan bases de datos para realizar consultas complejas, generar informes, identificar tendencias y tomar decisiones estratégicas basadas en datos.
+
+**5. Aplicaciones científicas y de investigación:** En campos como la ciencia, la medicina o la investigación, se utilizan bases de datos para almacenar y analizar grandes cantidades de datos experimentales, médicos o científicos.
+
+**6. Almacenamiento de contenido multimedia:** Bases de datos también se utilizan para almacenar contenido multimedia como imágenes, vídeos, audio, y documentos, permitiendo su fácil acceso y gestión.
+
+### Clusterizar
+
+Es utilizado en el ámbito del análisis de datos y minería de datos.
+Su objetivo principal es identificar patrones, estructuras o relaciones conocidas. Los algoritmos de clustering examinan similitudes y diferencias entre los datos para asignarlos a grupos o clusters de manera que los elementos dentro de un mismo custer sean más similares entre sí que con aquellos en otros clusters.
+
+El clustering tiene diversas aplicaciones, desde la segmentación de clientes en marketing, la organización de grandes conjuntos de datos para entender su estructura interna, la identificación de patrones en imágenes o textos, hasta la compresión de datos para reducir su complejidad manteniendo la información más relevante.
+
+## DIAGRAMAS
+
+Los diagramas en la programación sirven como herramientas visuales para planificar, comprender, diseñar y comunicar diferentes aspectos de un sistema de software. Aquí hay algunas formas clave en las que los diagramas son útiles en programación:
+
+**1. Visualización y comprensión:** Los diagramas proporcionan una representación visual de la estructura, relaciones y flujo de datos o procesos en el software. Ayudan a los desarrolladores a comprender mejor cómo interactúan los distintos componentes del sistema, lo que facilita la comprensión de la lógica y la arquitectura general.
+
+**2. Diseño y planificación:** Antes de escribir código, los diagramas permiten planificar la estructura y la lógica del software. Los diagramas de flujo, diagramas de casos de uso, diagramas de clases y otros tipos de diagramas ayudan a diseñar la arquitectura y la funcionalidad del sistema antes de comenzar a codificar.
+
+**3. Comunicación:** Son una forma efectiva de comunicar ideas y conceptos entre equipos de desarrollo, gerentes de proyectos, clientes y otros stakeholders. Los diagramas permiten explicar visualmente cómo funcionará el software, lo que ayuda a alinear las expectativas y aclarar requisitos.
+
+**4. Identificación de problemas y optimización:** Al observar los diagramas, los desarrolladores pueden identificar posibles problemas en el diseño antes de implementar el código. Esto les permite hacer ajustes y optimizaciones antes de comprometerse con la fase de implementación.
+
+**5. Documentación:** Los diagramas también sirven como documentación visual del sistema de software. Permiten a nuevos desarrolladores comprender rápidamente la estructura y la lógica del código existente sin necesidad de profundizar directamente en el código fuente.
+
+En este caso vamos a emplear dos tipos de diagramas:
+
+### **1. Diagramas de Casos de uso**
+
++ **¿Qué es?**
+
+  El diagrama de casos de uso muestra cómo interactúan los usuarios (actores) con un sistema de software para lograr ciertos objetivos.
+
++ **¿Para qué sirve?**
+
+  Se utiliza para identificar las funcionalidades que el sistema debe proporcionar desde la perspectiva del usuario. Los actores (usuarios o sistemas externos) se representan junto con los diferentes casos de uso, que son acciones o funciones que el sistema realiza en respuesta a las interacciones con los actores.
+
++ **Relación con la POO:**
+
+  Los casos de uso son la base para diseñar las funcionalidades del sistema desde el punto de vista del usuario. Estos casos de uso luego se traducen en operaciones y comportamientos de las clases en el sistema, ya que cada caso de uso puede implicar la interacción de múltiples clases para lograr su funcionalidad.
+
+![Use Case](image-1.png)
+
+### **2. Diagrama de Clases**
+
++ **¿Qué es?**
+
+    El diagrama de clases es una representación visual de las clases, objetos, atributos y relaciones entre ellos en un sistema de software.
+
++ **¿Para qué sirve?**
+
+   Se utiliza para modelar la estructura estática del sistema, mostrando las clases y cómo se relacionan entre sí. Muestra las clases (los moldes para los objetos) junto con sus atributos (características) y métodos (acciones que pueden realizar). Las relaciones entre clases, como la herencia, la asociación y la composición, se representan en el diagrama.
+
++ **Relación con la POO:**
+
+    En la programación orientada a objetos, las clases son la base del diseño. El diagrama de clases proporciona una representación visual de cómo se estructurará el sistema y cómo interactuarán sus componentes. Los programadores utilizan estos diagramas como guía para escribir el código, definiendo clases, atributos y métodos según lo representado en el diagrama.
+
+![Diagrama de clases](image.png)
 
 # <span style = "color: #FF4767">CLASE 18</span>
 ***Fecha:*** 14 de diciembre
 
 # <span style = "color: #FF4767">CLASE 19</span>
 ***Fecha:*** 15 de diciembre
+
+# <span style = "color: #FF4767">CLASE 20</span>
+***Fecha:*** 19 de diciembre
+
+# <span style = "color: #FF4767">CLASE 21</span>
+***Fecha:*** 20 de diciembre
+
+# <span style = "color: #FF4767">CLASE 22</span>
+***Fecha:*** 21 de diciembre
+
+# <span style = "color: #FF4767">CLASE 23</span>
+***Fecha:*** 22 de diciembre
+
+# <span style = "color: #FF4767">CLASE 24</span>
+***Fecha:***  02 de enero 2024
+
+# <span style = "color: #FF4767">CLASE 25</span>
+
+***Fecha:*** 03 de enero 2024
+
+# <span style = "color: #FF4767">CLASE 26</span>
+***Fecha:*** 04 de enero 2024
+
+# <span style = "color: #FF4767">CLASE 27</span>
+***Fecha:*** 05 de enero 2024
 
 </dev>
