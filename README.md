@@ -5,7 +5,7 @@
 
 ***Nota:*** *Para la clase de programación II, es recomendable practicar (jugar) mecanografía*
 
-# <p style="text-align: center;"><span style = "color: #007ACC;">IDE Visual Studio Code</span> [<img src="https://raw.githubusercontent.com/Delta456/Delta456/master/img/vscode.png" alt="vscode logo" width="24">](https://code.visualstudio.com/) 
+# <p style="text-align: center;"><span style = "color: #007ACC;">IDE Visual Studio Code</span> [<img src="https://raw.githubusercontent.com/Delta456/Delta456/master/img/vscode.png" alt="vscode logo" width="24">](https://code.visualstudio.com/)
  </p>
 
 ## ¿Qué es?
@@ -1851,11 +1851,13 @@ Los diagramas en la programación sirven como herramientas visuales para planifi
 
 En este caso vamos a emplear dos tipos de diagramas:
 
-### **1. Diagramas de Casos de uso**
+  <span style = "color: #ff0000">***NOTA:***</span> Para ello se utilizará la extensión drawio.
+
+## **1. Diagramas de Casos de uso UML**
 
 + **¿Qué es?**
 
-  El diagrama de casos de uso muestra cómo interactúan los usuarios (actores) con un sistema de software para lograr ciertos objetivos.
+  Es una forma de diagrama de comportamiento en lenguaje de modelado uniicado **UML**. El diagrama de casos de uso muestra cómo interactúan los usuarios (actores) con un sistema de software para lograr ciertos objetivos.
 
 + **¿Para qué sirve?**
 
@@ -1865,9 +1867,29 @@ En este caso vamos a emplear dos tipos de diagramas:
 
   Los casos de uso son la base para diseñar las funcionalidades del sistema desde el punto de vista del usuario. Estos casos de uso luego se traducen en operaciones y comportamientos de las clases en el sistema, ya que cada caso de uso puede implicar la interacción de múltiples clases para lograr su funcionalidad.
 
-![Use Case](image-1.png)
++ **Elementos**
 
-### **2. Diagrama de Clases**
+  **1. Actores:** Representan roles (usuarios, sistemas externos, otros sistemas) que interactúan con el sistema. Los actores se muestran fuera del sistema y se conectan a los casos de uso para indicar quién está involucrado en esa interacción.
+
+  **2. Casos de Uso:** Son acciones, funciones o servicios que el sistema proporciona a los actores. Cada caso de uso representa una forma específica en la que un actor interactúa con el sistema para lograr un objetivo particular. Se representan como elipses en el diagrama.
+
+  **3. Relaciones de Inclusión y Extensión:** Estas relaciones representan la interacción entre diferentes casos de uso.
+
+  + Inclusión (Include):** Indica que un caso de uso (llamado caso de uso incluido) está siempre presente dentro de otro caso de uso más grande (llamado caso de uso base). Por ejemplo, el caso de uso "Realizar Pago" puede incluir el caso de uso "Verificar Fondos".
+
+  + Extensión (Extend): Indica que un caso de uso (llamado caso de uso extendido) puede agregar funcionalidades opcionales a otro caso de uso base. Por ejemplo, el caso de uso "Cancelar Pedido" puede extender el caso de uso "Realizar Pedido".
+
+  **4. Sistema:** Representa el sistema en sí mismo y se muestra como una caja o un contenedor que contiene todos los casos de uso. Este elemento ayuda a delimitar los límites del sistema.
+
+  ![Elementos principales](Images/UML-Elementos.png)
+
+  ![Association](Images/UML-Associations.png)
+
+<span style ="color: #ff0000"> ***Ejemplo de diagrama de caso de uso:***</span>
+
+![Use Case](Images/Use-Case.png)
+
+## **2. Diagrama de Clases**
 
 + **¿Qué es?**
 
@@ -1881,25 +1903,50 @@ En este caso vamos a emplear dos tipos de diagramas:
 
     En la programación orientada a objetos, las clases son la base del diseño. El diagrama de clases proporciona una representación visual de cómo se estructurará el sistema y cómo interactuarán sus componentes. Los programadores utilizan estos diagramas como guía para escribir el código, definiendo clases, atributos y métodos según lo representado en el diagrama.
 
-![Diagrama de clases](image.png)
+### Componentes básicos de un diagrama de clases
+
++ **Clases:** Una clase es una plantilla para crear objetos. Representa un conjunto de objetos que comparten una estructura y un comportamiento comunes. Se representan con un rectángulo con tres filas: nombre, atributos y operaciones.
+
+  + **Atributos:** Los atributos representan las propiedades de una clase. Se pueden representar como variables, constantes o enumeraciones.
+
+  + **Operaciones:** Las operaciones representan el comportamiento de una clase. Se pueden representar como métodos, funciones o procedimientos.
+
+Además de las clases, los diagramas de clases también pueden incluir otros componentes, como:
+
++ **Relaciones:** Representan las conexiones entre clases. Pueden ser de varios tipos, como:
+
+  + **Asociación:** Es la relación predeterminada entre clases. Se representa con una línea entre las clases conectadas.
+  + **Herencia:** Indica que una clase (subclase) toma características de otra (superclase). Se dibuja con una flecha de la subclase a la superclase.
+  + **Generalización:** Una clase es un tipo específico de otra clase.
+  + **Agregación:** Una clase está compuesta por otras clases.
+  + **Dependencia:** Una clase utiliza los servicios de otra clase.
+
++ **Señales:** Las señales representan comunicaciones unidireccionales y asincrónicas entre objetos.
+
++ **Tipos de datos:** Representan valores de datos. Pueden ser primitivos, definidos por el usuario o derivados de otros tipos de datos.
++ **Paquetes:** Organizan clasificadores relacionados en un diagrama.
++ **Interfaces:** Definen un conjunto uniforme de comportamientos.
++ **Enumeraciones:** Representan tipos de datos definidos por el usuario.
++ **Objetos:** Son instancias de una clase o clases.
++ **Artefactos:** Representan entidades concretas de un sistema de software.
+
+![Diagrama de clases](Images/Clases-uso.png)
 
 # <span style = "color: #FF4767">CLASE 18</span>
 ***Fecha:*** 14 de diciembre
 
+Recordar que los getteres son un metodo de obtención, ya que permite acceder al valor de un atributo privato desde fuera de la clase. Mientras que los setters es un metodo de establecmiento que permite modificar o establecer el valor de un atributo.
+
+Una vez realizado el codigo se recomienda empezar a codificar con la clase que tenga menor dependencia.
+
 # <span style = "color: #FF4767">CLASE 19</span>
 ***Fecha:*** 15 de diciembre
 
-# <span style = "color: #FF4767">CLASE 20</span>
-***Fecha:*** 19 de diciembre
+# <span style = "color:   #FF4767">CLASE 20</span>
+***Fecha:*** 18 de diciembre
 
 # <span style = "color: #FF4767">CLASE 21</span>
 ***Fecha:*** 20 de diciembre
-
-# <span style = "color: #FF4767">CLASE 22</span>
-***Fecha:*** 21 de diciembre
-
-# <span style = "color: #FF4767">CLASE 23</span>
-***Fecha:*** 22 de diciembre
 
 # <span style = "color: #FF4767">CLASE 24</span>
 ***Fecha:***  02 de enero 2024
@@ -1910,6 +1957,8 @@ En este caso vamos a emplear dos tipos de diagramas:
 
 # <span style = "color: #FF4767">CLASE 26</span>
 ***Fecha:*** 04 de enero 2024
+
+EXAMEN DE PRIMER BIMESTRE
 
 # <span style = "color: #FF4767">CLASE 27</span>
 ***Fecha:*** 05 de enero 2024
