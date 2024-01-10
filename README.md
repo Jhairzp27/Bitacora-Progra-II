@@ -1,5 +1,5 @@
 
-# <span style="color: #FF4767;">**Clase 1**</span>
+# <span style="color: #FF4767;">**CLASE 1**</span>
 
 **Fecha:** 07 de noviembre 2023
 
@@ -61,7 +61,7 @@ workdirectory: workspace --> directorio de trabajo
 
 ---------------------------
 
-# <span style ="color: #FF4767;">**Clase 2**</span>
+# <span style ="color: #FF4767;">**CLASE 2**</span>
 
 **Fecha:** 08 de noviembre de 2023
 
@@ -219,7 +219,7 @@ La sintaxis general para ponerle colores al texto Markdown es la siguiente:
 | **Gris** | #EEEEEE, #D3D3D3 | <span style="color: #EEEEEE;">Gris claro</span>`,`<span style="color: #D3D3D3;">Gris oscuro</span> |
 |Negro|    #000000   |<span style="color: #000000;">Este texto es negro</span>|
 
-# <span style = "color: #FF4767;">**Clase 3**</span>
+# <span style = "color: #FF4767;">**CLASE 3**</span>
 
 **Fecha:** 9 de noviembre de 2023
 
@@ -323,7 +323,7 @@ Es una plataforma de desarrollo de código fuente que facilita a los desarrollad
 + <span style = "color: #F7F" >Issues:</span> Proporciona una función de Issues para que los desarrolladores puedan informar de errores y solicitar nuevas funciones.
 + <span style = "color: #F7F" >Pull requests:</span> Proporciona una función de Pull requests para que los desarrolladores puedan solicitar que sus cambios se incorporen a un proyecto.
 
-# <span style="color: #FF4767;">**Clase 4**</span>
+# <span style="color: #FF4767;">**CLASE 4**</span>
 
 **Fecha:** 10 de noviembre 2023
 
@@ -415,7 +415,7 @@ public class Nombre_de_la_clase{
 
 *Ejemplo:*
 
-<img align = "center" src = "https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/Structure-ED-Team.png">
+![Structure-ED-Team](Images/Structure-ED-Team.png)
 
 ## <span style ="color: #FF7F00;">Console commands</span>
 
@@ -424,7 +424,7 @@ public class Nombre_de_la_clase{
 |java ***nombre del archivo.java***|Compila el programa en consola|
 |cat ***nombre del archivo.java***|Muestra lo que tiene el archivo escrito|
 
-# <span style = "color: #FF4767;"> **Clase 5**</span>
+# <span style = "color: #FF4767;"> **CLASE 5**</span>
 **Fecha:** 14 de noviembre 2023
 
 
@@ -747,9 +747,9 @@ Otros ejemplos:
 + Una casa es un objeto que tiene estado, como su tamaño, número de habitaciones y ubicación. También tiene comportamiento, como proporcionar refugio, seguridad y comodidad.
 + Una computadora es un objeto que tiene estado, como su procesador, memoria y almacenamiento. También tiene comportamiento, como ejecutar programas, almacenar datos y conectarse a Internet.
 
-<img align="center" src = "https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/POO-EdxTeam.png">
+![POO](Images/POO-EdxTeam.png)
 
-# <Span style = "color: #FF4767;">**Clase 6**</Span>
+# <Span style = "color: #FF4767;">**CLASE 6**</Span>
 
 **Fecha:** 16 de noviembre 2023
 
@@ -820,9 +820,9 @@ Por ello lo recomendable es crear un archivo especifico para almacenar el proyec
 
 De esta manera se crea una estructura de proyecta Java, ejemplo:
 
-<img align = "center" src = "https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/MuestraVsCode.png">
+![Muestra](Images/MuestraVsCode.png)
 
-# <span style = "color: #FF4767;">**Clase 7**</span>
+# <span style = "color: #FF4767;">**CLASE 7**</span>
 
 **Fecha:** 21 de noviembre
 
@@ -891,7 +891,7 @@ Almacenan valores de tipos de datos primitivos, como números, caracteres y bool
     + boolean: Almacena un valor lógico, true o false.
     + Variables de referencia
 
-<img align = "center" src = "https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/TablaDeVariablesPrimitivas.png">
+![Tabla de vairables](Images/TablaDeVariablesPrimitivas.png)
 
   <span style = "color: #FF0000">Nota:</span> Se recomienda utilizar camelCase,para nombrar variables.
 
@@ -1178,7 +1178,7 @@ El símbolo € se representa con el código Unicode 0x20AC.
 
 Recordar el uso de `camelCase`
 
-# <span style = "color: #FF4767;">**Clase 8**</span>
+# <span style = "color: #FF4767;">**CLASE 8**</span>
 
 ***Fecha:*** 28 de noviembre
 
@@ -1362,7 +1362,7 @@ El método ``.equalsIgnoreCase()` funciona de la siguiente manera:
     1. Si las dos cadenas convertidas a minúsculas son iguales, el método devuelve true.
     1. Si las dos cadenas convertidas a minúsculas no son iguales, el método devuelve false.
 
-# <span style = "color: #FF4767;">Clase 9</span>
+# <span style = "color: #FF4767;">CLASE 9</span>
 ***Fecha:*** 29 de noviembre
 
     Nota: En esta clase se hizo una revision a los metodos de String
@@ -1514,7 +1514,7 @@ Esto imprimirá cada número del array numeros en líneas separadas.
 
 El siguiente bloque de codigo indica que:
 
-<img align = "center" src ="https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/BloqCodigoArrayList.png">
+![Array List](Images/BloqCodigoArrayList.png)
 
 ```java
   lstMujeres.add(2, new Mujer("Maria"));
@@ -1646,7 +1646,7 @@ Finalmente, el "*polimorfismo*" es como tener muchos juguetes de diferentes colo
 
 En resumen, la programación orientada a objetos es como construir cosas geniales usando piezas pequeñas, organizadas y reutilizables.
 
-<img align ="center" src="https://github.com/Jhairzp27/Bitacora-Progra-II/blob/main/Images/ComputerAndJava.png">
+![](Images/ComputerAndJava.png)
 
 # <span style = "color: #FF4767">CLASE 13</span>
 
