@@ -2440,10 +2440,322 @@ Siendo asi que deberia constar de las siguientes partes:</p>
 <h1 id="span-style--%22color-ff4767%22clase-17span"><span style = "color: #FF4767">CLASE 17</span></h1>
 <p><em><strong>Fecha:</strong></em> 13 de diciembre</p>
 <h2 id="introduccion-a-bases-de-datos">Introduccion a Bases de Datos</h2>
+<h3 id="%C2%BFqu%C3%A9-son-bases-de-datos">¿Qué son bases de datos?</h3>
+<p>Son sistemas organizados para almacenar, gestionar y recuperar información de manera estructura.</p>
+<h3 id="%C2%BFpara-que-sirven">¿Para que sirven?</h3>
+<p>Sirven para facilitar la organización, la búsqueda y la manipulación de información de manera eficiente</p>
+<h3 id="%C2%BFcomo-se-utilizan">¿Como se utilizan?</h3>
+<p>Se pueden emplear de diferentes maneras, por ejemplo:</p>
+<p><strong>1. Almacenamiento de datos:</strong> Las bases de datos son como almacenes donde se guardan datos estructurados. Pueden contener información sobre clientes, productos, transacciones financieras, inventarios, registros médicos y mucho más.</p>
+<p><strong>2. Aplicaciones web y móviles:</strong> La mayoría de las aplicaciones que usamos hoy en día, ya sea en un navegador web o en un dispositivo móvil, dependen de bases de datos para almacenar y recuperar información. Por ejemplo, redes sociales, tiendas en línea, servicios de streaming, aplicaciones bancarias, etc.</p>
+<p><strong>3. Sistemas de gestión empresarial:</strong> Grandes empresas utilizan bases de datos para gestionar sus operaciones diarias. Estos sistemas pueden abarcar desde la gestión de recursos humanos y contabilidad hasta la cadena de suministro y la gestión de clientes.</p>
+<p><strong>4. Análisis y Business Intelligence:</strong> Las bases de datos son fundamentales para analizar datos. Herramientas de Business Intelligence utilizan bases de datos para realizar consultas complejas, generar informes, identificar tendencias y tomar decisiones estratégicas basadas en datos.</p>
+<p><strong>5. Aplicaciones científicas y de investigación:</strong> En campos como la ciencia, la medicina o la investigación, se utilizan bases de datos para almacenar y analizar grandes cantidades de datos experimentales, médicos o científicos.</p>
+<p><strong>6. Almacenamiento de contenido multimedia:</strong> Bases de datos también se utilizan para almacenar contenido multimedia como imágenes, vídeos, audio, y documentos, permitiendo su fácil acceso y gestión.</p>
+<h3 id="clusterizar">Clusterizar</h3>
+<p>Es utilizado en el ámbito del análisis de datos y minería de datos.
+Su objetivo principal es identificar patrones, estructuras o relaciones conocidas. Los algoritmos de clustering examinan similitudes y diferencias entre los datos para asignarlos a grupos o clusters de manera que los elementos dentro de un mismo custer sean más similares entre sí que con aquellos en otros clusters.</p>
+<p>El clustering tiene diversas aplicaciones, desde la segmentación de clientes en marketing, la organización de grandes conjuntos de datos para entender su estructura interna, la identificación de patrones en imágenes o textos, hasta la compresión de datos para reducir su complejidad manteniendo la información más relevante.</p>
+<h2 id="diagramas">DIAGRAMAS</h2>
+<p>Los diagramas en la programación sirven como herramientas visuales para planificar, comprender, diseñar y comunicar diferentes aspectos de un sistema de software. Aquí hay algunas formas clave en las que los diagramas son útiles en programación:</p>
+<p><strong>1. Visualización y comprensión:</strong> Los diagramas proporcionan una representación visual de la estructura, relaciones y flujo de datos o procesos en el software. Ayudan a los desarrolladores a comprender mejor cómo interactúan los distintos componentes del sistema, lo que facilita la comprensión de la lógica y la arquitectura general.</p>
+<p><strong>2. Diseño y planificación:</strong> Antes de escribir código, los diagramas permiten planificar la estructura y la lógica del software. Los diagramas de flujo, diagramas de casos de uso, diagramas de clases y otros tipos de diagramas ayudan a diseñar la arquitectura y la funcionalidad del sistema antes de comenzar a codificar.</p>
+<p><strong>3. Comunicación:</strong> Son una forma efectiva de comunicar ideas y conceptos entre equipos de desarrollo, gerentes de proyectos, clientes y otros stakeholders. Los diagramas permiten explicar visualmente cómo funcionará el software, lo que ayuda a alinear las expectativas y aclarar requisitos.</p>
+<p><strong>4. Identificación de problemas y optimización:</strong> Al observar los diagramas, los desarrolladores pueden identificar posibles problemas en el diseño antes de implementar el código. Esto les permite hacer ajustes y optimizaciones antes de comprometerse con la fase de implementación.</p>
+<p><strong>5. Documentación:</strong> Los diagramas también sirven como documentación visual del sistema de software. Permiten a nuevos desarrolladores comprender rápidamente la estructura y la lógica del código existente sin necesidad de profundizar directamente en el código fuente.</p>
+<p>En este caso vamos a emplear dos tipos de diagramas:</p>
+<p><span style = "color: #ff0000"><em><strong>NOTA:</strong></em></span> Para ello se utilizará la extensión drawio.</p>
+<h2 id="1-diagramas-de-casos-de-uso-uml"><strong>1. Diagramas de Casos de uso UML</strong></h2>
+<ul>
+<li>
+<p><strong>¿Qué es?</strong></p>
+<p>Es una forma de diagrama de comportamiento en lenguaje de modelado uniicado <strong>UML</strong>. El diagrama de casos de uso muestra cómo interactúan los usuarios (actores) con un sistema de software para lograr ciertos objetivos.</p>
+</li>
+<li>
+<p><strong>¿Para qué sirve?</strong></p>
+<p>Se utiliza para identificar las funcionalidades que el sistema debe proporcionar desde la perspectiva del usuario. Los actores (usuarios o sistemas externos) se representan junto con los diferentes casos de uso, que son acciones o funciones que el sistema realiza en respuesta a las interacciones con los actores.</p>
+</li>
+<li>
+<p><strong>Relación con la POO:</strong></p>
+<p>Los casos de uso son la base para diseñar las funcionalidades del sistema desde el punto de vista del usuario. Estos casos de uso luego se traducen en operaciones y comportamientos de las clases en el sistema, ya que cada caso de uso puede implicar la interacción de múltiples clases para lograr su funcionalidad.</p>
+</li>
+<li>
+<p><strong>Elementos</strong></p>
+<p><strong>1. Actores:</strong> Representan roles (usuarios, sistemas externos, otros sistemas) que interactúan con el sistema. Los actores se muestran fuera del sistema y se conectan a los casos de uso para indicar quién está involucrado en esa interacción.</p>
+<p><strong>2. Casos de Uso:</strong> Son acciones, funciones o servicios que el sistema proporciona a los actores. Cada caso de uso representa una forma específica en la que un actor interactúa con el sistema para lograr un objetivo particular. Se representan como elipses en el diagrama.</p>
+<p><strong>3. Relaciones de Inclusión y Extensión:</strong> Estas relaciones representan la interacción entre diferentes casos de uso.</p>
+<ul>
+<li>
+<p>Inclusión (Include)<img class="emoji" alt="kissing" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAASfUlEQVR4Xu2bC5BlRXnHf919zr13Zu7cuTM7uzMsy2YXdhF2BQSfBHyBKZ9gIIKKEGPEaExSKikxUlHAWFJKIlaSkmgJvpAQMTEQqFBREVBABASUXR7uE3aXnd2d2Xncua9zur/crnOquryzM5klrlClX9VX5+5Wd+/3+/fXX/d5rBIRfptN81ttvxPgdwJEHGK7XCn93vMrRyL6OKVZryO9hojDFFSVoRdALHWBSVKecanbJI4NKPeLa66b3nKpiOMQ2iEpgqpjT59XeamK1Ft1T/SGuEcdq0qqxxQ1OgZlFHgPBlYQK7gEbMshTWkkDXnMNdLbJJWbjrh++n7p2PNagAfPVL2j1eq5HdgLixVzclQ2WvdqVFGhIg9uAUFrBQrIcfLfOCeAQqxBUpCW4OqOtGZda9reK035yu7JyW+/+GapP68EuOO1Klp7RPX8DuxHS4NmXTRg0L0GVXBo7VDGoPr60OVl0LMUysvRcQVMEQBsC5dMQ20XNPbianuQ2VnEWpzTSFvj6pZ0ytLcbze6urvyl09PXveaH0r6nAvw9PkDL1Ul87m+4eg10ZBB9xlMIUVFGl0dQS09HjPyCtTAMVAagagH0IADcXkUOvxd2oDmGDL1OHbsJ8jen+Mmx5DUYdsRbtaSTlhm96V3SNNefMR1U/c/JwKojj31rqGLisPq70rDUY+pRpiioApglh2NXvVm9LJToDAIpJA0s6tYwB1wCYAGZYAI4lJ2be/H7bkbt+1W7J4nkTbYlsJOpjT3pY3WPvnEym9NfF469hsT4MFzhwaWlflieSQ6L14WYcoaHaeYJSvRa96BHn1NBmKnwSagA+niLGdxCkwMpgJicbvvwG26ATv+FC6JsDVHsielNpZev6fGB1/87YmpQyqA6tiGc/pGKgOFb5eXx6+Mh2NMGXSsidachl59PsQVsJPgUkA9+xOH6xJER2CqkEzjtl5Huul2XOKwNUj2JdR2JT+anmqfu/7G2bGDyYboYOAfOLt3dKBauKW8onBStDQmKgmm0oc+5l3o0dOQZAZaO0GpvE8X0LM0EcC2IZ0FVUKvvZCo/0jc499CMQtRgX6jXqkUtz5wtrxFKbV7sSJEi4W/5c0D1dFBfaOHj5cVML2C6e/HrH8/amAd0toF8qtrWxS/HhOCuRbiZtDDr0AdV4ENX4KZGkoVKMNJo44bb3lzfIZSanIxIkSLgQfUuiX66r4V8SnRcAHTpzDlvg78e6F/FdLaDUpA5/Co7sB/vUpYkLTp/+0shg3XgKojwwX6nJyyLkmuBs7zoQcRnn0GqMfPG/jo4Iro7X7NR/0a06Mwa86A8kpojYVZD/CH0CQI22r4GLJYnrgREHAxg4m8vRPzQ8dcP3Ul8OwFUErpe86pvGRoJLo0WhZj+jtecJjRl8LAsdDeDZIHpLpy/jckgo/Bx2JGXwI7f4r0x4gVhhru0k7sP/SlS0TcQQugOnbGckqHVcwXSiNxT1SOiEpgqsMw+nK/PwMpaJ4LCwJYgNTHhJndApMTUI4ojbiew6bdFzoMr1NKNaRjB5sB5rJXDZxfPSw62QxE6N4IVRAYPj6DTqcBBcJzawIgEJV9bKj6nT5WzICjepg92TP81w1T1wLpIgQIqf+Rk6kMV6OLo2oGr4sK3V+FvhXQngAlIYDng7XbPjZ0/yAiUz5moqpluOou7rB8J98V3GIzwJxzROWdlaXmKNMfYUoGbYDycnApSB1QoHl+mAMQUL1QPhw9O+VjRvojKkvtUZ7lqnunvwwsJECY/RcMUxqtmPdGFYMqdTzueEFn53qZAUnD+lvIChEUFDQsWMdBmdHQY6At0E5ZnFkoVFGFGOWcjx3P4Fk6TN9QStmQBfNngP70S/peVh02J6iy8UqiYqBYAhND2gC1MAyRgmoPzZ1TjI83OHztEBhgur2IbVKgUgDr2Pn4HpYs6aF0eAUmG5AKC5okWYzFEsrWfezYssGzeKZzbpu9E5hHgHDoiY6sxn9oykZn8AZtNJgikIBLWdC0gnKR71xzH9fe8HOSZsLq1Uv47Cdfy+DyXphps6D1x+x/aj8f+9QP2bp1nLgU86fvOJ63vft42N8GJyxoOoKohDZNJAbP4Fk8E3B3ngUyXwaoIwcpDlbVa3RZ+7RHxQoMYCKQFkjCQubhH7lrM1/+2oOsXFKib2nMth3jfOqKO7nqn/4ATAKpzJ85KN+WsU6fdUf0Mlt3fizWru7jhJOXw1SLBc1TawMGH7tnwLN4Js+2ZT9tYF4BzF+e0Lu2XDFrvXLadzYatAIc2CaIZUHTMbf+z1YOr8YcvbxIpBUDJcNjOyfZ9PAO1qyvQCMB5cBJyBrR0BN32uxhR6ftCav6qfYa0qpgrfVjcsIpo+AWzKDwvEH72MUz4Fk8k2e76I76I4CbTwB9VMUcH/fqoldOKQ1GgdHgWuCaIAIIwVTuAA7ajn3jNZZVYvpLmtjDIZSM7oB1BHhBFZoJIOF2UQRQ0Bt7eN+2A6+plDSJEz+WHxPaM+ASwvYzNxaU8iLlMTvPgGfxTJ4N+MVCRdAM9+h1pphBq0iFQUkhmQFdIpiApPnWmICz0BexZChiZrbt+dBKiJSiVNAMDxcgFVCaYEE/UvFtfFvfx/f1PChRfkxI90IzBW1AxaAjUFEYADJ4kjxmlTEYjWfybICZK0AogLq/pI5SkUZpBcbD66B4WgedQIgYnJszC6e+einXX72Z5cMRxJqJyYTq0hLrXzQEk/X5d4K6+DadtmOdPm0Kywq0E8f+mZQ3dsbMQB04l0FaBVpnGAoQAZeErFR4Bs+CZ/JsgPas0rHuDFCALkRqKYUMXom/AqjAaNuhNbprCQAd2Fe/YSkbn5xl4x1jFJWQ9hW48MNHo3QKSbY+D2iJ8214d6ftVz6zkdqWOi1RvOj0UT8mbJ8CdNe9gAAtgoWxMeQMCs/k2ULQSGgdkKJCzECWC4AJcIgAARrRIMz1RGDXNB+8ZC0X/v1JvOmidXzyay/jhWtiGGvMDw+gtW/j2/o+vq8fw4/lx4RE5i57yGMJMYVYc3gNnsmzAWHNHCgDjNZFFCiXMSsroLyHgQ8YhQpXZlPk53s4YUUf6ugysnsKJlthN1nItIJtUwxVi5z+6jJSz8bCSt5/7j0IwlxDwErG4DI6zxZmcJ5zACaIinMgLvCqwI/qhu/OQoGnphGXQYXgF2EamGwiEw3QeWZo5sCH6zxKiAMX8hwzN9qoW0ebSEsEsPk+Te5OwkBIEGFeFSQHB7QsHj6IEJIF+6vjh2wMzC5n0+E3IuCsZ0EkYwPUQgchSaxMIYKI72RBABfyuwskLA+Vw4pAaJ77Ip4RKuaa7l7zIZb5nrw6l4FrACeIszjrwAqeDZD5MsAB0rKyl0TAZuqJBaV1gOrOhlAXg9MFrp/l+wA1R7Uwlj3QnIQAEBDnAAsu4/FsgBzwJCgdU0rZyabbKqlknZUGcZD30C7MTGYChkCsQrBZRrj8ykIWKrd0p3533cldVBaD6yqekMEGKMQKiMMzeTYgXehmyG7fr355XFuy7LOCiKDIy6jp2gH03AwIf5aw/lUXTBAJYiBSGUydPPNkbjvVXV8CKCm5+AqtFbgcXrKxrAPbFjwbYBc6Cqc/2d168vWNQituS9EhgdGE7RBCVUV1V1kJARu6hApCNOvCzl1tduy2aBEOXxpz5O9FUNHQBuouFDMk9MUDhvGQcA0TEzLBIZAISUNang1IF/pGKL3usebWmZrdLIlAEgbOgPJ01gE+CCKEdkIQJ3hoDyaGuKCZrjm+f1eTv71ynHP+fDefvnych+5pZJAllYHkM4nLwch8bg3q2nFEIAVpC57Js/2fAkw1md09bn9MQ5BUcFa6j/rd3h1EMBXAuz0uKlaujTnjzDKXXjLEZz65hLe+scxDG9t85IoJ3nPxPh6+uwkF8mWRAyGhXgSbK7SAWO8Omg7P5NkWFCAvDrXvbbc/SGetk5aAFVyejWjvKrgK2RCuKvcAH9oFR+dgIuheWHVCkQs+PsR114ywfmWB2pTjo/84wfbHkmw8CeKGa5cT6qCzeQ1rQTrrnGcCahnjws8E2//wQO3hC04qPDoy7I4n1ZAK2uVwQbp8rUt2JcBiujJDL7znkwJ5oa03hJ5IMVzWOA2qLZBIDhzEDZZPhORxONBOsFZwqeCajokJ+6hnAtqLeSyezrSY/NlT9t9ev9wd7yoO1aPAhlnI4ENGdMMGIbqgg4DBPGRFQ1Hxk+/O8i9fnEISYfVIxIfe2scRywyu5rMkZFwufqCwACrs8JJnV9vhag7P4pmAdGEBwnlg+uN31297+WrzviUVvUqXNK4I2gEmB1byq0LQNfOmC1xzQFNlzeZHW3zj2mnuv7/F2sMM55zcw++viqGsSacduqJxKDR5IYYghpt7WnZtkJZga47JsWSbZwGmPdtiX4y0N+1Lnrl3i/3yG4bdZ3SfQxUUFHQIwKiuTJin6Omu9RrQUb2KXVsS3v++MXojxdrlMZ/vzLrq1aQ1Ia0LphqAwy5EMKWCAAK0HdIWbMOR7nd4Bs8S0n8RAoiIU0pNfOAHU7fetyL6o+UV/WJV0qg26FhCKisFRkAfaDmE8wAEYYIBThg5POasM/t55N4mtZpw08aEt6yPiQYN2oJVoegSCm0gsOEsjJX8IyqHnXaM7Uof9AzAhGc62Jej7f2z7Lz6/tbnLlmiv17uUSVXUOhY5+AK4hzaEAIkFKyQEQu8xyjAX1wxxN4NCd+8eppr7qzz3Yc1bzqxyNtf1YPuU7gIVKQgzjzkelhiiEBLPDyuZmnsS5s+ds8AtA/uY+mwJU5ddX/tgR8/3vpiss9iZzpez6uyDXdj4OFDMKjMQ7Ga36QtyB7H0qMiLvrnJbzngn7aLeGrdzb40FenaadgSirUFJkbtQfHz3rD+RhJ91l8zD52z+BZDk6AIEIK7DjrxumvPrGp/d/p3pR0ymJnHa7toAUIYEMxmnPrKgBqHieIOAtozdv+apDVoxFHDxt+sbnFhh0pFHQQEgU2HztVkIDz8LPiC2YHPsXH6mMGdniG/+8nMgmw/d03z1zxnz0Do8sjfaIyYJQB7UDrLC31AnLKgR8nqDylKSpwwuSmNv/+9Rn2jDuUgbNf2ceLjo4hEZRRQQTnXSABmg6ZlSw791me2ZY+5GMFtuex8+wFCNtibePe9LE/uan2N988u++qEVVchygwYIRshmxekKKuM4CdvwY0poRdO9rc/1CL+37a4InH2vQaxakvLHL6iQXWry+itAqPH2yYEqx4eKyHn3Kkey1jW1sb33Pz7Md8rOHU9+wF6BZh4p6nW49c8B985Noz1RUrnJwkLoK2oMqCTjQUgVKeDTLPViiAhvqsY9u2hEc3tHh6S8LqiuGMs/o5aXVMZVCDAknJCmDY6iDNip1rCzLrSGccdk/Kjs3Jzzrwl9zbiTGv+nIovhTVwPCa4ejYfz2r/2MvOKrwxmgkIqoYv3ej+hS6qCCv2OGuMTiSuSSOVs0hdUePDQWRhuAciAcvZJ/aU8rv8wVc6sEFaQp22pJ04J/4Zfu2d94089lN+9INwHjY8n7NAgQRGARW3nRu5Y9PPbb0geKIKUVVgy5rVEmje1V2cDK5x10l1+UpbIG2y2a04ZA2SNhFoZC/2hLyjABpOtyM8wWP1ljSvGtj60udgvd1YGuo+Is3c9lll3Ew1mkvl19+eROYvmFDa3O9ziNHF1nRB8uRsO7FZaCKcD6HAJP/RhTZ1SgADxxey+V9SRRSz871dn82609vbj945R3Ny/76e7Wbgc3da/5QZUB3NkTASKWHIz5/WuUtrzumcN7QYWZ1NGBQZY3p1dksFhVEoD1UWNOIAFZw+doWK5Bmv3HgUiARpOWQht/mLBN7km23P55+68Pfn75lusHTwFjXVvebEyC8VKUXGB2tRis/fUrv6aceFZ0xOmpeGJUj7ZeD6snXcqzQUdc9hAApuHxJSCoZdFtwLUGyw43bvc9uuGdLevMn7qrfvnMqfQp4BqiHWX9uBOgWoh8YiWOG/uzE3uPOXFs4dc0y84rBQbMq6lVFXVBQ1GgDygCETHBpPvstS9oC13St/fvdti177X23bmr/6EsP1R9tJIwDY8BMF/hzLkC3ED1AFRjqiaictrZn5WuPiFYdM6RXj/TpFb0ltaRUoN8oXVIGXFtadSszsy0ZH6+5nU+Ouy2370y3376lsX2mwRQwAUwCza4K/xwKsPgdowSUgd5cmBKggbjrjJgADmgB9dxr+Z9d94w//wVYWBTT9bDM5W7zGSZ8xHBo7Xf/e5zfcvtfgB45/P8cH/8AAAAASUVORK5CYII=" />* Indica que un caso de uso (llamado caso de uso incluido) está siempre presente dentro de otro caso de uso más grande (llamado caso de uso base). Por ejemplo, el caso de uso &quot;Realizar Pago&quot; puede incluir el caso de uso &quot;Verificar Fondos&quot;.</p>
+</li>
+<li>
+<p>Extensión (Extend): Indica que un caso de uso (llamado caso de uso extendido) puede agregar funcionalidades opcionales a otro caso de uso base. Por ejemplo, el caso de uso &quot;Cancelar Pedido&quot; puede extender el caso de uso &quot;Realizar Pedido&quot;.</p>
+</li>
+</ul>
+<p><strong>4. Sistema:</strong> Representa el sistema en sí mismo y se muestra como una caja o un contenedor que contiene todos los casos de uso. Este elemento ayuda a delimitar los límites del sistema.</p>
+<p><img src="Images/UML-Elementos.png" alt="Elementos principales"></p>
+<p><img src="Images/UML-Associations.png" alt="Association"></p>
+</li>
+</ul>
+<p><span style ="color: #ff0000"> <em><strong>Ejemplo de diagrama de caso de uso:</strong></em></span></p>
+<p><img src="Images/Use-Case.png" alt="Use Case"></p>
+<h2 id="2-diagrama-de-clases"><strong>2. Diagrama de Clases</strong></h2>
+<ul>
+<li>
+<p><strong>¿Qué es?</strong></p>
+<p>El diagrama de clases es una representación visual de las clases, objetos, atributos y relaciones entre ellos en un sistema de software.</p>
+</li>
+<li>
+<p><strong>¿Para qué sirve?</strong></p>
+<p>Se utiliza para modelar la estructura estática del sistema, mostrando las clases y cómo se relacionan entre sí. Muestra las clases (los moldes para los objetos) junto con sus atributos (características) y métodos (acciones que pueden realizar). Las relaciones entre clases, como la herencia, la asociación y la composición, se representan en el diagrama.</p>
+</li>
+<li>
+<p><strong>Relación con la POO:</strong></p>
+<p>En la programación orientada a objetos, las clases son la base del diseño. El diagrama de clases proporciona una representación visual de cómo se estructurará el sistema y cómo interactuarán sus componentes. Los programadores utilizan estos diagramas como guía para escribir el código, definiendo clases, atributos y métodos según lo representado en el diagrama.</p>
+</li>
+</ul>
+<h3 id="componentes-b%C3%A1sicos-de-un-diagrama-de-clases">Componentes básicos de un diagrama de clases</h3>
+<ul>
+<li>
+<p><strong>Clases:</strong> Una clase es una plantilla para crear objetos. Representa un conjunto de objetos que comparten una estructura y un comportamiento comunes. Se representan con un rectángulo con tres filas: nombre, atributos y operaciones.</p>
+<ul>
+<li>
+<p><strong>Atributos:</strong> Los atributos representan las propiedades de una clase. Se pueden representar como variables, constantes o enumeraciones.</p>
+</li>
+<li>
+<p><strong>Operaciones:</strong> Las operaciones representan el comportamiento de una clase. Se pueden representar como métodos, funciones o procedimientos.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Además de las clases, los diagramas de clases también pueden incluir otros componentes, como:</p>
+<ul>
+<li>
+<p><strong>Relaciones:</strong> Representan las conexiones entre clases. Pueden ser de varios tipos, como:</p>
+<ul>
+<li><strong>Asociación:</strong> Es la relación predeterminada entre clases. Se representa con una línea entre las clases conectadas.</li>
+<li><strong>Herencia:</strong> Indica que una clase (subclase) toma características de otra (superclase). Se dibuja con una flecha de la subclase a la superclase.</li>
+<li><strong>Generalización:</strong> Una clase es un tipo específico de otra clase.</li>
+<li><strong>Agregación:</strong> Una clase está compuesta por otras clases.</li>
+<li><strong>Dependencia:</strong> Una clase utiliza los servicios de otra clase.</li>
+</ul>
+</li>
+<li>
+<p><strong>Señales:</strong> Las señales representan comunicaciones unidireccionales y asincrónicas entre objetos.</p>
+</li>
+<li>
+<p><strong>Tipos de datos:</strong> Representan valores de datos. Pueden ser primitivos, definidos por el usuario o derivados de otros tipos de datos.</p>
+</li>
+<li>
+<p><strong>Paquetes:</strong> Organizan clasificadores relacionados en un diagrama.</p>
+</li>
+<li>
+<p><strong>Interfaces:</strong> Definen un conjunto uniforme de comportamientos.</p>
+</li>
+<li>
+<p><strong>Enumeraciones:</strong> Representan tipos de datos definidos por el usuario.</p>
+</li>
+<li>
+<p><strong>Objetos:</strong> Son instancias de una clase o clases.</p>
+</li>
+<li>
+<p><strong>Artefactos:</strong> Representan entidades concretas de un sistema de software.</p>
+</li>
+</ul>
+<p><img src="Images/Clases-uso.png" alt="Diagrama de clases"></p>
 <h1 id="span-style--%22color-ff4767%22clase-18span"><span style = "color: #FF4767">CLASE 18</span></h1>
 <p><em><strong>Fecha:</strong></em> 14 de diciembre</p>
+<p>Recordar que los getteres son un metodo de obtención, ya que permite acceder al valor de un atributo privato desde fuera de la clase. Mientras que los setters es un metodo de establecmiento que permite modificar o establecer el valor de un atributo.</p>
+<p>Una vez realizado el codigo se recomienda empezar a codificar con la clase que tenga menor dependencia.</p>
+<h2 id="aplicacion-de-poo-en-codigo">Aplicacion de POO en codigo</h2>
+<p>En clase se aplicó un ejemplo de padres e hijos para entender como se codificaría estos procesos de llamados.</p>
+<p>Otro claro ejemplo es la creación de un mundo de animales en la computadora, donde cada animal tiene sus propias características y habilidades.</p>
+<p>Supongamos que se desea acceder al nombre de algunos animales, por lo cual es necesario seguir el siguiente proceso:</p>
+<ol>
+<li>
+<p>Se crea un proyecto java, donde constarán de 3 clases inicialmente:</p>
+<ul>
+<li>Main</li>
+<li>Animal</li>
+<li>Perro</li>
+</ul>
+</li>
+<li>
+<p>La clase animal constará de la siguiente manera:</p>
+</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span></span>{
+  <span class="hljs-keyword">private</span> String nombre;
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Animal</span><span class="hljs-params">(String nombre)</span></span>{
+    <span class="hljs-keyword">this</span>.nombre = nombre;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getNombre</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">return</span> nombre;
+  }
+}
+</div></code></pre>
+<p>Esta clase consta de un atributo privado <code>nombre</code> y un metodo publico <code>getNombre()</code> para obtener el nombre.</p>
+<ol start="3">
+<li>Las clases hijas serán de <code>Perro</code> y <code>Gato</code>.</li>
+</ol>
+<pre class="hljs"><code><div>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Perro</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Animal</span></span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Perro</span><span class="hljs-params">(String nombre)</span></span>{
+    <span class="hljs-keyword">super</span>(nombre);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ladrar</span><span class="hljs-params">()</span></span>{
+    System.out.println(<span class="hljs-string">"Guau Guaau!!"</span>)
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Gato</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Anima</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Gato</span><span class="hljs-params">(String nombre)</span></span>{
+      <span class="hljs-keyword">super</span>(nombre);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ronronear</span><span class="hljs-params">()</span></span>{
+      System.out.println(<span class="hljs-string">"Prrrr Ronronea"</span>);
+    }
+  }
+}
+</div></code></pre>
+<p>Estas clases heredan de la clase <code>Animal</code> utilizando <code>extends</code>.
+Tienen su propio constructor que llama al constructor de la clase padre <code>(super(nombre))</code>. Además, tienen métodos especiales como <code>ladrar()</code> para los perros y <code>ronronear()</code> para los gatos.</p>
+<ol start="4">
+<li>En la clase <code>Main</code> se pueden crear instancias de estos animales y acceder a susnombres:</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>{
+    Perro miPerro = <span class="hljs-keyword">new</span> Perro(<span class="hljs-string">"Bobby"</span>);
+    Gato miGato = <span class="hljs-keyword">new</span> Gato(<span class="hljs-string">"Garfield"</span>);
+
+    System.out.println(<span class="hljs-string">"El perro se llama: "</span> + miPerro.getNombre());
+    System.out.println(<span class="hljs-string">"El gato se llama: "</span>+ miGato.getNombre());
+
+    miPerro,ladrar();
+    miGato.ronronear();
+  }
+}
+</div></code></pre>
+<p>En el metodo <code>main</code> se crea un perro llamado Bobby y un gato llamado Garfield. Luego usando <code>getNombre()</code>, se imprimen sus nombres y se llaman a los metodos especiales <code>ladrar()</code> y <code>ronronear()</code></p>
+<p>De esta manera se pueden utilizar las herencias y acceder a los atribuos y metodos de las clases.</p>
 <h1 id="span-style--%22color-ff4767%22clase-19span"><span style = "color: #FF4767">CLASE 19</span></h1>
 <p><em><strong>Fecha:</strong></em> 15 de diciembre</p>
+<p>EXPLICACION DEL PROBLEMA DE LOBO, UVAS, CAPERUCITA</p>
+<h1 id="span-style--%22color-ff4767%22clase-20span"><span style = "color:   #FF4767">CLASE 20</span></h1>
+<p><em><strong>Fecha:</strong></em> 18 de diciembre</p>
+<p>Refuerzo y aclaraciones sobre el UML</p>
+<h3 id="diagrama-de-casos-de-uso">Diagrama de Casos de Uso</h3>
+<p>Los diagramas de casos de uso se centran en representar las interacciones entre un sistema y sus actores, mostrando las funcionalidades que el sistema ofrece.</p>
+<ol>
+<li>
+<p><strong>Actor</strong>: Representa un rol (usuario, sistema externo, otro sistema, etc.) interactuando con el sistema. Los actores están fuera del sistema y se comunican con él a través de casos de uso.</p>
+</li>
+<li>
+<p><strong>Casos de Uso</strong>: Representan las diferentes funcionalidades o acciones que el sistema puede realizar. Cada caso de uso describe una secuencia de interacciones entre el sistema y los actores.</p>
+</li>
+</ol>
+<h3 id="diagrama-de-clases">Diagrama de Clases</h3>
+<p>Los diagramas de clases muestran la estructura estática de un sistema, representando las clases, sus atributos, métodos y las relaciones entre ellas.</p>
+<ol>
+<li>
+<p><strong>Clase</strong>: Representa una plantilla para crear objetos. Contiene atributos (variables) y métodos (funciones) que describen el comportamiento y características de los objetos que se pueden crear a partir de esa clase.</p>
+</li>
+<li>
+<p><strong>Relaciones entre Clases</strong>:</p>
+<ul>
+<li><strong>Asociación</strong>: Representa una conexión entre dos clases y describe cómo están relacionadas. Puede tener multiplicidades que indican la cantidad de objetos que pueden estar involucrados en la relación.</li>
+<li><strong>Herencia</strong>: Indica una relación de tipo &quot;es-un&quot;. Una clase hereda atributos y métodos de otra clase (superclase).</li>
+<li><strong>Agregación y Composición</strong>: Describen relaciones de parte-todo entre clases, donde la agregación es más débil que la composición. La composición implica una relación más fuerte, donde la parte no puede existir sin el todo.</li>
+</ul>
+</li>
+</ol>
+<h1 id="span-style--%22color-ff4767%22clase-21span"><span style = "color: #FF4767">CLASE 21</span></h1>
+<p><em><strong>Fecha:</strong></em> 20 de diciembre</p>
+<p>REVISION PRUEBA ESCRITA</p>
+<h1 id="span-style--%22color-ff4767%22clase-22span"><span style = "color: #FF4767">CLASE 22</span></h1>
+<p><em><strong>Fecha:</strong></em>  03 de enero 2024</p>
+<h2 id="span-style--%22color-ff7f00%22interfacesspan"><span style = "color: #FF7F00">Interfaces</span></h2>
+<p>Es similar a un contrato. Define un conjunto de métodos que una clase que implementa la interfaz debe proporcionar, pero no contiene ninguna implementación de esos métodos. Especifica qué debe hacer una clase, pero no cómo se debe hacer. Las interfaces se declaran con la palabra clave interface y los métodos en una interfaz son implícitamente públicos y abstractos, por lo que no necesitan ser escritos como tal.</p>
+<ol>
+<li>
+<p>Contratos: Las interfaces definen un conjunto de métodos que deben ser implementados por cualquier clase que las implemente. Por ejemplo, una interfaz Volador puede tener métodos despegar(), aterrizar() y volar(), indicando qué acciones debe poder realizar cualquier objeto que sea Volador.</p>
+</li>
+<li>
+<p>Múltiple implementación: Una clase puede implementar múltiples interfaces. Esto es útil para permitir a una clase tener comportamientos de diferentes fuentes. Por ejemplo, una clase Ave puede implementar las interfaces Volador y Animal al mismo tiempo.</p>
+</li>
+<li>
+<p>Sin implementación: Los métodos en una interfaz no tienen ninguna implementación. Solo especifican la firma del método (nombre, parámetros y tipo de retorno). Las clases que implementan la interfaz deben proporcionar la implementación concreta de estos métodos.</p>
+</li>
+<li>
+<p>Pertenencia a tipos de datos: Las interfaces pueden utilizarse para definir tipos de datos. Por ejemplo, una lista de objetos Volador puede contener cualquier objeto que implemente esa interfaz.</p>
+</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MiInterfaz</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">metodoUno</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">metodoDos</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-comment">// Otros métodos...</span>
+}
+</div></code></pre>
+<h2 id="span-style--%22color-ff7f00%22clase-abstractaspan"><span style = "color: #FF7F00">Clase abstracta</span></h2>
+<p>Es una clase que no puede ser instanciada directamente. Puede contener métodos abstractos (métodos sin implementación) y métodos concretos (métodos con implementación). Las clases abstractas permiten definir métodos que algunas subclases deben implementar, pero también pueden proporcionar cierta funcionalidad común. Se declaran con la palabra clave abstract.</p>
+<ol>
+<li>
+<p>Combinación de métodos concretos y abstractos: Las clases abstractas pueden contener métodos concretos (es decir, métodos con implementación) además de métodos abstractos (métodos sin implementación). Las subclases no necesitan implementar los métodos concretos si no lo desean, pero tienen la opción de hacerlo.</p>
+</li>
+<li>
+<p>Herencia simple: Una clase puede heredar de una única clase abstracta. Esto limita la flexibilidad en comparación con las interfaces, ya que una clase puede implementar múltiples interfaces, pero solo puede tener una clase padre.</p>
+</li>
+<li>
+<p>Contener estados y comportamientos comunes: Las clases abstractas son útiles cuando se desea proporcionar una implementación base común para subclases. Pueden contener variables de instancia, constructores y métodos que las subclases pueden usar o sobrescribir.</p>
+</li>
+<li>
+<p>Punto intermedio entre una interfaz y una clase concreta: Las clases abstractas permiten definir comportamientos comunes sin proporcionar una implementación completa, a diferencia de las clases concretas, pero más que las interfaces.</p>
+</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MiClaseAbstracta</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">metodoAbstracto</span><span class="hljs-params">()</span></span>;
+    
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">metodoConcreto</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// Implementación del método concreto</span>
+    }
+    <span class="hljs-comment">// Otros métodos y atributos...</span>
+}
+
+</div></code></pre>
+<p>Una diferencia clave entre una interfaz y una clase abstracta es que en Java una clase puede implementar múltiples interfaces, pero solo puede heredar de una clase abstracta. Además, una clase abstracta puede contener variables de instancia, constructores y métodos concretos, mientras que una interfaz solo puede tener constantes y métodos abstractos.</p>
+<h1 id="span-style--%22color-ff4767%22clase-23span"><span style = "color: #FF4767">CLASE 23</span></h1>
+<p><em><strong>Fecha:</strong></em> 04 de enero 2024</p>
+<p>EXAMEN DE PRIMER BIMESTRE</p>
+<h1 id="span-style--%22color-ff4767%22clase-24span"><span style = "color: #FF4767">CLASE 24</span></h1>
+<p><em><strong>Fecha:</strong></em> 05 de enero 2024</p>
+<h3 id="span-style--%22color-ff7f00%22cardinalidad-en-generalspan"><span style = "color: #FF7F00">Cardinalidad en general:</span></h3>
+<ul>
+<li><strong>Cardinalidad</strong>: Se refiere a la cantidad de elementos de un conjunto de datos que están relacionados con los elementos de otro conjunto de datos.</li>
+<li><strong>Tipos</strong>:
+<ul>
+<li>Uno a Uno (1:1)</li>
+<li>Uno a Muchos (1:N)</li>
+<li>Muchos a Uno (N:1)</li>
+<li>Muchos a Muchos (N:M)</li>
+</ul>
+</li>
+<li>Describe la cantidad de ocurrencias permitidas en una relación entre conjuntos de datos.</li>
+</ul>
+<h3 id="span-style--%22color-ff7f00%22cardinalidad-en-uml-lenguaje-de-modelado-unificadospan"><span style = "color: #FF7F00">Cardinalidad en UML (Lenguaje de Modelado Unificado):</span></h3>
+<ul>
+<li>En UML, la cardinalidad se representa en los diagramas de clases o de relaciones entre clases.</li>
+<li>Se muestra mediante notaciones como &quot;<em>1&quot;, &quot;1..</em>&quot;, &quot;*0..1&quot;, etc.</li>
+<li>Indica cuántas instancias de una clase pueden estar asociadas con cuántas instancias de otra clase.</li>
+<li>Ayuda a especificar y comprender las relaciones entre clases en un modelo de software.</li>
+</ul>
+<p>Ambas definiciones de cardinalidad son fundamentales para entender las relaciones y conexiones entre conjuntos de datos en bases de datos o en el modelado de sistemas y estructuras en UML, proporcionando información sobre la cantidad y naturaleza de las asociaciones entre diferentes elementos.</p>
+<h1 id="span-style--%22color-ff4767%22clase-25span"><span style = "color: #FF4767">CLASE 25</span></h1>
+<p><em><strong>Fecha:</strong></em> 08 enero 2024</p>
+<p>DEFENSA DE PROYECTOS PARTE 1</p>
+
 </dev>
 
 </body>

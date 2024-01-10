@@ -1939,28 +1939,199 @@ Recordar que los getteres son un metodo de obtención, ya que permite acceder al
 
 Una vez realizado el codigo se recomienda empezar a codificar con la clase que tenga menor dependencia.
 
+## Aplicacion de POO en codigo
+
+En clase se aplicó un ejemplo de padres e hijos para entender como se codificaría estos procesos de llamados.
+
+Otro claro ejemplo es la creación de un mundo de animales en la computadora, donde cada animal tiene sus propias características y habilidades.
+
+Supongamos que se desea acceder al nombre de algunos animales, por lo cual es necesario seguir el siguiente proceso:
+
+1. Se crea un proyecto java, donde constarán de 3 clases inicialmente:
+
+    + Main
+    + Animal
+    + Perro
+2. La clase animal constará de la siguiente manera:
+
+```java
+public class Animal{
+  private String nombre;
+
+  public Animal(String nombre){
+    this.nombre = nombre;
+  }
+
+  public String getNombre(){
+    return nombre;
+  }
+}
+```
+
+Esta clase consta de un atributo privado `nombre` y un metodo publico `getNombre()` para obtener el nombre.
+
+3. Las clases hijas serán de `Perro` y `Gato`.
+
+```` java
+
+public class Perro extends Animal{
+  public Perro(String nombre){
+    super(nombre);
+  }
+
+  public void ladrar(){
+    System.out.println("Guau Guaau!!")
+  }
+
+  public class Gato extends Anima{
+    public Gato(String nombre){
+      super(nombre);
+    }
+
+    public void ronronear(){
+      System.out.println("Prrrr Ronronea");
+    }
+  }
+}
+````
+
+Estas clases heredan de la clase `Animal` utilizando `extends`.
+Tienen su propio constructor que llama al constructor de la clase padre `(super(nombre))`. Además, tienen métodos especiales como `ladrar()` para los perros y `ronronear()` para los gatos.
+
+4. En la clase `Main` se pueden crear instancias de estos animales y acceder a susnombres:
+
+```` java
+public class Main{
+  public static void main(String[] args){
+    Perro miPerro = new Perro("Bobby");
+    Gato miGato = new Gato("Garfield");
+
+    System.out.println("El perro se llama: " + miPerro.getNombre());
+    System.out.println("El gato se llama: "+ miGato.getNombre());
+
+    miPerro,ladrar();
+    miGato.ronronear();
+  }
+}
+````
+
+En el metodo `main` se crea un perro llamado Bobby y un gato llamado Garfield. Luego usando `getNombre()`, se imprimen sus nombres y se llaman a los metodos especiales `ladrar()` y `ronronear()`
+
+De esta manera se pueden utilizar las herencias y acceder a los atribuos y metodos de las clases.
+
 # <span style = "color: #FF4767">CLASE 19</span>
 ***Fecha:*** 15 de diciembre
+
+EXPLICACION DEL PROBLEMA DE LOBO, UVAS, CAPERUCITA
 
 # <span style = "color:   #FF4767">CLASE 20</span>
 ***Fecha:*** 18 de diciembre
 
+Refuerzo y aclaraciones sobre el UML
+
+### Diagrama de Casos de Uso
+
+Los diagramas de casos de uso se centran en representar las interacciones entre un sistema y sus actores, mostrando las funcionalidades que el sistema ofrece.
+
+1. **Actor**: Representa un rol (usuario, sistema externo, otro sistema, etc.) interactuando con el sistema. Los actores están fuera del sistema y se comunican con él a través de casos de uso.
+
+2. **Casos de Uso**: Representan las diferentes funcionalidades o acciones que el sistema puede realizar. Cada caso de uso describe una secuencia de interacciones entre el sistema y los actores.
+
+### Diagrama de Clases
+
+Los diagramas de clases muestran la estructura estática de un sistema, representando las clases, sus atributos, métodos y las relaciones entre ellas.
+
+1. **Clase**: Representa una plantilla para crear objetos. Contiene atributos (variables) y métodos (funciones) que describen el comportamiento y características de los objetos que se pueden crear a partir de esa clase.
+
+2. **Relaciones entre Clases**:
+   - **Asociación**: Representa una conexión entre dos clases y describe cómo están relacionadas. Puede tener multiplicidades que indican la cantidad de objetos que pueden estar involucrados en la relación.
+   - **Herencia**: Indica una relación de tipo "es-un". Una clase hereda atributos y métodos de otra clase (superclase).
+   - **Agregación y Composición**: Describen relaciones de parte-todo entre clases, donde la agregación es más débil que la composición. La composición implica una relación más fuerte, donde la parte no puede existir sin el todo.
+
 # <span style = "color: #FF4767">CLASE 21</span>
 ***Fecha:*** 20 de diciembre
 
-# <span style = "color: #FF4767">CLASE 24</span>
-***Fecha:***  02 de enero 2024
+REVISION PRUEBA ESCRITA
 
-# <span style = "color: #FF4767">CLASE 25</span>
+# <span style = "color: #FF4767">CLASE 22</span>
+***Fecha:***  03 de enero 2024
 
-***Fecha:*** 03 de enero 2024
+## <span style = "color: #FF7F00">Interfaces</span>
 
-# <span style = "color: #FF4767">CLASE 26</span>
+Es similar a un contrato. Define un conjunto de métodos que una clase que implementa la interfaz debe proporcionar, pero no contiene ninguna implementación de esos métodos. Especifica qué debe hacer una clase, pero no cómo se debe hacer. Las interfaces se declaran con la palabra clave interface y los métodos en una interfaz son implícitamente públicos y abstractos, por lo que no necesitan ser escritos como tal.
+
+1. Contratos: Las interfaces definen un conjunto de métodos que deben ser implementados por cualquier clase que las implemente. Por ejemplo, una interfaz Volador puede tener métodos despegar(), aterrizar() y volar(), indicando qué acciones debe poder realizar cualquier objeto que sea Volador.
+
+2. Múltiple implementación: Una clase puede implementar múltiples interfaces. Esto es útil para permitir a una clase tener comportamientos de diferentes fuentes. Por ejemplo, una clase Ave puede implementar las interfaces Volador y Animal al mismo tiempo.
+
+3. Sin implementación: Los métodos en una interfaz no tienen ninguna implementación. Solo especifican la firma del método (nombre, parámetros y tipo de retorno). Las clases que implementan la interfaz deben proporcionar la implementación concreta de estos métodos.
+
+4. Pertenencia a tipos de datos: Las interfaces pueden utilizarse para definir tipos de datos. Por ejemplo, una lista de objetos Volador puede contener cualquier objeto que implemente esa interfaz.
+
+```java
+public interface MiInterfaz {
+    void metodoUno();
+    int metodoDos();
+    // Otros métodos...
+}
+```
+
+## <span style = "color: #FF7F00">Clase abstracta</span>
+
+Es una clase que no puede ser instanciada directamente. Puede contener métodos abstractos (métodos sin implementación) y métodos concretos (métodos con implementación). Las clases abstractas permiten definir métodos que algunas subclases deben implementar, pero también pueden proporcionar cierta funcionalidad común. Se declaran con la palabra clave abstract.
+
+1. Combinación de métodos concretos y abstractos: Las clases abstractas pueden contener métodos concretos (es decir, métodos con implementación) además de métodos abstractos (métodos sin implementación). Las subclases no necesitan implementar los métodos concretos si no lo desean, pero tienen la opción de hacerlo.
+
+2. Herencia simple: Una clase puede heredar de una única clase abstracta. Esto limita la flexibilidad en comparación con las interfaces, ya que una clase puede implementar múltiples interfaces, pero solo puede tener una clase padre.
+
+3. Contener estados y comportamientos comunes: Las clases abstractas son útiles cuando se desea proporcionar una implementación base común para subclases. Pueden contener variables de instancia, constructores y métodos que las subclases pueden usar o sobrescribir.
+
+4. Punto intermedio entre una interfaz y una clase concreta: Las clases abstractas permiten definir comportamientos comunes sin proporcionar una implementación completa, a diferencia de las clases concretas, pero más que las interfaces.
+
+```java
+public abstract class MiClaseAbstracta {
+    public abstract void metodoAbstracto();
+    
+    public void metodoConcreto() {
+        // Implementación del método concreto
+    }
+    // Otros métodos y atributos...
+}
+
+```
+
+Una diferencia clave entre una interfaz y una clase abstracta es que en Java una clase puede implementar múltiples interfaces, pero solo puede heredar de una clase abstracta. Además, una clase abstracta puede contener variables de instancia, constructores y métodos concretos, mientras que una interfaz solo puede tener constantes y métodos abstractos.
+
+# <span style = "color: #FF4767">CLASE 23</span>
 ***Fecha:*** 04 de enero 2024
 
 EXAMEN DE PRIMER BIMESTRE
 
-# <span style = "color: #FF4767">CLASE 27</span>
+# <span style = "color: #FF4767">CLASE 24</span>
 ***Fecha:*** 05 de enero 2024
+
+### <span style = "color: #FF7F00">Cardinalidad en general:</span>
+
+- **Cardinalidad**: Se refiere a la cantidad de elementos de un conjunto de datos que están relacionados con los elementos de otro conjunto de datos.
+- **Tipos**:
+  - Uno a Uno (1:1)
+  - Uno a Muchos (1:N)
+  - Muchos a Uno (N:1)
+  - Muchos a Muchos (N:M)
+- Describe la cantidad de ocurrencias permitidas en una relación entre conjuntos de datos.
+
+### <span style = "color: #FF7F00">Cardinalidad en UML (Lenguaje de Modelado Unificado):</span>
+
+- En UML, la cardinalidad se representa en los diagramas de clases o de relaciones entre clases.
+- Se muestra mediante notaciones como "*1", "1..*", "*0..1", etc.
+- Indica cuántas instancias de una clase pueden estar asociadas con cuántas instancias de otra clase.
+- Ayuda a especificar y comprender las relaciones entre clases en un modelo de software.
+
+Ambas definiciones de cardinalidad son fundamentales para entender las relaciones y conexiones entre conjuntos de datos en bases de datos o en el modelado de sistemas y estructuras en UML, proporcionando información sobre la cantidad y naturaleza de las asociaciones entre diferentes elementos.
+
+# <span style = "color: #FF4767">CLASE 25</span>
+***Fecha:*** 08 enero 2024
+
+DEFENSA DE PROYECTOS PARTE 1
 
 </dev>
