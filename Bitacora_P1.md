@@ -2130,7 +2130,7 @@ EXAMEN DE PRIMER BIMESTRE
 Ambas definiciones de cardinalidad son fundamentales para entender las relaciones y conexiones entre conjuntos de datos en bases de datos o en el modelado de sistemas y estructuras en UML, proporcionando información sobre la cantidad y naturaleza de las asociaciones entre diferentes elementos.
 
 # <span style = "color: #FF4767">CLASE 25</span>
-***Fecha:*** 08 enero 2024
+***Fecha:*** 09 enero 2024
 
 DEFENSA DE PROYECTOS PARTE 1
 
